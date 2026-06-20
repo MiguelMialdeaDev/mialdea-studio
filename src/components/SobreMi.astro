@@ -1,0 +1,58 @@
+---
+import { site } from '../data/config';
+---
+
+<section id="sobre-mi" class="py-24 sm:py-32 border-t border-line">
+  <div class="max-w-content mx-auto px-5 sm:px-8 grid md:grid-cols-[280px_1fr] gap-10 md:gap-14 items-center">
+    <div class="reveal">
+      <div class="gcard">
+        <div class="gcard-inner overflow-hidden">
+          <img
+            src={`${import.meta.env.BASE_URL}${site.foto.replace(/^\//, '')}`}
+            alt={`${site.founder}, fundador de Mialdea Studio`}
+            width="280"
+            height="340"
+            class="w-full h-[340px] object-cover"
+            onerror="this.style.display='none'; this.parentElement.classList.add('foto-placeholder');"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <p class="text-xs uppercase tracking-[0.18em] text-muted mb-5">Sobre mi</p>
+      <h2
+        class="font-sans font-medium tracking-tight text-paper mb-5"
+        style="font-size: clamp(1.6rem, 3.5vw, 2.5rem); line-height: 1.1;"
+      >
+        Soy {site.founder}, y construyo tu web yo mismo.
+      </h2>
+      <p class="text-paper/85 leading-relaxed mb-4 max-w-2xl">
+        Llevo anos desarrollando software para grandes bancos, donde una web
+        lenta o que falla no es una opcion. Esa misma exigencia la pongo ahora
+        al servicio de tu negocio, con una web hecha a medida y para nadie mas.
+      </p>
+      <p class="text-muted leading-relaxed max-w-2xl">
+        No soy una agencia con comerciales. Trabajo desde Valencia, para
+        clientes de cualquier sitio. Hablas conmigo de principio a fin, te lo
+        explico todo en cristiano y me encargo yo de lo tecnico. Tu te centras
+        en tu negocio.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .foto-placeholder {
+    background: linear-gradient(135deg, #141416, #0a0a0b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 340px;
+  }
+  .foto-placeholder::after {
+    content: 'Tu foto aqui';
+    color: #8a8a82;
+    font-size: 0.8rem;
+  }
+</style>

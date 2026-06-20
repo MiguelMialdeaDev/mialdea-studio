@@ -1,0 +1,35 @@
+---
+import { site, nav } from '../data/config';
+const year = 2026;
+---
+
+<footer class="border-t border-line py-12">
+  <div
+    class="max-w-content mx-auto px-5 sm:px-8 flex flex-col sm:flex-row gap-8 sm:items-center sm:justify-between"
+  >
+    <div>
+      <div class="flex items-baseline gap-1.5 mb-2">
+        <span class="font-display text-xl text-paper">Mialdea</span>
+        <span class="text-xs text-muted lowercase tracking-wide">studio</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-accent self-end mb-1"></span>
+      </div>
+      <p class="text-sm text-muted max-w-xs">{site.tagline}</p>
+    </div>
+
+    <nav class="flex flex-wrap gap-x-6 gap-y-2">
+      {nav.map((item) => (
+        <a href={item.href} class="text-sm text-muted hover:text-paper transition">
+          {item.label}
+        </a>
+      ))}
+      <a href={`mailto:${site.email}`} class="text-sm text-muted hover:text-paper transition">
+        {site.email}
+      </a>
+    </nav>
+  </div>
+
+  <div class="max-w-content mx-auto px-5 sm:px-8 mt-10 pt-6 border-t border-line flex flex-col sm:flex-row gap-2 sm:justify-between text-xs text-muted">
+    <span>&copy; {year} Mialdea Studio. {site.location}.</span>
+    <span>Disenado y desarrollado en Valencia.</span>
+  </div>
+</footer>
