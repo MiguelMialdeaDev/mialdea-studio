@@ -29,6 +29,25 @@ export const sectores = [
   'Comercio local',
 ];
 
+// ============================================================
+//  PROYECTOS  ·  aqui subes tus casos segun los terminas
+// ============================================================
+//
+// COMO AÑADIR UN PROYECTO:
+//   1. Guarda la captura de la web/app en  public/images/proyectos/
+//      (ej: altamira.jpg). Una buena captura de la home vale mucho.
+//   2. Copia un bloque de proyecto, pegalo dentro de "proyectos = ["
+//   3. Rellena los campos. 'portada' es la imagen que se ve grande.
+//   4. Guarda. En local se ve al instante; en la web, al hacer push.
+//
+// Campos:
+//   portada     -> 'proyectos/archivo.jpg' (captura principal). Si lo
+//                  dejas vacio, sale una tarjeta de texto sin imagen.
+//   imagenes    -> capturas extra (opcional)
+//   destacado   -> true para marcarlo como caso estrella
+//   url         -> URL de la web en vivo (si esta publicada)
+//   testimonio  -> frase real del cliente (si la tienes)
+
 export const proyectos = [
   {
     nombre: 'Altamira',
@@ -36,8 +55,9 @@ export const proyectos = [
     descripcion:
       'Llegaron sin web y sin salir en Google. Les monte su web desde cero y trabaje el SEO local hasta posicionarlos como el mejor venezolano de Valencia. Hoy los clientes nuevos los encuentran antes de llegar a la puerta. El mismo trabajo que hare con tu negocio.',
     resultado: 'De invisible en Google a primero por "venezolano en Valencia".',
-    // RELLENAR cuando tengas la frase del dueno: testimonio + nombre
-    testimonio: '',
+    portada: '', // RELLENAR: 'proyectos/altamira.jpg'
+    imagenes: [],
+    testimonio: '', // RELLENAR cuando tengas la frase del dueno
     testimonio_autor: '',
     stack: ['Web a medida', 'SEO local', 'Google Business'],
     destacado: true,

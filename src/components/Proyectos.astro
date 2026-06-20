@@ -1,6 +1,7 @@
 ---
 import { proyectos, site } from '../data/config';
 const waBase = site.whatsapp ? `https://wa.me/${site.whatsapp}` : '#contacto';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <section id="proyectos" class="py-24 sm:py-32">
@@ -23,7 +24,18 @@ const waBase = site.whatsapp ? `https://wa.me/${site.whatsapp}` : '#contacto';
           : '#contacto';
         return (
           <article class="reveal gcard">
-            <div class="gcard-inner spotlight p-7 sm:p-10">
+            <div class="gcard-inner spotlight overflow-hidden">
+              {p.portada && (
+                <div class="border-b border-line">
+                  <img
+                    src={`${base}/images/${p.portada}`}
+                    alt={`Proyecto ${p.nombre}`}
+                    loading="lazy"
+                    class="w-full aspect-[16/9] object-cover object-top"
+                  />
+                </div>
+              )}
+              <div class="p-7 sm:p-10">
               <div class="flex items-center gap-3 mb-5">
                 <span class="font-display text-3xl sm:text-4xl text-paper">{p.nombre}</span>
                 {p.destacado && (
@@ -77,6 +89,7 @@ const waBase = site.whatsapp ? `https://wa.me/${site.whatsapp}` : '#contacto';
                     Ver web en vivo
                   </a>
                 )}
+              </div>
               </div>
             </div>
           </article>
