@@ -2,13 +2,13 @@
 import { proceso, faq } from '../data/config';
 ---
 
-<section id="proceso" class="py-24 sm:py-32 border-t border-line">
+<section id="proceso" class="py-24 sm:py-32">
   <div class="max-w-content mx-auto px-5 sm:px-8">
     <div class="reveal max-w-2xl mb-14">
-      <p class="text-xs uppercase tracking-[0.18em] text-muted mb-4">Como trabajamos</p>
+      <p class="text-xs uppercase tracking-[0.18em] text-terracota font-medium mb-4">Cómo trabajo</p>
       <h2
-        class="font-sans font-medium tracking-tight text-paper"
-        style="font-size: clamp(1.75rem, 4vw, 3rem); line-height: 1.05;"
+        class="font-display font-medium tracking-tight text-tinta"
+        style="font-size: clamp(1.9rem, 4.5vw, 3.25rem); line-height: 1.05;"
       >
         Sencillo. Tres pasos.
       </h2>
@@ -17,33 +17,33 @@ import { proceso, faq } from '../data/config';
     <div class="grid sm:grid-cols-3 gap-8 mb-24">
       {proceso.map((p) => (
         <div class="reveal">
-          <span class="font-display text-5xl text-accent/80">{p.n}</span>
-          <h3 class="text-paper font-medium text-xl mt-4 mb-2">{p.titulo}</h3>
-          <p class="text-muted leading-relaxed">{p.desc}</p>
+          <span class="font-display text-5xl text-terracota">{p.n}</span>
+          <h3 class="font-display text-xl text-tinta mt-4 mb-2">{p.titulo}</h3>
+          <p class="text-tinta/70 leading-relaxed">{p.desc}</p>
         </div>
       ))}
     </div>
 
-    <div class="reveal max-w-2xl mb-10">
+    <div class="reveal max-w-2xl mb-8">
       <h2
-        class="font-sans font-medium tracking-tight text-paper"
+        class="font-display font-medium tracking-tight text-tinta"
         style="font-size: clamp(1.5rem, 3vw, 2.25rem); line-height: 1.1;"
       >
         Lo que sueles preguntarte.
       </h2>
     </div>
 
-    <div class="grid gap-px bg-line rounded-2xl overflow-hidden border border-line">
+    <div class="grid gap-px bg-linea rounded-2xl overflow-hidden border border-linea">
       {faq.map((f) => (
-        <details class="reveal group bg-surface">
+        <details class="group bg-papel">
           <summary
-            class="cursor-pointer list-none flex items-center justify-between gap-4 px-6 py-5 text-paper font-medium hover:text-accent transition"
+            class="cursor-pointer list-none flex items-center justify-between gap-4 px-6 py-5 text-tinta font-medium hover:text-terracota transition"
           >
             {f.q}
             <span class="text-muted group-open:rotate-45 transition-transform text-xl">+</span>
           </summary>
           <div class="faq-content">
-            <p class="px-6 pb-5 text-muted leading-relaxed">{f.a}</p>
+            <p class="px-6 pb-5 text-tinta/70 leading-relaxed">{f.a}</p>
           </div>
         </details>
       ))}
@@ -57,13 +57,7 @@ import { proceso, faq } from '../data/config';
     grid-template-rows: 0fr;
     transition: grid-template-rows 0.3s ease;
   }
-  details[open] .faq-content {
-    grid-template-rows: 1fr;
-  }
-  .faq-content > p {
-    overflow: hidden;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .faq-content { transition: none; }
-  }
+  details[open] .faq-content { grid-template-rows: 1fr; }
+  .faq-content > p { overflow: hidden; }
+  @media (prefers-reduced-motion: reduce) { .faq-content { transition: none; } }
 </style>

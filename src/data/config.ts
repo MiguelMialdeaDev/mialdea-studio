@@ -1,119 +1,116 @@
 export const site = {
   name: 'Mialdea Studio',
   founder: 'Miguel Mialdea',
-  tagline: 'Webs y apps a medida para hacer tu negocio visible.',
+  tagline: 'Webs y apps a medida. Cada proyecto, una historia.',
   email: 'mialdeastudio@gmail.com',
-  // RELLENAR: numero de WhatsApp NUEVO de la marca, formato 34XXXXXXXXX (sin + ni espacios)
+  // RELLENAR: numero WhatsApp de la marca, formato 34XXXXXXXXX
   whatsapp: '',
   // RELLENAR: pon tu foto en public/miguel.jpg
   foto: '/miguel.jpg',
-  location: 'Valencia, Espana',
+  location: 'Valencia',
   url: 'https://mialdeastudio.com',
 };
 
 export const nav = [
+  { label: 'Historias', href: '#historias' },
   { label: 'Servicios', href: '#servicios' },
-  { label: 'Proyectos', href: '#proyectos' },
-  { label: 'Proceso', href: '#proceso' },
-  { label: 'Sobre mi', href: '#sobre-mi' },
+  { label: 'Cómo trabajo', href: '#proceso' },
+  { label: 'Sobre mí', href: '#sobre-mi' },
   { label: 'Contacto', href: '#contacto' },
 ];
 
 export const sectores = [
   'Restaurantes',
+  'Oficios',
   'Tiendas',
-  'Clinicas',
-  'Peluquerias',
-  'Servicios',
-  'Hosteleria',
+  'Clínicas',
+  'Diseñadores',
+  'Hostelería',
   'Comercio local',
 ];
 
 // ============================================================
-//  PROYECTOS  ·  aqui subes tus casos segun los terminas
+//  HISTORIAS  ·  el núcleo de la marca
+//  "No contamos proyectos, contamos historias en las que impactamos"
+//  Generales/anónimas por ahora (sin nombres ni localidad).
+//  portada -> 'historias/archivo.jpg' (opcional). Sin imagen sale
+//  una tarjeta con color cálido de fondo.
 // ============================================================
-//
-// COMO AÑADIR UN PROYECTO:
-//   1. Guarda la captura de la web/app en  public/images/proyectos/
-//      (ej: altamira.jpg). Una buena captura de la home vale mucho.
-//   2. Copia un bloque de proyecto, pegalo dentro de "proyectos = ["
-//   3. Rellena los campos. 'portada' es la imagen que se ve grande.
-//   4. Guarda. En local se ve al instante; en la web, al hacer push.
-//
-// Campos:
-//   portada     -> 'proyectos/archivo.jpg' (captura principal). Si lo
-//                  dejas vacio, sale una tarjeta de texto sin imagen.
-//   imagenes    -> capturas extra (opcional)
-//   destacado   -> true para marcarlo como caso estrella
-//   url         -> URL de la web en vivo (si esta publicada)
-//   testimonio  -> frase real del cliente (si la tienes)
-
-export const proyectos = [
+export const historias = [
   {
-    nombre: 'Altamira',
-    tipo: 'Restaurante venezolano, Burjassot',
-    descripcion:
-      'Llegaron sin web y sin salir en Google. Les monte su web desde cero y trabaje el SEO local hasta posicionarlos como el mejor venezolano de Valencia. Hoy los clientes nuevos los encuentran antes de llegar a la puerta. El mismo trabajo que hare con tu negocio.',
-    resultado: 'De invisible en Google a primero por "venezolano en Valencia".',
-    portada: '', // RELLENAR: 'proyectos/altamira.jpg'
-    imagenes: [],
-    testimonio: '', // RELLENAR cuando tengas la frase del dueno
-    testimonio_autor: '',
-    stack: ['Web a medida', 'SEO local', 'Google Business'],
-    destacado: true,
-    url: '', // RELLENAR con la URL de la web en vivo cuando este publicada
+    quien: 'Un restaurante venezolano',
+    titulo: 'Sabores de casa que casi nadie encontraba',
+    resumen:
+      'Una familia que se trajo su cocina en la maleta. Cinco estrellas reales, pero invisible en Google. Le construyo su sitio y trabajo para que lo encuentren antes de llegar a la puerta.',
+    etiqueta: 'Web + SEO local',
+    color: 'terracota',
+    portada: '',
+  },
+  {
+    quien: 'Un fontanero',
+    titulo: 'Un oficio de toda la vida que da el salto',
+    resumen:
+      'Un manitas que decide digitalizarse: una web para especializarse y aparecer justo cuando alguien busca su oficio en su zona.',
+    etiqueta: 'Web de servicios',
+    color: 'verde',
+    portada: '',
+  },
+  {
+    quien: 'Una diseñadora',
+    titulo: 'El talento estaba. Faltaba el escaparate',
+    resumen:
+      'Mucho talento y la valentía de emprender. Le monto un portfolio a su altura para dar el salto digital y empezar a ofrecer lo suyo.',
+    etiqueta: 'Portfolio',
+    color: 'ocre',
+    portada: '',
+  },
+  {
+    quien: 'Una marca de café tradicional',
+    titulo: 'De vender a comercios a vender a tu casa',
+    resumen:
+      'Toda la vida sirviendo café a negocios locales. Ahora da el salto para llegar también a particulares, sin perder lo de siempre.',
+    etiqueta: 'Tienda online',
+    color: 'terracota',
+    portada: '',
   },
 ];
 
 export const servicios = [
   {
     titulo: 'Webs',
-    desc: 'Webs rapidas, modernas y faciles de usar desde el movil. Pensadas para convertir visitas en clientes reales y para que te encuentren en Google cuando te buscan.',
-    bullets: ['Diseno a medida', 'Optimizadas para movil', 'SEO local incluido'],
-    desde: 'Desde 890 EUR',
+    desc: 'Webs a medida, rápidas y pensadas para el móvil. Para que te encuentren en Google y que quien entra acabe llamando, reservando o comprando.',
+    bullets: ['Diseño único, sin plantillas', 'SEO local incluido', 'Listas en semanas'],
+    desde: 'Desde 890 €',
   },
   {
-    titulo: 'Apps',
-    desc: 'Apps a medida para tu negocio, desde reservas hasta pedidos o fidelizacion. Sencillas para tus clientes y utiles para ti, con la misma exigencia tecnica que pide la banca.',
-    bullets: ['Reservas y pedidos', 'Fidelizacion', 'Android e iOS'],
-    desde: 'Desde 3.900 EUR',
+    titulo: 'Apps y herramientas',
+    desc: 'Apps y software a medida para tu negocio: reservas, pedidos, fidelización o esa herramienta que te simplifica el día a día.',
+    bullets: ['Hecho para tu caso', 'Sencillo de usar', 'Móvil y ordenador'],
+    desde: 'A medida',
   },
 ];
 
 export const paquetes = [
   {
     nombre: 'Presencia',
-    precio: '890 EUR',
+    precio: '890 €',
     desc: 'Para aparecer y que te encuentren.',
-    incluye: ['Web de una pagina', 'Movil primero', 'Boton de WhatsApp', 'Alta en Google y fotos'],
+    incluye: ['Web de una página', 'Móvil primero', 'Botón de WhatsApp', 'Alta en Google'],
     destacado: false,
   },
   {
     nombre: 'Negocio',
-    precio: '1.490 EUR',
-    desc: 'El que elige la mayoria.',
-    incluye: ['Hasta 5 paginas', 'SEO local para tu zona', 'Google Business configurado', 'Resenas y textos que venden'],
+    precio: '1.490 €',
+    desc: 'El que elige la mayoría.',
+    incluye: ['Hasta 5 páginas', 'SEO local de tu zona', 'Google Business', 'Textos que venden'],
     destacado: true,
   },
   {
     nombre: 'A medida',
-    precio: 'Desde 2.900 EUR',
-    desc: 'Reservas, pedidos, carta digital.',
-    incluye: ['Funciones a medida', 'Reservas o pedidos', 'Carta digital', 'Lo que tu negocio necesite'],
+    precio: 'Desde 2.900 €',
+    desc: 'Reservas, pedidos, lo que necesites.',
+    incluye: ['Funciones a medida', 'Reservas o pedidos', 'Integraciones', 'Lo que tu negocio pida'],
     destacado: false,
-  },
-];
-
-export const mantenimiento = [
-  {
-    nombre: 'Tranquilidad',
-    precio: '59 EUR/mes',
-    incluye: 'Hosting, dominio, copias de seguridad, actualizaciones y hasta 2 cambios al mes. Soporte por WhatsApp.',
-  },
-  {
-    nombre: 'Crecimiento',
-    precio: '129 EUR/mes',
-    incluye: 'Todo lo anterior, mas SEO local continuo, informe mensual de visitas y una mejora al mes para subir en Google.',
   },
 ];
 
@@ -121,35 +118,35 @@ export const proceso = [
   {
     n: '01',
     titulo: 'Hablamos',
-    desc: 'Me cuentas tu negocio y que quieres conseguir. Sin tecnicismos.',
+    desc: 'Me cuentas tu negocio y qué quieres conseguir. En cristiano, sin tecnicismos.',
   },
   {
     n: '02',
     titulo: 'Lo construyo',
-    desc: 'Diseno y monto tu web o app, y te la enseno paso a paso.',
+    desc: 'Diseño y monto tu web o app, y te la enseño por el camino. Tú sigues a lo tuyo.',
   },
   {
     n: '03',
     titulo: 'Creces',
-    desc: 'La lanzamos, la posicionamos en Google y sigo a tu lado.',
+    desc: 'La lanzamos, la posiciono en Google y sigo a tu lado. No te dejo solo.',
   },
 ];
 
 export const faq = [
   {
-    q: 'Es caro?',
-    a: 'Una web no es un gasto, es lo que te trae clientes cada mes. Te doy un presupuesto cerrado antes de empezar, asi sabes exactamente lo que pagas.',
+    q: '¿Es caro?',
+    a: 'Una web no es un gasto, es lo que te trae clientes cada mes. Te doy un presupuesto cerrado antes de empezar, así sabes exactamente lo que pagas.',
   },
   {
-    q: 'Y luego desapareces?',
-    a: 'No. Hablas siempre conmigo, antes y despues de lanzar. Si algo falla o quieres cambios, sabes a quien escribir y te contesto.',
+    q: '¿Y luego desapareces?',
+    a: 'No. Hablas siempre conmigo, antes y después de lanzar. Si algo falla o quieres cambios, sabes a quién escribir y te contesto.',
   },
   {
-    q: 'No entiendo de tecnologia.',
-    a: 'No hace falta entender nada. Te lo explico en cristiano y de lo tecnico me encargo yo.',
+    q: 'No entiendo de tecnología.',
+    a: 'No hace falta. Te lo explico en cristiano y de lo técnico me encargo yo.',
   },
   {
-    q: 'Cuanto tarda?',
-    a: 'Tu web lista y posicionandose en semanas, no meses.',
+    q: '¿Cuánto tarda?',
+    a: 'Tu web lista y posicionándose en semanas, no en meses.',
   },
 ];

@@ -3,12 +3,12 @@ import { sectores } from '../data/config';
 const loop = [...sectores, ...sectores];
 ---
 
-<section class="py-8 border-y border-line overflow-hidden" aria-label="Sectores">
+<section class="py-7 border-y border-linea overflow-hidden bg-papel" aria-label="Sectores">
   <div class="marquee">
     {loop.map((s) => (
       <span class="flex items-center text-muted text-sm uppercase tracking-[0.16em] whitespace-nowrap px-8">
         {s}
-        <span class="w-1 h-1 rounded-full bg-accent/60 ml-8"></span>
+        <span class="w-1 h-1 rounded-full bg-terracota/70 ml-8"></span>
       </span>
     ))}
   </div>

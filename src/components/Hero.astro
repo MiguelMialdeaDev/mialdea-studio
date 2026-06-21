@@ -5,58 +5,58 @@ const wa = site.whatsapp
   : '#contacto';
 ---
 
-<section id="top" class="relative spotlight pt-32 pb-20 sm:pt-44 sm:pb-28 overflow-hidden">
+<section id="top" class="relative pt-32 pb-20 sm:pt-40 sm:pb-28 overflow-hidden">
+  <!-- mancha cálida sutil -->
   <div
-    class="absolute -top-40 -left-32 w-[680px] h-[680px] rounded-full opacity-[0.18] blur-[120px] pointer-events-none"
-    style="background: radial-gradient(circle, #c8ff3c 0%, transparent 70%);"
+    class="absolute -top-32 -right-24 w-[620px] h-[620px] rounded-full opacity-[0.18] blur-[130px] pointer-events-none"
+    style="background: radial-gradient(circle, #C8553D 0%, transparent 70%);"
+    aria-hidden="true"
+  >
+  </div>
+  <div
+    class="absolute top-40 -left-32 w-[480px] h-[480px] rounded-full opacity-[0.14] blur-[120px] pointer-events-none"
+    style="background: radial-gradient(circle, #E0A04D 0%, transparent 70%);"
     aria-hidden="true"
   >
   </div>
 
   <div class="max-w-content mx-auto px-5 sm:px-8 relative">
-    <p class="reveal text-xs uppercase tracking-[0.18em] text-muted mb-6">
-      Estudio de desarrollo, Valencia
+    <p class="reveal text-xs uppercase tracking-[0.18em] text-terracota font-medium mb-6">
+      Estudio de webs y apps
     </p>
 
     <h1
-      class="reveal font-display font-normal leading-[0.95] tracking-tight text-paper"
-      style="font-size: clamp(2.5rem, 7vw, 5.75rem);"
+      class="reveal font-display font-medium text-tinta leading-[1.02] tracking-tight max-w-4xl"
+      style="font-size: clamp(2.5rem, 6.5vw, 5.25rem);"
     >
-      Una web de banco<br />
-      para tu negocio de <em class="italic text-accent">barrio</em>.
+      Que te <span class="italic text-terracota">encuentren</span>.
+      Que te elijan.
     </h1>
 
-    <p class="reveal mt-7 max-w-xl text-lg text-muted leading-relaxed">
-      La hace un ingeniero que ha desarrollado para grandes bancos, no una
-      plantilla. Webs y apps rapidas, seguras y preparadas para que te
-      encuentren en Google y llenes tu local.
+    <p class="reveal mt-7 max-w-xl text-lg text-tinta/75 leading-relaxed">
+      Diseño webs y apps a medida para negocios que quieren hacerse notar y
+      atraer clientes. Con la exigencia de quien ha desarrollado para la banca,
+      y el trato de quien te coge el teléfono siempre.
     </p>
 
     <div class="reveal mt-9 flex flex-wrap items-center gap-4">
       <a
         href={wa}
-        class="inline-flex items-center gap-2 text-base font-medium text-ink bg-accent px-6 py-3.5 rounded-full hover:brightness-110 transition"
+        class="inline-flex items-center gap-2 text-base font-medium text-papel bg-terracota px-6 py-3.5 rounded-full hover:bg-terracotaDark transition"
       >
-        Quiero mi web
+        Quiero atraer clientes
         <span aria-hidden="true">&rarr;</span>
       </a>
       <a
-        href="#proyectos"
-        class="text-base text-paper/80 hover:text-paper transition underline-offset-4 hover:underline"
+        href="#historias"
+        class="text-base text-tinta/80 hover:text-tinta transition underline-offset-4 hover:underline"
       >
-        Ver proyectos
+        Ver historias
       </a>
     </div>
 
-    <p class="reveal mt-7 text-sm text-muted flex flex-wrap items-center gap-x-3 gap-y-1">
-      <span class="inline-flex items-center gap-2">
-        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-        Hablas directamente conmigo
-      </span>
-      <span class="text-line">/</span>
-      <span>Hecho en Valencia</span>
-      <span class="text-line">/</span>
-      <span>Respuesta el mismo dia</span>
+    <p class="reveal mt-8 text-sm text-muted">
+      Cada proyecto, una historia. Sin plantillas.
     </p>
   </div>
 </section>

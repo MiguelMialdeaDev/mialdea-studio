@@ -7,8 +7,8 @@ interface Props {
   description?: string;
 }
 const {
-  title = `${site.name} | Webs y apps a medida para hacer tu negocio visible`,
-  description = 'Estudio de diseno y desarrollo. Webs y apps a medida, hechas para que tu negocio se vea y lo encuentren en Google. Nada de plantillas, trato directo.',
+  title = `${site.name} | Webs y apps que atraen clientes`,
+  description = 'Diseño webs y apps a medida para que tu negocio se haga notar y atraiga clientes. Cada proyecto, una historia. Sin plantillas, trato directo.',
 } = Astro.props;
 ---
 
@@ -26,7 +26,7 @@ const {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -34,18 +34,16 @@ const {
       '@type': 'ProfessionalService',
       name: site.name,
       description: description,
-      areaServed: 'Valencia, Espana',
+      areaServed: 'España',
       email: site.email,
       url: site.url,
-      knowsAbout: ['Diseno web', 'Desarrollo de apps', 'SEO local'],
+      knowsAbout: ['Diseño web', 'Desarrollo de apps', 'SEO local'],
     })} />
   </head>
   <body class="font-sans antialiased">
-    <div class="grain" aria-hidden="true"></div>
     <slot />
 
     <script is:inline>
-      // Scroll reveal con stagger
       const io = new IntersectionObserver(
         (entries) => {
           entries.forEach((e) => {
@@ -58,20 +56,10 @@ const {
         { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
       );
       document.querySelectorAll('.reveal').forEach((el, i) => {
-        el.style.transitionDelay = (i % 6) * 60 + 'ms';
+        el.style.transitionDelay = (i % 5) * 70 + 'ms';
         io.observe(el);
       });
 
-      // Spotlight cursor
-      document.querySelectorAll('.spotlight').forEach((el) => {
-        el.addEventListener('mousemove', (ev) => {
-          const r = el.getBoundingClientRect();
-          el.style.setProperty('--mx', ((ev.clientX - r.left) / r.width) * 100 + '%');
-          el.style.setProperty('--my', ((ev.clientY - r.top) / r.height) * 100 + '%');
-        });
-      });
-
-      // Nav blur al hacer scroll
       const nav = document.getElementById('nav');
       if (nav) {
         const onScroll = () => {

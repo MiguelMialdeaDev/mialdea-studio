@@ -1,62 +1,60 @@
 ---
 import { site } from '../data/config';
 const wa = site.whatsapp
-  ? `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hola Miguel, quiero informacion sobre una web para mi negocio.')}`
+  ? `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hola Miguel, quiero que mi negocio atraiga más clientes.')}`
   : null;
 ---
 
-<section id="contacto" class="py-28 sm:py-40 spotlight border-t border-line relative overflow-hidden">
+<section id="contacto" class="py-28 sm:py-40 relative overflow-hidden">
   <div
-    class="absolute bottom-0 right-0 w-[560px] h-[560px] rounded-full opacity-[0.14] blur-[120px] pointer-events-none"
-    style="background: radial-gradient(circle, #c8ff3c 0%, transparent 70%);"
+    class="absolute bottom-0 right-0 w-[520px] h-[520px] rounded-full opacity-[0.16] blur-[120px] pointer-events-none"
+    style="background: radial-gradient(circle, #C8553D 0%, transparent 70%);"
     aria-hidden="true"
   >
   </div>
 
   <div class="max-w-content mx-auto px-5 sm:px-8 relative text-center">
     <h2
-      class="reveal font-display font-normal tracking-tight text-paper mx-auto max-w-3xl"
-      style="font-size: clamp(2.25rem, 6vw, 4.5rem); line-height: 1;"
+      class="reveal font-display font-medium tracking-tight text-tinta mx-auto max-w-3xl"
+      style="font-size: clamp(2.25rem, 5.5vw, 4.25rem); line-height: 1.02;"
     >
-      Listo para que <em class="italic text-accent">te encuentren</em>?
+      ¿Empezamos <span class="italic text-terracota">tu historia</span>?
     </h2>
-    <p class="reveal mt-6 text-lg text-muted max-w-xl mx-auto leading-relaxed">
-      Cuentame tu negocio y te digo como conseguir que te encuentren y te
+    <p class="reveal mt-6 text-lg text-tinta/75 max-w-xl mx-auto leading-relaxed">
+      Cuéntame tu negocio y te digo cómo conseguir que te encuentren y te
       elijan. Sin compromiso y sin tecnicismos.
     </p>
 
     <p class="reveal mt-4 text-sm text-muted max-w-lg mx-auto">
-      No hace falta que seas una gran empresa. Trabajo con bares, clinicas y
-      tiendas de barrio que quieren salir en Google y llenar su local.
+      No hace falta que seas una gran empresa. Trabajo con bares, oficios,
+      clínicas y tiendas que quieren hacerse notar y llenar su local.
     </p>
 
     <div class="reveal mt-9 flex flex-wrap items-center justify-center gap-4">
       {wa ? (
         <a
           href={wa}
-          class="inline-flex items-center gap-2 text-base font-medium text-ink bg-accent px-7 py-4 rounded-full hover:brightness-110 transition"
+          class="inline-flex items-center gap-2 text-base font-medium text-papel bg-terracota px-7 py-4 rounded-full hover:bg-terracotaDark transition"
         >
-          Escribeme por WhatsApp
+          Escríbeme por WhatsApp
           <span aria-hidden="true">&rarr;</span>
         </a>
       ) : (
         <a
           href={`mailto:${site.email}?subject=Quiero%20una%20web%20para%20mi%20negocio`}
-          class="inline-flex items-center gap-2 text-base font-medium text-ink bg-accent px-7 py-4 rounded-full hover:brightness-110 transition"
+          class="inline-flex items-center gap-2 text-base font-medium text-papel bg-terracota px-7 py-4 rounded-full hover:bg-terracotaDark transition"
         >
-          Escribeme
+          Escríbeme
           <span aria-hidden="true">&rarr;</span>
         </a>
       )}
     </div>
 
-    <p class="reveal mt-5 text-sm text-paper/80">
-      Te contesto yo mismo, normalmente el mismo dia.
-    </p>
+    <p class="reveal mt-5 text-sm text-tinta/70">Te contesto yo mismo, normalmente el mismo día.</p>
     {wa && (
       <p class="reveal mt-2 text-sm text-muted">
-        O escribeme a
-        <a href={`mailto:${site.email}`} class="text-paper hover:text-accent underline underline-offset-4">
+        O escríbeme a
+        <a href={`mailto:${site.email}`} class="text-tinta hover:text-terracota underline underline-offset-4">
           {site.email}
         </a>
       </p>

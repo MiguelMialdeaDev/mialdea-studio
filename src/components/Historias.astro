@@ -1,0 +1,74 @@
+---
+import { historias, site } from '../data/config';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const wa = site.whatsapp ? `https://wa.me/${site.whatsapp}` : '#contacto';
+
+const colores: Record<string, string> = {
+  terracota: '#C8553D',
+  verde: '#5B7B5A',
+  ocre: '#E0A04D',
+};
+---
+
+<section id="historias" class="py-24 sm:py-32">
+  <div class="max-w-content mx-auto px-5 sm:px-8">
+    <div class="reveal max-w-2xl mb-14">
+      <p class="text-xs uppercase tracking-[0.18em] text-terracota font-medium mb-4">Historias</p>
+      <h2
+        class="font-display font-medium tracking-tight text-tinta"
+        style="font-size: clamp(1.9rem, 4.5vw, 3.25rem); line-height: 1.05;"
+      >
+        No hago webs. Acompaño a gente
+        <span class="text-muted">que se atreve a dar el salto.</span>
+      </h2>
+      <p class="mt-5 text-lg text-tinta/70 leading-relaxed">
+        Detrás de cada proyecto hay alguien con un sueño y las ganas de hacerse
+        notar. Estas son algunas de sus historias.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-6">
+      {historias.map((h) => (
+        <article class="card-warm overflow-hidden flex flex-col">
+          {h.portada ? (
+            <img
+              src={`${base}/images/${h.portada}`}
+              alt={h.titulo}
+              loading="lazy"
+              class="w-full aspect-[16/10] object-cover"
+            />
+          ) : (
+            <div
+              class="w-full aspect-[16/7] flex items-end p-6"
+              style={`background: linear-gradient(135deg, ${colores[h.color]}22, ${colores[h.color]}08);`}
+            >
+              <span
+                class="text-xs uppercase tracking-wider font-medium px-3 py-1 rounded-full"
+                style={`color: ${colores[h.color]}; background: ${colores[h.color]}1A;`}
+              >
+                {h.etiqueta}
+              </span>
+            </div>
+          )}
+
+          <div class="p-7 flex flex-col flex-1">
+            <p class="text-sm text-muted mb-1">{h.quien}</p>
+            <h3 class="font-display text-2xl text-tinta leading-snug mb-3">{h.titulo}</h3>
+            <p class="text-tinta/75 leading-relaxed">{h.resumen}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="reveal mt-12 flex flex-wrap items-center gap-4">
+      <p class="text-tinta/70">¿Quieres que la próxima historia sea la tuya?</p>
+      <a
+        href={wa}
+        class="inline-flex items-center gap-2 text-sm font-medium text-papel bg-tinta px-5 py-2.5 rounded-full hover:opacity-90 transition"
+      >
+        Cuéntame la tuya
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>

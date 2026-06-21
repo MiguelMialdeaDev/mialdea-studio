@@ -7,32 +7,21 @@ html {
 }
 
 body {
-  background: #0a0a0b;
-  color: #fafaf7;
+  background: #f8f3ea;
+  color: #231e1a;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: #c8ff3c;
-  color: #0a0a0b;
+  background: #c8553d;
+  color: #fffdf8;
 }
 
-/* Grain overlay */
-.grain {
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  pointer-events: none;
-  opacity: 0.04;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* Scroll reveal */
+/* Reveal suave */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(20px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
@@ -42,54 +31,31 @@ body {
   transform: none;
 }
 
-/* Gradient border card */
-.gcard {
-  position: relative;
-  border-radius: 1rem;
-  background: linear-gradient(135deg, rgba(200, 255, 60, 0.28), rgba(38, 38, 42, 0.4));
-  padding: 1px;
-  transition: background 0.4s ease;
-}
-.gcard:hover {
-  background: linear-gradient(135deg, rgba(200, 255, 60, 0.7), rgba(38, 38, 42, 0.5));
-}
-.gcard > .gcard-inner {
-  background: #141416;
-  border-radius: calc(1rem - 1px);
-  height: 100%;
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+  .marquee { animation: none; }
 }
 
-/* Spotlight that follows cursor */
-.spotlight {
-  position: relative;
-  overflow: hidden;
-}
-.spotlight::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    600px circle at var(--mx, 50%) var(--my, 0%),
-    rgba(200, 255, 60, 0.1),
-    transparent 40%
-  );
-  pointer-events: none;
-  transition: opacity 0.3s;
-}
-
-/* Marquee */
+/* Marquee cálido */
 .marquee {
   display: flex;
   width: max-content;
-  animation: marquee 42s linear infinite;
+  animation: marquee 40s linear infinite;
 }
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
-  .marquee { animation: none; }
-  html { scroll-behavior: auto; }
+/* Tarjeta cálida */
+.card-warm {
+  background: #fffdf8;
+  border: 1px solid #e7ddcd;
+  border-radius: 1.25rem;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.card-warm:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px -20px rgba(35, 30, 26, 0.25);
 }
