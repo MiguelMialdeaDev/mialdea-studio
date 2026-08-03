@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Proceso from '../components/Proceso.astro';
+import Capacidad from '../components/Capacidad.astro';
+import Faq from '../components/Faq.astro';
+import Contacto from '../components/Contacto.astro';
+import Footer from '../components/Footer.astro';
+import WhatsappFab from '../components/WhatsappFab.astro';
+import { seo, comoTrabajo, link } from '../data/config';
+---
+
+<BaseLayout title={seo.comoTrabajo.title} description={seo.comoTrabajo.description}>
+  <Nav />
+  <main>
+    <section class="pt-28 pb-14 sm:pt-40 sm:pb-20 relative overflow-hidden">
+      <div
+        class="absolute -top-32 -right-24 w-[560px] h-[560px] rounded-full opacity-[0.16] blur-[130px] pointer-events-none"
+        style="background: radial-gradient(circle, #C8553D 0%, transparent 70%);"
+        aria-hidden="true"
+      >
+      </div>
+
+      <div class="max-w-content mx-auto px-5 sm:px-8 relative">
+        <h1
+          class="font-display font-medium text-tinta leading-[1.05] tracking-tight max-w-3xl"
+          style="font-size: clamp(2.25rem, 5.5vw, 4rem);"
+        >
+          Cómo trabajo
+        </h1>
+        <div class="mt-7 max-w-2xl">
+          {comoTrabajo.intro.map((p) => (
+            <p class="text-xl text-tinta/80 leading-relaxed mb-5">{p}</p>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Para quién es y para quién no -->
+    <section class="py-16 sm:py-20 bg-papel border-y border-linea">
+      <div class="max-w-content mx-auto px-5 sm:px-8 grid md:grid-cols-2 gap-8">
+        <div class="reveal card-warm p-8">
+          <h2 class="font-display text-2xl text-tinta mb-5">{comoTrabajo.paraQuien.si.titulo}</h2>
+          <ul class="space-y-3.5">
+            {comoTrabajo.paraQuien.si.puntos.map((p) => (
+              <li class="flex gap-3 text-lg text-tinta/80 leading-relaxed">
+                <span class="text-terracota mt-0.5" aria-hidden="true">&#10003;</span>
+                <span>{p}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="reveal card-warm p-8">
+          <h2 class="font-display text-2xl text-tinta mb-5">{comoTrabajo.paraQuien.no.titulo}</h2>
+          <ul class="space-y-3.5">
+            {comoTrabajo.paraQuien.no.puntos.map((p) => (
+              <li class="flex gap-3 text-lg text-tinta/80 leading-relaxed">
+                <span class="text-muted mt-0.5" aria-hidden="true">&times;</span>
+                <span>{p}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Los cinco pasos -->
+    <Proceso titulo="Cinco pasos, y ninguna sorpresa a mitad" kicker="El proceso" />
+
+    <!-- Los productos -->
+    <section id="lo-que-cuesta" class="py-20 sm:py-28 bg-papel border-y border-linea">
+      <div class="max-w-content mx-auto px-5 sm:px-8">
+        <div class="reveal max-w-2xl mb-12">
+          <h2
+            class="font-display font-medium tracking-tight text-tinta"
+            style="font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.05;"
+          >
+            {comoTrabajo.productos.titulo}
+          </h2>
+          <p class="mt-5 text-lg text-tinta/75 leading-relaxed">{comoTrabajo.productos.intro}</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          {comoTrabajo.productos.items.map((p) => (
+            <article class="card-warm p-8 flex flex-col">
+              <h3 class="font-display text-2xl text-tinta">{p.nombre}</h3>
+              <p class="font-display text-3xl text-terracota mt-2">{p.precio}</p>
+              <p class="text-sm text-muted mt-1">{p.plazo}</p>
+              <p class="text-tinta/80 leading-relaxed mt-5">{p.desc}</p>
+              <ul class="space-y-2.5 mt-6">
+                {p.incluye.map((i) => (
+                  <li class="flex items-start gap-2.5 text-base text-tinta/80">
+                    <span class="text-terracota mt-0.5" aria-hidden="true">&#10003;</span>
+                    <span>{i}</span>
+                  </li>
+                ))}
+              </ul>
+              <p class="text-sm text-muted mt-6 pt-5 border-t border-linea">{p.cierre}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Qué necesito de ti -->
+    <section class="py-16 sm:py-20">
+      <div class="max-w-content mx-auto px-5 sm:px-8">
+        <div class="reveal max-w-2xl">
+          <h2 class="font-display text-2xl sm:text-3xl text-tinta mb-4">{comoTrabajo.queNecesito.titulo}</h2>
+          <p class="text-lg text-tinta/80 leading-relaxed">{comoTrabajo.queNecesito.texto}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qué pasa después de publicar -->
+    <section class="py-16 sm:py-20 bg-papel border-y border-linea">
+      <div class="max-w-content mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-10">
+        <div class="reveal">
+          <p class="text-xs uppercase tracking-[0.18em] text-terracota font-medium mb-4">
+            Después de publicar
+          </p>
+          <h2 class="font-display text-2xl sm:text-3xl text-tinta mb-3">
+            {comoTrabajo.planCuidado.titulo}
+          </h2>
+          <p class="font-display text-2xl text-terracota mb-5">{comoTrabajo.planCuidado.precio}</p>
+          {comoTrabajo.planCuidado.parrafos.map((p) => (
+            <p class="text-lg text-tinta/80 leading-relaxed mb-4">{p}</p>
+          ))}
+        </div>
+
+        <div class="reveal">
+          <p class="text-xs uppercase tracking-[0.18em] text-terracota font-medium mb-4">Urgencias</p>
+          <h2 class="font-display text-2xl sm:text-3xl text-tinta mb-3">
+            {comoTrabajo.rescate.titulo}
+          </h2>
+          <p class="font-display text-2xl text-terracota mb-5">{comoTrabajo.rescate.precio}</p>
+          {comoTrabajo.rescate.parrafos.map((p) => (
+            <p class="text-lg text-tinta/80 leading-relaxed mb-4">{p}</p>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Lo que no hago -->
+    <section class="py-16 sm:py-20">
+      <div class="max-w-content mx-auto px-5 sm:px-8">
+        <div class="reveal max-w-2xl">
+          <h2 class="font-display text-2xl sm:text-3xl text-tinta mb-4">{comoTrabajo.noHago.titulo}</h2>
+          <p class="text-lg text-tinta/80 leading-relaxed">{comoTrabajo.noHago.texto}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lo que prometo y lo que no -->
+    <section class="py-16 sm:py-20 bg-papel border-y border-linea">
+      <div class="max-w-content mx-auto px-5 sm:px-8">
+        <div class="reveal max-w-2xl">
+          <h2 class="font-display text-2xl sm:text-3xl text-tinta mb-5">
+            {comoTrabajo.garantias.titulo}
+          </h2>
+          <p class="text-lg text-tinta/80 leading-relaxed mb-6">{comoTrabajo.garantias.intro}</p>
+          <p class="text-lg text-tinta font-medium mb-4">{comoTrabajo.garantias.subtitulo}</p>
+          <ul class="space-y-3 mb-6">
+            {comoTrabajo.garantias.puntos.map((p) => (
+              <li class="flex gap-3 text-lg text-tinta/80 leading-relaxed">
+                <span class="text-terracota mt-0.5" aria-hidden="true">&#10003;</span>
+                <span>{p}</span>
+              </li>
+            ))}
+          </ul>
+          <p class="text-lg text-tinta/75 leading-relaxed">{comoTrabajo.garantias.cierre}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- El escalón pequeño, siempre después de los productos -->
+    <section class="py-16 sm:py-20">
+      <div class="max-w-content mx-auto px-5 sm:px-8">
+        <div class="reveal card-warm p-8 sm:p-10 max-w-3xl">
+          <h2 class="font-display text-2xl sm:text-3xl text-tinta mb-3">{comoTrabajo.escalon.titulo}</h2>
+          <p class="font-display text-2xl text-terracota mb-5">{comoTrabajo.escalon.precio}</p>
+          <p class="text-lg text-tinta/80 leading-relaxed">{comoTrabajo.escalon.texto}</p>
+          <p class="mt-6 text-base text-tinta/75 leading-relaxed border-t border-linea pt-6">
+            {comoTrabajo.charla.texto}
+          </p>
+          <p class="mt-6">
+            <a
+              href={link('/que-preguntar')}
+              class="inline-flex items-center gap-2 text-base font-medium text-tinta underline underline-offset-4 hover:text-terracota transition"
+            >
+              Ocho preguntas que hacerle a quien te vaya a hacer la web
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <Capacidad />
+    <Faq titulo="Lo que suele preguntarme la gente" />
+    <Contacto
+      titulo="Si te encaja, hablamos"
+      texto="Una llamada de veinte minutos. Te pregunto por el negocio, no por la web, y al final de esa llamada ya sabes cuánto cuesta y cuándo lo tendrías."
+    />
+  </main>
+  <Footer />
+  <WhatsappFab />
+</BaseLayout>
