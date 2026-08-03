@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { nav, site, link } from '../data/config';
+---
+
+<BaseLayout
+  title="Esta página no está | Mialdea Studio"
+  description="Esta página no existe o la he movido. Aquí tienes por dónde seguir."
+  noindex={true}
+>
+  <Nav />
+  <main>
+    <section class="pt-32 pb-24 sm:pt-48 sm:pb-36 min-h-[70vh]">
+      <div class="max-w-content mx-auto px-5 sm:px-8 max-w-2xl">
+        <h1
+          class="font-display font-medium text-tinta leading-[1.05] tracking-tight"
+          style="font-size: clamp(2.25rem, 5.5vw, 3.5rem);"
+        >
+          Esta página no está.
+        </h1>
+        <p class="mt-6 text-xl text-tinta/80 leading-relaxed">
+          O la he movido yo, o el enlace venía mal. Ninguna de las dos es culpa
+          tuya, así que te dejo por dónde seguir.
+        </p>
+
+        <ul class="mt-8 flex flex-col gap-3">
+          {nav.map((item) => (
+            <li>
+              <a
+                href={link(item.href)}
+                class="text-lg text-tinta underline underline-offset-4 hover:text-terracota transition"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <p class="mt-10 text-lg text-tinta/75">
+          Y si tenías prisa, llámame al
+          <a href={site.telefonoLink} class="text-tinta font-medium underline underline-offset-4 hover:text-terracota">
+            {site.telefono}
+          </a>.
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

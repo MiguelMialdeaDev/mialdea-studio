@@ -7,5 +7,10 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://miguelmialdeadev.github.io',
   base: '/mialdea-studio',
-  integrations: [tailwind(), sitemap()],
+  integrations: [
+    tailwind(),
+    // La pagina de gracias no entra en el sitemap: solo se llega a ella
+    // despues de enviar el formulario.
+    sitemap({ filter: (page) => !page.includes('/gracias') }),
+  ],
 });
