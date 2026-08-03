@@ -1,0 +1,21 @@
+---
+import { portada } from '../data/config';
+---
+
+<section id="el-problema" class="py-20 sm:py-28">
+  <div class="max-w-content mx-auto px-5 sm:px-8">
+    <div class="reveal max-w-2xl">
+      <h2
+        class="font-display font-medium tracking-tight text-tinta mb-7"
+        style="font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.1;"
+      >
+        {portada.problema.titulo}
+      </h2>
+      {portada.problema.parrafos.map((p, i) => (
+        <p class={`leading-relaxed mb-5 ${i === 2 ? 'text-xl text-tinta font-medium' : 'text-lg text-tinta/80'}`}>
+          {p}
+        </p>
+      ))}
+    </div>
+  </div>
+</section>

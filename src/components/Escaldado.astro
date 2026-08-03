@@ -1,0 +1,26 @@
+---
+import { portada, link } from '../data/config';
+---
+
+<section id="ya-pagaste" class="py-20 sm:py-28">
+  <div class="max-w-content mx-auto px-5 sm:px-8">
+    <div class="reveal max-w-2xl">
+      <h2
+        class="font-display font-medium tracking-tight text-tinta mb-7"
+        style="font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.1;"
+      >
+        {portada.escaldado.titulo}
+      </h2>
+      {portada.escaldado.parrafos.map((p) => (
+        <p class="text-lg text-tinta/80 leading-relaxed mb-5">{p}</p>
+      ))}
+      <a
+        href={link('/que-preguntar')}
+        class="inline-flex items-center gap-2 text-base font-medium text-tinta underline underline-offset-4 hover:text-terracota transition"
+      >
+        Ocho preguntas que hacerle al siguiente que te haga la web
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>

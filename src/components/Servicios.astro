@@ -1,14 +1,14 @@
 ---
-import { servicios, paquetes } from '../data/config';
+import { servicios, paquetes, link } from '../data/config';
 ---
 
-<section id="servicios" class="py-24 sm:py-32 bg-papel border-y border-linea">
+<section id="servicios" class="py-20 sm:py-28 bg-papel border-y border-linea">
   <div class="max-w-content mx-auto px-5 sm:px-8">
-    <div class="reveal max-w-2xl mb-14">
-      <p class="text-xs uppercase tracking-[0.18em] text-terracota font-medium mb-4">Servicios</p>
+    <div class="reveal max-w-2xl mb-12">
+      <p class="text-xs uppercase tracking-[0.18em] text-terracota font-medium mb-4">Lo que hago</p>
       <h2
         class="font-display font-medium tracking-tight text-tinta"
-        style="font-size: clamp(1.9rem, 4.5vw, 3.25rem); line-height: 1.05;"
+        style="font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.05;"
       >
         Lo técnico lo llevo yo.
       </h2>
@@ -25,7 +25,7 @@ import { servicios, paquetes } from '../data/config';
           <ul class="space-y-2.5 mt-auto">
             {s.bullets.map((b) => (
               <li class="flex items-center gap-3 text-sm text-tinta/80">
-                <span class="w-1.5 h-1.5 rounded-full bg-terracota"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-terracota" aria-hidden="true"></span>
                 {b}
               </li>
             ))}
@@ -36,7 +36,9 @@ import { servicios, paquetes } from '../data/config';
 
     <div class="reveal mb-8">
       <h3 class="font-display text-2xl text-tinta">Cómo empezar</h3>
-      <p class="text-tinta/70 mt-1">Presupuesto cerrado antes de empezar. Sabes lo que pagas y cuándo lo tienes.</p>
+      <p class="text-tinta/70 mt-1">
+        Precio cerrado por escrito antes de empezar. Sabes lo que pagas y cuándo lo tienes.
+      </p>
     </div>
 
     <div class="grid sm:grid-cols-3 gap-5">
@@ -60,6 +62,16 @@ import { servicios, paquetes } from '../data/config';
           </ul>
         </div>
       ))}
+    </div>
+
+    <div class="reveal mt-10">
+      <a
+        href={link('/como-trabajo')}
+        class="inline-flex items-center gap-2 text-base font-medium text-tinta underline underline-offset-4 hover:text-terracota transition"
+      >
+        Qué incluye cada uno, en cuánto tiempo lo tienes y qué necesito de ti
+        <span aria-hidden="true">&rarr;</span>
+      </a>
     </div>
   </div>
 </section>

@@ -1,0 +1,14 @@
+---
+import { capacidad } from '../data/config';
+---
+
+<section id="capacidad" class="py-16 sm:py-20 bg-papel border-y border-linea">
+  <div class="max-w-content mx-auto px-5 sm:px-8">
+    <div class="reveal max-w-2xl">
+      <h2 class="font-display text-2xl sm:text-3xl text-tinta mb-4">{capacidad.titulo}</h2>
+      {capacidad.parrafos.map((p) => (
+        <p class="text-lg text-tinta/80 leading-relaxed mb-4">{p}</p>
+      ))}
+    </div>
+  </div>
+</section>

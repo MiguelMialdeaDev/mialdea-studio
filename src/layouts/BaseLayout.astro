@@ -1,15 +1,21 @@
 ---
 import '../styles/global.css';
-import { site } from '../data/config';
+import { site, seo } from '../data/config';
 
 interface Props {
   title?: string;
   description?: string;
+  noindex?: boolean;
 }
 const {
-  title = `${site.name} | Webs y apps que atraen clientes`,
-  description = 'Diseño webs y apps a medida para que tu negocio se haga notar y atraiga clientes. Cada proyecto, una historia. Sin plantillas, trato directo.',
+  title = seo.home.title,
+  description = seo.home.description,
+  noindex = false,
 } = Astro.props;
+
+const base = import.meta.env.BASE_URL;
+const ruta = Astro.url.pathname.replace(base, '/').replace(/\/{2,}/g, '/');
+const canonical = new URL(ruta, site.url).href;
 ---
 
 <!doctype html>
@@ -19,8 +25,11 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,11 +43,18 @@ const {
       '@type': 'ProfessionalService',
       name: site.name,
       description: description,
-      areaServed: 'España',
-      email: site.email,
+      areaServed: 'Provincia de Valencia',
+      telephone: '+34617983637',
       url: site.url,
-      knowsAbout: ['Diseño web', 'Desarrollo de apps', 'SEO local'],
+      founder: { '@type': 'Person', name: site.founder },
+      knowsAbout: ['Webs para negocios locales', 'Ficha de Google', 'Que te encuentren en Google'],
     })} />
+
+    <!--
+      {{PENDIENTE: medición}}
+      Falta instalar la medición desde el día uno: clics en llamar, clics en
+      WhatsApp y envíos del formulario. Pegar aquí el script elegido.
+    -->
   </head>
   <body class="font-sans antialiased">
     <slot />

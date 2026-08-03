@@ -1,0 +1,28 @@
+---
+import { portada } from '../data/config';
+---
+
+<section id="el-coste" class="py-20 sm:py-28 bg-papel border-y border-linea">
+  <div class="max-w-content mx-auto px-5 sm:px-8 grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+    <div class="reveal">
+      <p class="text-xs uppercase tracking-[0.18em] text-terracota font-medium mb-4">Los portales</p>
+      <h2
+        class="font-display font-medium tracking-tight text-tinta"
+        style="font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.1;"
+      >
+        {portada.villano.titulo}
+      </h2>
+      <p class="mt-5 text-lg text-tinta/80 leading-relaxed">{portada.villano.intro}</p>
+      <p class="mt-6 text-lg text-tinta font-medium leading-relaxed">{portada.villano.cierre}</p>
+    </div>
+
+    <ul class="reveal space-y-4">
+      {portada.villano.puntos.map((p) => (
+        <li class="flex gap-3.5 text-lg text-tinta/85 leading-relaxed">
+          <span class="mt-2.5 w-2 h-2 rounded-full bg-terracota shrink-0" aria-hidden="true"></span>
+          <span>{p}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

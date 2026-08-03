@@ -1,16 +1,16 @@
 ---
-import { site } from '../data/config';
+import { site, quienSoy, link } from '../data/config';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const foto = `${base}${site.foto}`;
 ---
 
-<section id="sobre-mi" class="py-24 sm:py-32 bg-papel border-y border-linea">
+<section id="sobre-mi" class="py-20 sm:py-28 bg-papel border-y border-linea">
   <div class="max-w-content mx-auto px-5 sm:px-8 grid md:grid-cols-[300px_1fr] gap-10 md:gap-14 items-center">
     <div class="reveal">
       <div class="rounded-2xl overflow-hidden border border-linea bg-crema">
         <img
           src={foto}
-          alt={`${site.founder}, fundador de Mialdea Studio`}
+          alt={`Miguel Mialdea, que es quien hace la web y quien te coge el teléfono`}
           width="300"
           height="360"
           class="w-full h-[360px] object-cover"
@@ -20,23 +20,27 @@ const foto = `${base}${site.foto}`;
     </div>
 
     <div class="reveal">
-      <p class="text-xs uppercase tracking-[0.18em] text-terracota font-medium mb-5">Sobre mí</p>
+      <p class="text-xs uppercase tracking-[0.18em] text-terracota font-medium mb-5">Quién soy</p>
       <h2
         class="font-display font-medium tracking-tight text-tinta mb-5"
         style="font-size: clamp(1.7rem, 3.5vw, 2.5rem); line-height: 1.1;"
       >
-        Soy {site.founder}. Tu web la construyo yo, de principio a fin.
+        Soy {site.founder}. Tu web la hago yo, de principio a fin.
       </h2>
-      <p class="text-tinta/80 leading-relaxed mb-4 max-w-2xl">
-        Llevo años desarrollando software para grandes bancos, donde una web
-        lenta o que falla no es una opción. Esa misma exigencia la pongo ahora
-        al servicio de tu negocio, con una web hecha a medida y para nadie más.
+      <p class="text-lg text-tinta/80 leading-relaxed mb-4 max-w-2xl">
+        {quienSoy.resumenPortada}
       </p>
-      <p class="text-muted leading-relaxed max-w-2xl">
-        No soy una agencia con comerciales. Trabajo desde {site.location}, para
-        clientes de cualquier sitio. Hablas conmigo de principio a fin, te lo
-        explico todo en cristiano y me encargo yo de lo técnico. Tú a lo tuyo.
+      <p class="text-tinta/75 leading-relaxed max-w-2xl">
+        No soy una agencia con comerciales. Hablas conmigo antes y después, te lo
+        explico todo en cristiano y de lo técnico me encargo yo. Tú a lo tuyo.
       </p>
+      <a
+        href={link('/quien-soy')}
+        class="inline-flex items-center gap-2 mt-6 text-base font-medium text-tinta underline underline-offset-4 hover:text-terracota transition"
+      >
+        Quién soy y por qué acabé haciendo esto
+        <span aria-hidden="true">&rarr;</span>
+      </a>
     </div>
   </div>
 </section>
@@ -49,7 +53,7 @@ const foto = `${base}${site.foto}`;
     min-height: 360px;
   }
   .foto-ph::after {
-    content: 'Tu foto aquí';
+    content: 'Foto de Miguel pendiente';
     color: #8c8378;
     font-size: 0.85rem;
   }

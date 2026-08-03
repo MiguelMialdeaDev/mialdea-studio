@@ -3,24 +3,35 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
 import Marquee from '../components/Marquee.astro';
+import Problema from '../components/Problema.astro';
+import Villano from '../components/Villano.astro';
+import Escaldado from '../components/Escaldado.astro';
 import Historias from '../components/Historias.astro';
 import Servicios from '../components/Servicios.astro';
 import Proceso from '../components/Proceso.astro';
+import Capacidad from '../components/Capacidad.astro';
 import SobreMi from '../components/SobreMi.astro';
+import Faq from '../components/Faq.astro';
 import Contacto from '../components/Contacto.astro';
 import Footer from '../components/Footer.astro';
 import WhatsappFab from '../components/WhatsappFab.astro';
+import { seo, faq } from '../data/config';
 ---
 
-<BaseLayout>
+<BaseLayout title={seo.home.title} description={seo.home.description}>
   <Nav />
   <main>
     <Hero />
     <Marquee />
-    <Historias />
+    <Problema />
+    <Villano />
+    <Escaldado />
+    <Historias limite={4} enlace={true} />
     <Servicios />
-    <Proceso />
+    <Proceso enlace={true} />
+    <Capacidad />
     <SobreMi />
+    <Faq items={faq.slice(0, 5)} />
     <Contacto />
   </main>
   <Footer />

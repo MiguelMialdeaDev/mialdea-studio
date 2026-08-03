@@ -1,7 +1,21 @@
 ---
-import { historias, site } from '../data/config';
+import { historias, link } from '../data/config';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const wa = site.whatsapp ? `https://wa.me/${site.whatsapp}` : '#contacto';
+
+interface Props {
+  titulo?: string;
+  intro?: string;
+  limite?: number;
+  enlace?: boolean;
+}
+const {
+  titulo = 'Gente de aquí que ha dado el salto',
+  intro = 'Los negocios que enseño aquí son clientes de verdad. Los cuento en anónimo mientras no tengo su permiso por escrito para poner su nombre.',
+  limite = 0,
+  enlace = false,
+} = Astro.props;
+
+const lista = limite > 0 ? historias.slice(0, limite) : historias;
 
 const colores: Record<string, string> = {
   terracota: '#C8553D',
@@ -10,25 +24,21 @@ const colores: Record<string, string> = {
 };
 ---
 
-<section id="historias" class="py-24 sm:py-32">
+<section id="historias" class="py-20 sm:py-28">
   <div class="max-w-content mx-auto px-5 sm:px-8">
-    <div class="reveal max-w-2xl mb-14">
-      <p class="text-xs uppercase tracking-[0.18em] text-terracota font-medium mb-4">Historias</p>
+    <div class="reveal max-w-2xl mb-12">
+      <p class="text-xs uppercase tracking-[0.18em] text-terracota font-medium mb-4">Trabajos</p>
       <h2
         class="font-display font-medium tracking-tight text-tinta"
-        style="font-size: clamp(1.9rem, 4.5vw, 3.25rem); line-height: 1.05;"
+        style="font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.05;"
       >
-        No hago webs. Acompaño a gente
-        <span class="text-muted">que se atreve a dar el salto.</span>
+        {titulo}
       </h2>
-      <p class="mt-5 text-lg text-tinta/70 leading-relaxed">
-        Detrás de cada proyecto hay alguien con un sueño y las ganas de hacerse
-        notar. Estas son algunas de sus historias.
-      </p>
+      <p class="mt-5 text-lg text-tinta/75 leading-relaxed">{intro}</p>
     </div>
 
     <div class="grid sm:grid-cols-2 gap-6">
-      {historias.map((h) => (
+      {lista.map((h) => (
         <article class="card-warm overflow-hidden flex flex-col">
           {h.portada ? (
             <img
@@ -60,15 +70,16 @@ const colores: Record<string, string> = {
       ))}
     </div>
 
-    <div class="reveal mt-12 flex flex-wrap items-center gap-4">
-      <p class="text-tinta/70">¿Quieres que la próxima historia sea la tuya?</p>
-      <a
-        href={wa}
-        class="inline-flex items-center gap-2 text-sm font-medium text-papel bg-tinta px-5 py-2.5 rounded-full hover:opacity-90 transition"
-      >
-        Cuéntame la tuya
-        <span aria-hidden="true">&rarr;</span>
-      </a>
-    </div>
+    {enlace && (
+      <div class="reveal mt-10">
+        <a
+          href={link('/trabajos')}
+          class="inline-flex items-center gap-2 text-base font-medium text-tinta underline underline-offset-4 hover:text-terracota transition"
+        >
+          Ver un trabajo contado por dentro
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    )}
   </div>
 </section>

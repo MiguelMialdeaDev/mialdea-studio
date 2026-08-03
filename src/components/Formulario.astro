@@ -1,0 +1,145 @@
+---
+import { contacto, site, link } from '../data/config';
+const graciasUrl = link('/gracias');
+---
+
+<form
+  id="form-contacto"
+  class="card-warm p-7 sm:p-10 max-w-2xl"
+  data-wa={site.whatsapp}
+  data-gracias={graciasUrl}
+  novalidate={false}
+>
+  <div class="grid sm:grid-cols-2 gap-5">
+    <div class="flex flex-col gap-2">
+      <label for="nombre" class="text-base font-medium text-tinta">{contacto.campos.nombre.label}</label>
+      <input
+        id="nombre"
+        name="nombre"
+        type="text"
+        required
+        autocomplete="name"
+        placeholder={contacto.campos.nombre.placeholder}
+        class="rounded-xl border border-linea bg-papel px-4 py-3.5 text-base text-tinta placeholder:text-muted/80 focus:outline-none focus:border-terracota"
+      />
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <label for="telefono" class="text-base font-medium text-tinta">{contacto.campos.telefono.label}</label>
+      <input
+        id="telefono"
+        name="telefono"
+        type="tel"
+        required
+        autocomplete="tel"
+        placeholder={contacto.campos.telefono.placeholder}
+        class="rounded-xl border border-linea bg-papel px-4 py-3.5 text-base text-tinta placeholder:text-muted/80 focus:outline-none focus:border-terracota"
+      />
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-2 mt-5">
+    <label for="negocio" class="text-base font-medium text-tinta">{contacto.campos.negocio.label}</label>
+    <input
+      id="negocio"
+      name="negocio"
+      type="text"
+      required
+      placeholder={contacto.campos.negocio.placeholder}
+      class="rounded-xl border border-linea bg-papel px-4 py-3.5 text-base text-tinta placeholder:text-muted/80 focus:outline-none focus:border-terracota"
+    />
+  </div>
+
+  <div class="flex flex-col gap-2 mt-5">
+    <label for="problema" class="text-base font-medium text-tinta">{contacto.campos.problema.label}</label>
+    <textarea
+      id="problema"
+      name="problema"
+      rows="4"
+      required
+      placeholder={contacto.campos.problema.placeholder}
+      class="rounded-xl border border-linea bg-papel px-4 py-3.5 text-base text-tinta placeholder:text-muted/80 focus:outline-none focus:border-terracota resize-y"
+    ></textarea>
+  </div>
+
+  <fieldset class="mt-7">
+    <legend class="text-base font-medium text-tinta mb-3">{contacto.horquilla.label}</legend>
+    <div class="flex flex-wrap gap-2.5">
+      {contacto.horquilla.opciones.map((o, i) => (
+        <label class="opcion cursor-pointer">
+          <input type="radio" name="horquilla" value={o} checked={i === contacto.horquilla.opciones.length - 1} class="sr-only" />
+          <span class="inline-block rounded-full border border-linea bg-papel px-4 py-2.5 text-base text-tinta transition">{o}</span>
+        </label>
+      ))}
+    </div>
+  </fieldset>
+
+  <fieldset class="mt-7">
+    <legend class="text-base font-medium text-tinta mb-3">{contacto.origen.label}</legend>
+    <div class="flex flex-wrap gap-2.5">
+      {contacto.origen.opciones.map((o, i) => (
+        <label class="opcion cursor-pointer">
+          <input type="radio" name="origen" value={o} checked={i === 0} class="sr-only" />
+          <span class="inline-block rounded-full border border-linea bg-papel px-4 py-2.5 text-base text-tinta transition">{o}</span>
+        </label>
+      ))}
+    </div>
+  </fieldset>
+
+  <button
+    type="submit"
+    class="inline-flex items-center gap-2 mt-8 text-base font-medium text-papel bg-terracota px-7 py-4 rounded-full hover:bg-terracotaDark transition"
+  >
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.477-.911zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+    </svg>
+    {contacto.boton}
+  </button>
+
+  <p class="mt-4 text-sm text-muted max-w-md">{contacto.nota}</p>
+</form>
+
+<style>
+  .opcion input:checked + span {
+    background: #231e1a;
+    border-color: #231e1a;
+    color: #fffdf8;
+  }
+  .opcion input:focus-visible + span {
+    outline: 2px solid #c8553d;
+    outline-offset: 2px;
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var form = document.getElementById('form-contacto');
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var datos = new FormData(form);
+      var val = function (k) {
+        var v = datos.get(k);
+        return v ? String(v).trim() : '';
+      };
+
+      var texto =
+        'Hola Miguel, te escribo desde la web.\n\n' +
+        'Me llamo: ' + val('nombre') + '\n' +
+        'Mi teléfono: ' + val('telefono') + '\n' +
+        'Mi negocio: ' + val('negocio') + '\n\n' +
+        'Lo que me pasa: ' + val('problema') + '\n\n' +
+        'Presupuesto: ' + val('horquilla') + '\n' +
+        'He llegado a ti: ' + val('origen');
+
+      var url = 'https://wa.me/' + form.dataset.wa + '?text=' + encodeURIComponent(texto);
+      var ventana = window.open(url, '_blank');
+      if (!ventana) {
+        window.location.href = url;
+        return;
+      }
+      window.location.href = form.dataset.gracias;
+    });
+  })();
+</script>
