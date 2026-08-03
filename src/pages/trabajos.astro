@@ -55,7 +55,7 @@ import { seo, caso, link } from '../data/config';
         </div>
 
         <div class="mt-12 grid gap-8 max-w-3xl">
-          {caso.bloques.map((b) => (
+          {caso.bloques.filter((b) => b.texto && !b.texto.includes('PENDIENTE')).map((b) => (
             <div class="reveal">
               <h3 class="font-display text-2xl text-tinta mb-3">{b.titulo}</h3>
               <p class="text-lg text-tinta/80 leading-relaxed">{b.texto}</p>
@@ -63,12 +63,14 @@ import { seo, caso, link } from '../data/config';
           ))}
         </div>
 
-        <blockquote class="reveal mt-12 card-warm p-8 sm:p-10 max-w-3xl">
-          <p class="font-display text-xl sm:text-2xl text-tinta leading-relaxed">
-            {caso.testimonio.texto}
-          </p>
-          <footer class="mt-5 text-sm text-muted">{caso.testimonio.autor}</footer>
-        </blockquote>
+        {caso.testimonio.texto && !caso.testimonio.texto.includes('PENDIENTE') && (
+          <blockquote class="reveal mt-12 card-warm p-8 sm:p-10 max-w-3xl">
+            <p class="font-display text-xl sm:text-2xl text-tinta leading-relaxed">
+              {caso.testimonio.texto}
+            </p>
+            <footer class="mt-5 text-sm text-muted">{caso.testimonio.autor}</footer>
+          </blockquote>
+        )}
       </div>
     </section>
 

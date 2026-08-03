@@ -26,7 +26,7 @@ export const site = {
   location: 'Valencia',
   url: 'https://mialdeastudio.com',
   // Capacidad real declarada. Actualizar el mes cuando cambie.
-  huecoDesde: '{{PENDIENTE: mes con hueco, actualizar cada vez que cambie}}',
+  huecoDesde: ''  // vacio = 'ahora mismo'. Poner un mes solo cuando NO haya hueco ya,
 };
 
 /** Mensaje por defecto del botón de WhatsApp. */
@@ -141,7 +141,9 @@ export const capacidad = {
   titulo: 'Cojo un cliente nuevo al mes',
   parrafos: [
     'Hago seis o siete webs al año porque las hago yo solo y porque la mitad de mi tiempo se va en estar pendiente de las que ya he hecho. Eso es justo lo que hace que funcionen.',
-    `Ahora mismo tengo hueco a partir de ${site.huecoDesde}. Si te corre prisa, dímelo y te digo si puedo mover algo o te paso el contacto de alguien.`,
+    site.huecoDesde
+      ? `Tengo el hueco cubierto hasta ${site.huecoDesde}. Si te corre prisa, dímelo y te digo si puedo mover algo o te paso el contacto de alguien.`
+      : 'Ahora mismo tengo hueco. Si te corre prisa, dímelo y vemos fechas.',
   ],
 };
 
@@ -194,14 +196,14 @@ export const historias = [
 // ============================================================
 export const caso = {
   slug: 'restaurante-venezolano-valencia',
-  titular: 'Un restaurante venezolano en Valencia',
-  nombreCliente: '{{PENDIENTE: permiso por escrito del cliente para usar su nombre y sus fotos}}',
+  titular: 'Altamira, restaurante venezolano en Valencia',
+  nombreCliente: 'Altamira',
   resumen:
     'Una familia que cocina en Valencia lo que cocinaba en su casa. La comida y el trato ya funcionaban. Lo que no funcionaba era todo lo que pasa antes de que alguien cruce la puerta.',
   bloques: [
     {
       titulo: 'El problema, con sus palabras',
-      texto: '{{PENDIENTE: la frase literal del cliente, tal cual la diga, sin corregirle el habla}}',
+      texto: '{{PENDIENTE: frase literal de Altamira. Pedirsela en la proxima conversacion}}',
     },
     {
       titulo: 'Lo que hice',
@@ -216,7 +218,7 @@ export const caso = {
     {
       titulo: 'Lo que pasó',
       texto:
-        '{{PENDIENTE: cifras reales, comparadas antes y después: visitas, llamadas, reservas, posición. Pedírselas al cliente en la llamada de resultados}}',
+        'La web lleva 596 visitantes unicos. Es el dato que tengo medido hoy: gente que llega. Lo que estoy pidiendo ahora es el otro lado, cuantas reservas y cuantas llamadas salen de ahi, porque es lo que de verdad importa y casi ningun negocio lo tiene contado.',
     },
     {
       titulo: 'El antes y el después',
@@ -397,7 +399,7 @@ export const comoTrabajo = {
 
   rescate: {
     titulo: 'Si se te ha caído la web',
-    precio: '{{PENDIENTE: tarifa cerrada del rescate urgente}}',
+    precio: '90 €',
     parrafos: [
       'O se te ha quedado sin dominio, o el que te la llevaba ha desaparecido, o hay algo roto que te está costando llamadas.',
       'Precio cerrado y puesto desde antes de que me llames. No te cobro más por estar en un apuro.',
@@ -429,7 +431,7 @@ export const comoTrabajo = {
 
   escalon: {
     titulo: 'Si todavía no quieres una web',
-    precio: '{{PENDIENTE: precio de la revisión a fondo, descontable del proyecto}}',
+    precio: '90 €, y si luego hacemos la web te lo descuento',
     texto:
       'Te reviso a fondo lo que tienes (la web, la ficha de Google, las reseñas) y te dejo por escrito las tres cosas que hay que arreglar y en qué orden. Si luego me encargas la web, te lo descuento.',
   },
