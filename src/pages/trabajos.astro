@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Historias from '../components/Historias.astro';
+import Contacto from '../components/Contacto.astro';
+import Footer from '../components/Footer.astro';
+import WhatsappFab from '../components/WhatsappFab.astro';
+import { seo, caso, link } from '../data/config';
+---
+
+<BaseLayout title={seo.trabajos.title} description={seo.trabajos.description}>
+  <Nav />
+  <main>
+    <section class="pt-28 pb-14 sm:pt-40 sm:pb-16 relative overflow-hidden">
+      <div
+        class="absolute -top-32 -right-24 w-[560px] h-[560px] rounded-full opacity-[0.16] blur-[130px] pointer-events-none"
+        style="background: radial-gradient(circle, #C8553D 0%, transparent 70%);"
+        aria-hidden="true"
+      >
+      </div>
+
+      <div class="max-w-content mx-auto px-5 sm:px-8 relative">
+        <h1
+          class="font-display font-medium text-tinta leading-[1.05] tracking-tight max-w-3xl"
+          style="font-size: clamp(2.25rem, 5.5vw, 4rem);"
+        >
+          Trabajos que he hecho para negocios de aquí
+        </h1>
+        <p class="mt-7 max-w-2xl text-xl text-tinta/80 leading-relaxed">
+          Prefiero contar uno por dentro que enseñar veinte por fuera. Aquí está
+          qué pasaba antes, qué hice y qué cambió después.
+        </p>
+        <p class="mt-4 max-w-2xl text-base text-muted leading-relaxed">
+          Son clientes de verdad. Mientras no tengo su permiso por escrito para
+          poner su nombre y sus fotos, los cuento en anónimo.
+        </p>
+      </div>
+    </section>
+
+    <!-- El caso, contado a fondo -->
+    <section id="caso" class="py-16 sm:py-24 bg-papel border-y border-linea">
+      <div class="max-w-content mx-auto px-5 sm:px-8">
+        <div class="max-w-3xl">
+          <p class="text-xs uppercase tracking-[0.18em] text-terracota font-medium mb-4">
+            Un trabajo por dentro
+          </p>
+          <h2
+            class="font-display font-medium tracking-tight text-tinta"
+            style="font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.05;"
+          >
+            {caso.titular}
+          </h2>
+          <p class="mt-5 text-xl text-tinta/80 leading-relaxed">{caso.resumen}</p>
+          <p class="mt-4 text-sm text-muted">{caso.nombreCliente}</p>
+        </div>
+
+        <div class="mt-12 grid gap-8 max-w-3xl">
+          {caso.bloques.map((b) => (
+            <div class="reveal">
+              <h3 class="font-display text-2xl text-tinta mb-3">{b.titulo}</h3>
+              <p class="text-lg text-tinta/80 leading-relaxed">{b.texto}</p>
+            </div>
+          ))}
+        </div>
+
+        <blockquote class="reveal mt-12 card-warm p-8 sm:p-10 max-w-3xl">
+          <p class="font-display text-xl sm:text-2xl text-tinta leading-relaxed">
+            {caso.testimonio.texto}
+          </p>
+          <footer class="mt-5 text-sm text-muted">{caso.testimonio.autor}</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <Historias
+      titulo="Otros negocios con los que he trabajado"
+      intro="Cada uno tenía un problema distinto, y ninguno era que su web fuese fea."
+    />
+
+    <section class="pb-4">
+      <div class="max-w-content mx-auto px-5 sm:px-8">
+        <div class="reveal card-warm p-8 max-w-3xl">
+          <p class="text-lg text-tinta/80 leading-relaxed">
+            Si quieres ver cómo trabajo antes de que hablemos, está todo escrito:
+            los cinco pasos, lo que cuesta cada cosa y qué necesito de ti.
+          </p>
+          <a
+            href={link('/como-trabajo')}
+            class="inline-flex items-center gap-2 mt-4 text-base font-medium text-tinta underline underline-offset-4 hover:text-terracota transition"
+          >
+            Ver cómo trabajo
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <Contacto
+      titulo="¿Quieres que el siguiente sea el tuyo?"
+      texto="Cuéntame qué negocio tienes y qué es lo que no te está funcionando. Te contesto yo, normalmente el mismo día."
+    />
+  </main>
+  <Footer />
+  <WhatsappFab />
+</BaseLayout>
