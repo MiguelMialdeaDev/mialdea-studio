@@ -242,7 +242,7 @@ export const servicios = [
       'Sales cuando alguien busca tu oficio y tu pueblo',
       'Listas en semanas',
     ],
-    desde: 'Desde 890 €',
+    desde: 'Desde 600 €',
   },
   {
     titulo: 'Apps y herramientas',
@@ -255,21 +255,21 @@ export const servicios = [
 export const paquetes = [
   {
     nombre: 'Presencia',
-    precio: '890 €',
+    precio: '600 €',
     desc: 'Para aparecer y que te encuentren.',
     incluye: ['Web de una página', 'Móvil primero', 'Botón de WhatsApp', 'Alta en Google'],
     destacado: false,
   },
   {
     nombre: 'Negocio',
-    precio: '1.490 €',
+    precio: '1.200 €',
     desc: 'El que elige la mayoría.',
     incluye: ['Hasta 5 páginas', 'SEO local de tu zona', 'Google Business', 'Textos que venden'],
     destacado: true,
   },
   {
     nombre: 'A medida',
-    precio: 'Desde 2.900 €',
+    precio: 'Hablamos',
     desc: 'Reservas, pedidos, lo que necesites.',
     incluye: ['Funciones a medida', 'Reservas o pedidos', 'Integraciones', 'Lo que tu negocio pida'],
     destacado: false,
@@ -338,7 +338,7 @@ export const comoTrabajo = {
     items: [
       {
         nombre: 'Presencia',
-        precio: '890 €',
+        precio: '600 €',
         plazo: 'Publicada en dos semanas',
         desc: 'Una sola página bien hecha, pensada para que quien te busque desde el móvil te llame en menos de un minuto.',
         incluye: [
@@ -351,7 +351,7 @@ export const comoTrabajo = {
       },
       {
         nombre: 'Negocio',
-        precio: '1.490 €',
+        precio: '1.200 €',
         plazo: 'Publicada en dos semanas',
         desc: 'Lo mismo, más una página para cada cosa que haces y para cada zona en la que trabajas. Es la que tiene sentido si vives de que te encuentren y no solo del boca a boca.',
         incluye: [
@@ -364,7 +364,7 @@ export const comoTrabajo = {
       },
       {
         nombre: 'A medida',
-        precio: 'Desde 2.900 €',
+        precio: 'Hablamos',
         plazo: 'El plazo te lo digo en la primera llamada',
         desc: 'Cuando lo que necesitas no es una web, sino que el negocio funcione por dentro: reservas, pedidos, o esa herramienta que hoy llevas en una libreta.',
         incluye: [
@@ -386,7 +386,7 @@ export const comoTrabajo = {
 
   planCuidado: {
     titulo: 'Que no te tengas que acordar de ella nunca',
-    precio: '{{PENDIENTE: precio del plan de cuidado mensual}}',
+    precio: '49 € al mes',
     parrafos: [
       'Tu web al día, rápida y funcionando. Si algo se rompe, es problema mío, no tuyo.',
       'Todos los meses te escribo con un dato: cuánta gente te ha llamado desde la web y por qué búsqueda te están encontrando. Y voy revisando tu ficha de Google, las reseñas nuevas y que el formulario siga llegándote.',
