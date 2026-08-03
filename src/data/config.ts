@@ -63,7 +63,7 @@ export const seo = {
   quienSoy: {
     title: 'Quién soy: Miguel Mialdea, hago webs en Valencia | Mialdea Studio',
     description:
-      'Me llamo Miguel Mialdea, vivo en Valencia y llevo doce años programando. Hago seis o siete webs al año para negocios de aquí al lado.',
+      'Me llamo Miguel Mialdea, vivo en Valencia y llevo siete años programando. Hago webs para negocios de aquí al lado, de una en una.',
   },
   quePreguntar: {
     title: 'Ocho preguntas que hacerle a quien te vaya a hacer la web',
@@ -140,7 +140,7 @@ export const portada = {
 export const capacidad = {
   titulo: 'Cojo un cliente nuevo al mes',
   parrafos: [
-    'Hago seis o siete webs al año porque las hago yo solo y porque la mitad de mi tiempo se va en estar pendiente de las que ya he hecho. Eso es justo lo que hace que funcionen.',
+    'Cojo un cliente nuevo al mes porque las hago yo solo y porque la mitad de mi tiempo se va en estar pendiente de las que ya he hecho. Eso es justo lo que hace que funcionen.',
     site.huecoDesde
       ? `Tengo el hueco cubierto hasta ${site.huecoDesde}. Si te corre prisa, dímelo y te digo si puedo mover algo o te paso el contacto de alguien.`
       : 'Ahora mismo tengo hueco. Si te corre prisa, dímelo y vemos fechas.',
@@ -460,12 +460,12 @@ export const revision = {
 export const quienSoy = {
   titulo: 'Quién soy',
   parrafos: [
-    'Me llamo Miguel Mialdea y vivo en Valencia. Llevo doce años programando, la mayor parte para empresas grandes, y desde hace un tiempo hago webs para negocios de aquí al lado.',
+    'Me llamo Miguel Mialdea y vivo en Valencia. Llevo siete años programando, la mayor parte para empresas grandes, y desde hace un tiempo hago webs para negocios de aquí al lado.',
     'Empecé con esto por un fontanero de la zona que perdía llamadas porque cuando alguien buscaba su oficio y el nombre de su pueblo, salía todo el mundo menos él.',
-    'Hago seis o siete webs al año. No es una técnica de venta, es lo que me permite coger el teléfono cuando me llamas.',
+    'Cojo un cliente nuevo al mes. No es una técnica de venta, es lo que me permite coger el teléfono cuando me llamas.',
   ],
   resumenPortada:
-    'Me llamo Miguel Mialdea, vivo en Valencia y llevo doce años programando, la mayor parte para empresas grandes. Ahora hago webs para negocios de aquí al lado, y las hago yo, de principio a fin.',
+    'Me llamo Miguel Mialdea, vivo en Valencia y llevo siete años programando, la mayor parte para empresas grandes. Ahora hago webs para negocios de aquí al lado, y las hago yo, de principio a fin.',
 };
 
 // ============================================================

@@ -2,11 +2,10 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
-// GitHub Pages (temporal). Cuando muevas a Vercel/dominio propio:
-// pon site: 'https://mialdeastudio.com' y base: '/'
+// Dominio propio. El CNAME de public/ es lo que hace que GitHub Pages lo sirva.
 export default defineConfig({
-  site: 'https://miguelmialdeadev.github.io',
-  base: '/mialdea-studio',
+  site: 'https://mialdeastudio.com',
+  base: '/',
   integrations: [
     tailwind(),
     // La pagina de gracias no entra en el sitemap: solo se llega a ella
