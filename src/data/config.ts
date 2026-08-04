@@ -770,6 +770,67 @@ export const gremios: Gremio[] = [
       },
     ],
   },
+  {
+    slug: 'webs-para-electricistas',
+    menuLabel: 'Para electricistas',
+    enlaceEtiqueta: 'electricistas',
+    seo: {
+      title: 'Webs para electricistas en Valencia y alrededores | Mialdea Studio',
+      description:
+        'Hago webs para electricistas: boletines, instalaciones y urgencias. Para que quien compara tres presupuestos te encuentre a ti. Desde 600 euros, lista en dos semanas.',
+    },
+    kicker: 'Electricidad · Valencia y alrededores',
+    h1: 'Webs para electricistas en Valencia y alrededores',
+    sub: 'Quien necesita un boletín o una instalación busca en Google y pide dos o tres presupuestos. Si no apareces, no entras en el reparto.',
+    waMensaje: 'Hola Miguel. Soy electricista en ______ y quería preguntarte por una web.',
+    sintomas: {
+      kicker: 'El día a día',
+      titulo: 'Lo que suele estar pasando',
+      puntos: [
+        { b: 'El que busca compara tres', s: 'Si no sales, ni siquiera entras en la comparación.' },
+        { b: 'El boletín lo busca gente con prisa', s: 'Necesita el papel ya y llama al primero que sale.' },
+        { b: 'Las urgencias van al que contesta', s: 'Y al que tiene el teléfono a la vista en el móvil.' },
+      ],
+      cierre:
+        'La web se hace para eso: una página por cada cosa que haces, tu zona con nombre y apellidos, y el teléfono donde se ve.',
+    },
+    caso: {
+      titulo: 'Todavía no he hecho la web de un electricista',
+      texto:
+        'Te lo digo tal cual, antes de que lo preguntes. He hecho la de un fontanero y la de un restaurante, y las dos se pueden abrir desde el móvil. El método es el mismo: tu oficio, tu zona y que llamarte cueste un toque.',
+      interno: '/trabajos',
+      urlLabel: 'Ver esos trabajos',
+    },
+    incluye: {
+      titulo: 'Un precio, todo dentro',
+      filas: [
+        { th: 'Una página por servicio', td: 'Boletines, instalaciones, cuadros, urgencias.' },
+        { th: 'Que te encuentren', td: 'Tu ficha de Google y el SEO de tu zona.' },
+        { th: 'Fotos de tus trabajos', td: 'Tus instalaciones, no fotos de catálogo.' },
+        { th: 'Presupuesto en un clic', td: 'Formulario corto que te llega al WhatsApp.' },
+        { th: 'Los textos, contigo', td: 'Yo los escribo, tú opinas.' },
+        { th: 'Es tuya', td: 'La web y el dominio, a tu nombre.' },
+      ],
+    },
+    objeciones: [
+      {
+        q: '¿Y si ya tengo web?',
+        a: 'La miro y te digo si basta con arreglar cuatro cosas o hace falta rehacerla, aunque sea lo más barato.',
+      },
+      {
+        q: '¿Cuánto tarda en salir en Google?',
+        a: 'La ficha se mueve en semanas. Las búsquedas de tu zona, de dos a cuatro meses. No te prometo nada más rápido.',
+      },
+      {
+        q: '¿Hay que pagar todos los meses?',
+        a: 'No. Pagas una vez y la web es tuya. Si quieres que yo la cuide, son 49 € al mes, opcional y sin permanencia.',
+      },
+      {
+        q: '¿Cuánto tardas?',
+        a: 'Dos semanas desde que me pasas fotos y datos.',
+      },
+    ],
+  },
 ];
 
 // ============================================================

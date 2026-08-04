@@ -1,0 +1,10 @@
+---
+// Sin cliente de este gremio todavía: se dice tal cual y se enseña
+// el método con los trabajos que sí existen.
+import PaginaGremio from '../components/PaginaGremio.astro';
+import { gremios } from '../data/config';
+
+const gremio = gremios.find((g) => g.slug === 'webs-para-electricistas')!;
+---
+
+<PaginaGremio gremio={gremio} />
