@@ -56,7 +56,7 @@ export const seo = {
       'Los cinco pasos, lo que incluye cada web, en cuántas semanas la tienes y qué necesito de ti. Léelo antes de que hablemos y la llamada dura quince minutos.',
   },
   trabajos: {
-    title: 'Trabajos que he hecho para negocios de Valencia | Mialdea Studio',
+    title: 'Trabajos que he hecho para negocios de Valencia y alrededores | Mialdea Studio',
     description:
       'Webs que he hecho para negocios de aquí, contadas por dentro: qué pasaba antes, qué hice y qué cambió después.',
   },

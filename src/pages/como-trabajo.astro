@@ -7,10 +7,10 @@ import Faq from '../components/Faq.astro';
 import Contacto from '../components/Contacto.astro';
 import Footer from '../components/Footer.astro';
 import WhatsappFab from '../components/WhatsappFab.astro';
-import { seo, comoTrabajo, link } from '../data/config';
+import { seo, comoTrabajo, link, faq } from '../data/config';
 ---
 
-<BaseLayout title={seo.comoTrabajo.title} description={seo.comoTrabajo.description}>
+<BaseLayout title={seo.comoTrabajo.title} description={seo.comoTrabajo.description} faqSchema={faq}>
   <Nav />
   <main>
     <section class="pt-28 pb-14 sm:pt-40 sm:pb-20 relative overflow-hidden">
