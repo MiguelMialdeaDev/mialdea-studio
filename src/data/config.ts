@@ -831,6 +831,67 @@ export const gremios: Gremio[] = [
       },
     ],
   },
+  {
+    slug: 'webs-para-bares-y-restaurantes',
+    menuLabel: 'Para bares y restaurantes',
+    enlaceEtiqueta: 'bares y restaurantes',
+    seo: {
+      title: 'Webs para bares y restaurantes en Valencia y alrededores | Mialdea Studio',
+      description:
+        'Hago webs para bares y restaurantes: la carta que se lee en el móvil, tus fotos y la ficha de Google al día. Desde 600 euros, lista en dos semanas.',
+    },
+    kicker: 'Bares y restaurantes · Valencia y alrededores',
+    h1: 'Webs para bares y restaurantes en Valencia y alrededores',
+    sub: 'Antes de cruzar tu puerta, casi todo el mundo te ha mirado en el móvil. La pregunta es qué se encuentra.',
+    waMensaje: 'Hola Miguel. Tengo un bar o un restaurante en ______ y quería preguntarte por la web.',
+    sintomas: {
+      kicker: 'El móvil de tu cliente',
+      titulo: 'Lo que se encuentra tu cliente',
+      puntos: [
+        { b: 'La ficha de Google manda', s: 'Horario viejo o fotos oscuras, y se van al de al lado.' },
+        { b: 'La carta, en un PDF que no se lee', s: 'O con los precios de hace dos años.' },
+        { b: 'Reservas por teléfono en hora punta', s: 'Suena, nadie puede cogerlo, mesa perdida.' },
+      ],
+      cierre:
+        'La web pone eso en orden: la carta que se lee en el móvil, tus fotos de verdad, y reservar a un toque por llamada o WhatsApp.',
+    },
+    caso: {
+      titulo: 'Altamira, en Burjassot, la puedes abrir ahora',
+      texto:
+        'Le hice la web a Altamira, un restaurante venezolano de Burjassot, con su carta y las fotos de sus platos, y le puse al día la ficha de Google, que apuntaba a una página que ya no era suya. La web lleva 596 visitantes únicos: es el dato que tengo medido, gente que llega.',
+      url: 'https://altamiragcp.es',
+      urlLabel: 'altamiragcp.es',
+    },
+    incluye: {
+      titulo: 'Un precio, todo dentro',
+      filas: [
+        { th: 'La carta que se lee en el móvil', td: 'Al día y sin PDF.' },
+        { th: 'Que te encuentren', td: 'Tu ficha de Google con fotos y horario al día.' },
+        { th: 'Tus platos, tus fotos', td: 'Lo que sale de tu cocina, no un banco de imágenes.' },
+        { th: 'Reservar en un clic', td: 'Llamada o WhatsApp, a la vista.' },
+        { th: 'Los textos, contigo', td: 'Yo los escribo, tú opinas.' },
+        { th: 'Es tuya', td: 'La web y el dominio, a tu nombre.' },
+      ],
+    },
+    objeciones: [
+      {
+        q: '¿Y si ya tengo web?',
+        a: 'La miro y te digo si basta con arreglar cuatro cosas o hace falta rehacerla, aunque sea lo más barato.',
+      },
+      {
+        q: '¿Y cuando cambie la carta?',
+        a: 'Los cambios del día a día entran en el plan de cuidado de 49 € al mes. Me mandas la carta nueva y la subo yo.',
+      },
+      {
+        q: '¿Hay que pagar todos los meses?',
+        a: 'No. Pagas una vez y la web es tuya. El plan de 49 € es opcional y sin permanencia.',
+      },
+      {
+        q: '¿Cuánto tardas?',
+        a: 'Dos semanas desde que tengo tu carta, tus fotos y tus datos.',
+      },
+    ],
+  },
 ];
 
 // ============================================================

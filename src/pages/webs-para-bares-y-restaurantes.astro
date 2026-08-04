@@ -1,0 +1,11 @@
+---
+// Caso con nombre: Altamira (Burjassot). El único dato usable son
+// los 596 visitantes únicos. Nada de reservas ni llamadas: no están
+// medidas.
+import PaginaGremio from '../components/PaginaGremio.astro';
+import { gremios } from '../data/config';
+
+const gremio = gremios.find((g) => g.slug === 'webs-para-bares-y-restaurantes')!;
+---
+
+<PaginaGremio gremio={gremio} />
