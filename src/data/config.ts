@@ -176,15 +176,6 @@ export const historias = [
     portada: '',
   },
   {
-    quien: 'Una diseñadora',
-    titulo: 'El talento estaba. Faltaba el escaparate',
-    resumen:
-      'Mucho talento y la valentía de emprender. Le monté un portfolio a su altura para dar el salto digital y empezar a ofrecer lo suyo.',
-    etiqueta: 'Portfolio',
-    color: 'ocre',
-    portada: '',
-  },
-  {
     quien: 'Una marca de café tradicional',
     titulo: 'De vender a comercios a vender a tu casa',
     resumen:
@@ -197,11 +188,11 @@ export const historias = [
 
 // ============================================================
 //  EL CASO CONTADO A FONDO  ·  estructura de seis puntos
-//  Publicado en anónimo hasta tener el permiso por escrito.
+//  Altamira se publica con nombre. Falta testimonio y capturas.
 // ============================================================
 export const caso = {
-  slug: 'restaurante-venezolano-valencia',
-  titular: 'Altamira, restaurante venezolano en Valencia',
+  slug: 'restaurante-venezolano-burjassot',
+  titular: 'Altamira, restaurante venezolano en Burjassot',
   nombreCliente: 'Altamira',
   resumen:
     'Una familia que cocina en Valencia lo que cocinaba en su casa. La comida y el trato ya funcionaban. Lo que no funcionaba era todo lo que pasa antes de que alguien cruce la puerta.',
@@ -438,7 +429,7 @@ export const comoTrabajo = {
     titulo: 'Si todavía no quieres una web',
     precio: '90 €, y si luego hacemos la web te lo descuento',
     texto:
-      'Te reviso a fondo lo que tienes (la web, la ficha de Google, las reseñas) y te dejo por escrito las tres cosas que hay que arreglar y en qué orden. Si luego me encargas la web, te lo descuento.',
+      'Esto no es la llamada gratis de quince minutos, donde te digo por encima las tres cosas más gordas. Aquí reviso a fondo la web, la ficha de Google y las reseñas, y te lo dejo TODO por escrito: qué hay que arreglar, en qué orden y por qué. Te sirve me lo encargues a mí o a otro. Si luego me encargas la web, te lo descuento.',
   },
 
   charla: {
@@ -454,7 +445,8 @@ export const revision = {
   titulo: 'Te la miro y te digo qué falla. Quince minutos, sin coste.',
   parrafos: [
     'Miro tu web y tu ficha de Google, la abro en el móvil como la abre tu cliente, y te cuento por teléfono las tres cosas que están costándote llamadas.',
-    'No te mando un informe ni te meto en una lista de correo. Te lo cuento y ya está. Si de ahí sale trabajo, bien. Y si te apañas tú con lo que te cuente, también.',
+    'No te mando un informe ni te meto en una lista de correo. Te lo cuento por teléfono y ya está. Si de ahí sale trabajo, bien. Y si te apañas tú con lo que te cuente, también.',
+    'Si quieres el repaso completo y por escrito, con todo lo que hay que tocar y en qué orden, eso es otra cosa y cuesta 90 euros.',
   ],
   cta: 'Pídeme la revisión',
 };
