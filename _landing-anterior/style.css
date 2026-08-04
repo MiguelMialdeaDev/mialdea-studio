@@ -1,0 +1,210 @@
+/* Forge · redesign 2026-07-29 · macrostructure: Split Studio · genre: editorial
+ * nicho: empresas de reformas e instaladores, provincia de Valencia
+ * theme: custom "Ledger" (preservado) · paper oklch(97.2% 0.008 76) · accent oklch(56% 0.148 42) warm
+ * display: Newsreader (roman) · body: Geist
+ * nav: N9 Edge-aligned (telefono clicable) · footer: Ft5 Statement
+ * enrichment: ninguno, solo tipografia. Retiradas TODAS las imagenes:
+ *   work-plumber (captura de web de cliente, sin permiso) y
+ *   work-museum-* (marca real de un tercero, prohibido por safety.md)
+ * copy: sin cifras de resultado no verificables. Dato publico (coste de lead de portal)
+ *   para el problema, perfil real del operador para la confianza.
+ * axes: light paper / roman-serif display / warm accent
+ * Forge · pre-emit critique: P5 H4 E4 S5 R5 V4
+ */
+@import url("tokens.css");
+
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--color-paper);color:var(--color-ink);
+  font-family:var(--font-body);font-size:var(--text-base);line-height:1.62;
+  font-weight:400;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:var(--font-display);font-style:normal;font-weight:500;
+  line-height:1.08;letter-spacing:-0.012em;margin:0 0 var(--space-md);
+  overflow-wrap:anywhere;min-width:0}
+p{margin:0 0 var(--space-md);max-width:var(--measure)}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--color-focus);outline-offset:3px}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.rule{height:var(--rule-hair);background:var(--color-rule);border:0;margin:0}
+
+/* ── N9 · Edge-aligned minimal ─────────────────────────── */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:var(--space-md);
+  padding-block:var(--space-md)}
+.mark{font-family:var(--font-display);font-size:var(--text-xl);font-weight:500;
+  text-decoration:none;letter-spacing:-0.015em;white-space:nowrap}
+.mark span{color:var(--color-accent)}
+
+/* ── botones ───────────────────────────────────────────── */
+.btn{display:inline-block;padding:0.85rem 1.5rem;border-radius:var(--radius-sm);
+  font-family:var(--font-body);font-size:var(--text-sm);font-weight:600;
+  text-decoration:none;transition:background var(--dur-fast) var(--ease-out),
+  border-color var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out);
+  border:1px solid transparent;white-space:nowrap;cursor:pointer}
+.btn-solid{background:var(--color-accent);color:var(--color-paper)}
+.btn-solid:hover{background:var(--color-accent-ink)}
+.btn-line{border-color:var(--color-ink);color:var(--color-ink);background:transparent}
+.btn-line:hover{background:var(--color-ink);color:var(--color-paper)}
+.btn-onDark{border-color:var(--color-dark-ink-2);color:var(--color-dark-ink);background:transparent}
+.btn-onDark:hover{background:var(--color-dark-ink);color:var(--color-dark)}
+
+/* ── diptych: la unidad del Split Studio ──────────────── */
+.dip{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:var(--space-2xl);align-items:center;padding-block:var(--space-2xl)}
+.dip.flip .col-text{order:2}
+.dip.flip .col-proof{order:1}
+@media(max-width:900px){
+  .dip{grid-template-columns:minmax(0,1fr);gap:var(--space-md);padding-block:var(--space-xl)}
+  .dip.flip .col-text,.dip.flip .col-proof{order:initial}
+}
+
+.eyebrow{font-size:var(--text-xs);font-weight:600;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--color-accent);margin:0 0 var(--space-sm)}
+.lede{font-size:var(--text-lg);color:var(--color-ink-2)}
+
+/* ── hero ──────────────────────────────────────────────── */
+.hero{padding-block:var(--space-2xl) var(--space-xl)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,0.92fr);
+  gap:var(--space-2xl);align-items:end}
+.hero h1{font-size:var(--text-display);margin-bottom:var(--space-lg)}
+.hero h1 b{font-weight:500;color:var(--color-accent);border-bottom:3px solid var(--color-accent-wash)}
+.hero .lede{max-width:46ch}
+.hero-cta{display:flex;gap:var(--space-sm);flex-wrap:wrap;margin-top:var(--space-lg)}
+.hero-cta .btn{flex:0 1 auto}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:minmax(0,1fr);gap:var(--space-lg);align-items:start}
+  .hero{padding-block:var(--space-lg)}
+  .hero-cta .btn{flex:1 1 100%}
+}
+
+/* ── figuras de prueba ─────────────────────────────────── */
+figure{margin:0}
+figure img{border:1px solid var(--color-rule);border-radius:var(--radius-md)}
+figcaption{font-size:var(--text-xs);color:var(--color-ink-3);margin-top:var(--space-sm);
+  max-width:44ch}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-md)}
+.pair .tag{font-size:var(--text-xs);font-weight:600;letter-spacing:0.08em;
+  text-transform:uppercase;margin:0 0 var(--space-xs);color:var(--color-ink-3)}
+.pair .now .tag{color:var(--color-accent)}
+@media(max-width:560px){.pair{grid-template-columns:minmax(0,1fr)}}
+
+/* ── lista de problemas: tipográfica, no tarjetas ─────── */
+.plist{list-style:none;padding:0;margin:var(--space-lg) 0 0;max-width:var(--measure)}
+.plist li{padding:var(--space-md) 0;border-top:var(--rule-hair) solid var(--color-rule)}
+.plist li:last-child{border-bottom:var(--rule-hair) solid var(--color-rule)}
+.plist b{display:block;font-family:var(--font-display);font-size:var(--text-xl);
+  font-weight:500;margin-bottom:var(--space-2xs)}
+.plist span{color:var(--color-ink-2);font-size:var(--text-sm)}
+
+/* ── F3 · tabla de especificación (qué incluye) ───────── */
+.spec{width:100%;border-collapse:collapse;margin-top:var(--space-lg)}
+.spec th,.spec td{text-align:left;padding:var(--space-md) var(--space-sm);
+  border-bottom:var(--rule-hair) solid var(--color-rule);vertical-align:top}
+.spec th{width:38%;font-family:var(--font-display);font-size:var(--text-lg);
+  font-weight:500}
+.spec td{color:var(--color-ink-2);font-size:var(--text-sm)}
+@media(max-width:640px){
+  .spec,.spec tbody,.spec tr,.spec th,.spec td{display:block;width:100%}
+  .spec th{border-bottom:0;padding-bottom:var(--space-2xs)}
+  .spec td{padding-top:0}
+}
+
+/* ── precio ────────────────────────────────────────────── */
+.price{background:var(--color-paper-2);border:1px solid var(--color-rule);
+  border-radius:var(--radius-md);padding:var(--space-xl)}
+.price .amt{font-family:var(--font-display);font-size:var(--text-display-s);
+  font-weight:500;line-height:1;margin:0 0 var(--space-xs)}
+.price .amt em{font-style:normal;font-size:var(--text-base);color:var(--color-ink-3);
+  font-family:var(--font-body)}
+.price ul{list-style:none;padding:0;margin:var(--space-lg) 0}
+.price li{padding:var(--space-xs) 0 var(--space-xs) 1.6rem;position:relative;
+  font-size:var(--text-sm);color:var(--color-ink-2)}
+.price li::before{content:"";position:absolute;left:0;top:0.78em;width:8px;height:8px;
+  background:var(--color-accent);border-radius:1px}
+
+/* ── proceso ───────────────────────────────────────────── */
+.steps{counter-reset:s;list-style:none;padding:0;margin:var(--space-lg) 0 0}
+.steps li{counter-increment:s;display:grid;grid-template-columns:auto minmax(0,1fr);
+  gap:var(--space-md);padding:var(--space-md) 0;
+  border-top:var(--rule-hair) solid var(--color-rule)}
+.steps li::before{content:counter(s,decimal-leading-zero);font-family:var(--font-display);
+  font-size:var(--text-xl);color:var(--color-accent);line-height:1.2}
+.steps b{display:block;font-family:var(--font-display);font-size:var(--text-xl);
+  font-weight:500;margin-bottom:var(--space-2xs)}
+.steps span{color:var(--color-ink-2);font-size:var(--text-sm)}
+
+/* ── FAQ ───────────────────────────────────────────────── */
+details{border-bottom:var(--rule-hair) solid var(--color-rule);padding:var(--space-md) 0}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;
+  gap:var(--space-md);align-items:baseline;font-family:var(--font-display);
+  font-size:var(--text-xl);font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--color-accent);font-family:var(--font-body);
+  font-size:var(--text-xl);line-height:1}
+details[open] summary::after{content:"\2013"}
+details p{margin:var(--space-sm) 0 0;color:var(--color-ink-2);font-size:var(--text-sm)}
+
+/* ── formulario real ───────────────────────────────────── */
+.form{display:grid;gap:var(--space-md)}
+.form label{font-size:var(--text-sm);font-weight:600;display:block;
+  margin-bottom:var(--space-2xs)}
+.form input,.form select,.form textarea{
+  width:100%;padding:0.85rem 0.9rem;border:1px solid var(--color-rule);
+  border-radius:var(--radius-sm);background:var(--color-paper);color:var(--color-ink);
+  font-family:var(--font-body);font-size:var(--text-base)}
+.form textarea{min-height:120px;resize:vertical}
+.form input:hover,.form textarea:hover,.form select:hover{border-color:var(--color-ink-3)}
+.form .note{font-size:var(--text-xs);color:var(--color-ink-3);margin:0}
+
+/* ── Ft5 · Statement ───────────────────────────────────── */
+.closing{background:var(--color-dark);color:var(--color-dark-ink);
+  padding-block:var(--space-2xl) var(--space-xl);margin-top:var(--space-2xl)}
+.closing h2{font-size:var(--text-display-s);max-width:16ch;margin-bottom:var(--space-lg)}
+.closing .meta{display:flex;justify-content:space-between;gap:var(--space-md);
+  flex-wrap:wrap;font-size:var(--text-xs);color:var(--color-dark-ink-2);
+  border-top:1px solid oklch(34% 0.014 50);padding-top:var(--space-md);
+  margin-top:var(--space-2xl)}
+.closing a{color:var(--color-dark-ink)}
+
+/* ── motion: 2 primitivas ──────────────────────────────── */
+@media(prefers-reduced-motion:no-preference){
+  .rise{opacity:0;transform:translateY(14px);
+    animation:rise var(--dur-base) var(--ease-out) forwards;
+    animation-timeline:view();animation-range:entry 0% cover 26%}
+}
+@keyframes rise{to{opacity:1;transform:none}}
+.ulink{text-decoration:none;color:var(--color-accent-ink);font-weight:500;
+  border-bottom:1.5px solid var(--color-accent);padding-bottom:1px;
+  transition:background var(--dur-fast) var(--ease-out)}
+.ulink:hover{background:var(--color-accent-wash)}
+.ulink::after{content:" \2192";letter-spacing:0.02em}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:0.01ms !important;transition-duration:0.01ms !important}
+  .rise{opacity:1;transform:none}
+}
+
+/* ── selector de idioma (en la nav N9) ─────────────────── */
+.nav-end{display:flex;align-items:center;gap:var(--space-sm)}
+.lang{font-size:var(--text-xs);font-weight:600;letter-spacing:0.08em;
+  text-decoration:none;color:var(--color-ink-3);padding:var(--space-xs);
+  border-bottom:1px solid transparent;transition:color var(--dur-fast) var(--ease-out),
+  border-color var(--dur-fast) var(--ease-out)}
+.lang:hover{color:var(--color-accent);border-color:var(--color-accent)}
+
+/* ── testimonio (prueba real, con cifra) ───────────────── */
+.quote{border-left:3px solid var(--color-accent);padding-left:var(--space-md);
+  margin:var(--space-lg) 0 0}
+.quote p{font-family:var(--font-display);font-size:var(--text-xl);line-height:1.35;
+  margin:0 0 var(--space-sm);max-width:38ch}
+.quote .who{font-size:var(--text-sm);color:var(--color-ink-3);margin:0;max-width:none}
+.quote .who b{color:var(--color-ink);font-weight:600}
+.quote .who a{color:var(--color-accent-ink)}
+/* cifra de prueba bajo la figura del hero */
+.proof{margin-top:var(--space-sm);font-size:var(--text-sm);color:var(--color-ink-2);
+  max-width:46ch}
+.proof b{color:var(--color-ink);font-weight:600}
