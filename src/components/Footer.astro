@@ -1,5 +1,5 @@
 ---
-import { site, nav, link } from '../data/config';
+import { site, nav, link, gremios } from '../data/config';
 const year = 2026;
 ---
 
@@ -26,11 +26,20 @@ const year = 2026;
       </a>
     </div>
 
-    <nav class="flex flex-col gap-2" aria-label="Enlaces del pie">
-      {nav.map((item) => (
-        <a href={link(item.href)} class="text-sm text-muted hover:text-tinta transition">{item.label}</a>
-      ))}
-    </nav>
+    <div class="flex flex-col sm:flex-row gap-8 sm:gap-12">
+      <nav class="flex flex-col gap-2" aria-label="Webs por gremio">
+        <span class="text-sm text-tinta font-medium mb-1">Webs por gremio</span>
+        {gremios.map((g) => (
+          <a href={link(`/${g.slug}`)} class="text-sm text-muted hover:text-tinta transition">{g.menuLabel}</a>
+        ))}
+      </nav>
+      <nav class="flex flex-col gap-2" aria-label="Enlaces del pie">
+        <span class="text-sm text-tinta font-medium mb-1">El estudio</span>
+        {nav.map((item) => (
+          <a href={link(item.href)} class="text-sm text-muted hover:text-tinta transition">{item.label}</a>
+        ))}
+      </nav>
+    </div>
   </div>
 
   <div class="max-w-content mx-auto px-5 sm:px-8 mt-10 pt-6 border-t border-linea flex flex-col sm:flex-row gap-2 sm:justify-between text-xs text-muted">

@@ -1,0 +1,251 @@
+---
+// PÁGINA DE GREMIO
+//
+// Forge · sistema heredado del sitio (Fraunces + Inter, crema/terracota,
+// card-warm, reveal). Pre-emit: P4 H5 E4 S5 R5 V4.
+//
+// Una página por oficio, todas con la misma espina:
+// hero con precio a la vista, el síntoma en las palabras del gremio,
+// el caso real si lo hay (sin prometer resultados), qué incluye,
+// quién la hace, objeciones, zona con municipios y una sola acción:
+// WhatsApp, con la revisión de quince minutos como escalón.
+// El contenido vive en src/data/config.ts (gremios y gremioComun).
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from './Nav.astro';
+import Faq from './Faq.astro';
+import Footer from './Footer.astro';
+import WhatsappFab from './WhatsappFab.astro';
+import { site, link, waLink, gremioComun, gremios, type Gremio } from '../data/config';
+
+interface Props {
+  gremio: Gremio;
+}
+const { gremio: g } = Astro.props;
+const wa = waLink(g.waMensaje);
+const waRevision = waLink('Hola Miguel, quiero que le eches un vistazo a mi web y a mi ficha de Google.');
+const otros = gremios.filter((o) => o.slug !== g.slug);
+const c = gremioComun;
+---
+
+<BaseLayout title={g.seo.title} description={g.seo.description} faqSchema={g.objeciones}>
+  <Nav />
+  <main>
+    <!-- Hero con el precio a la vista -->
+    <section class="pt-28 pb-14 sm:pt-40 sm:pb-20 relative overflow-hidden">
+      <div
+        class="absolute -top-32 -right-24 w-[560px] h-[560px] rounded-full opacity-[0.16] blur-[130px] pointer-events-none"
+        style="background: radial-gradient(circle, #C8553D 0%, transparent 70%);"
+        aria-hidden="true"
+      >
+      </div>
+
+      <div class="max-w-content mx-auto px-5 sm:px-8 relative grid lg:grid-cols-[1fr,340px] gap-10 lg:gap-16 items-start">
+        <div>
+          <p class="text-xs uppercase tracking-[0.18em] text-terracota font-medium mb-4">{g.kicker}</p>
+          <h1
+            class="font-display font-medium text-tinta leading-[1.05] tracking-tight max-w-3xl"
+            style="font-size: clamp(2.25rem, 5.5vw, 4rem);"
+          >
+            {g.h1}
+          </h1>
+          <p class="mt-6 max-w-2xl text-xl text-tinta/80 leading-relaxed">{g.sub}</p>
+          <div class="mt-8 flex flex-col sm:flex-row flex-wrap gap-4">
+            <a
+              href={wa}
+              class="inline-flex items-center justify-center gap-2 text-base font-medium text-papel bg-terracota px-7 py-4 rounded-full hover:bg-terracotaDark transition"
+            >
+              Escríbeme por WhatsApp
+            </a>
+            <a
+              href={site.telefonoLink}
+              class="inline-flex items-center justify-center gap-2 text-base font-medium text-tinta border border-linea bg-papel px-7 py-4 rounded-full hover:border-terracota transition"
+            >
+              Llamar al {site.telefono}
+            </a>
+          </div>
+        </div>
+
+        <aside class="card-warm p-7 lg:mt-2">
+          <p class="text-xs uppercase tracking-[0.18em] text-terracota font-medium">{c.precio.kicker}</p>
+          <p class="font-display text-4xl text-tinta mt-3">{c.precio.principal}</p>
+          <p class="text-sm text-muted mt-1">{c.precio.principalNota}</p>
+          <p class="text-base text-tinta/80 leading-relaxed mt-4">{c.precio.resto}</p>
+          <p class="text-sm text-muted mt-4 pt-4 border-t border-linea">{c.precio.letraPequena}</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- El síntoma, en sus palabras -->
+    <section class="py-16 sm:py-24 bg-papel border-y border-linea">
+      <div class="max-w-content mx-auto px-5 sm:px-8 grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+        <div class="reveal">
+          <p class="text-xs uppercase tracking-[0.18em] text-terracota font-medium mb-4">
+            {g.sintomas.kicker}
+          </p>
+          <h2
+            class="font-display font-medium tracking-tight text-tinta"
+            style="font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.1;"
+          >
+            {g.sintomas.titulo}
+          </h2>
+          {g.sintomas.intro && (
+            <p class="mt-5 text-lg text-tinta/80 leading-relaxed">{g.sintomas.intro}</p>
+          )}
+          {g.sintomas.cierre && (
+            <p class="mt-6 text-lg text-tinta font-medium leading-relaxed">{g.sintomas.cierre}</p>
+          )}
+        </div>
+
+        <ul class="reveal space-y-4">
+          {g.sintomas.puntos.map((p) => (
+            <li class="flex gap-3.5 text-lg leading-relaxed">
+              <span class="mt-2.5 w-2 h-2 rounded-full bg-terracota shrink-0" aria-hidden="true"></span>
+              <span>
+                <span class="text-tinta font-medium">{p.b}.</span>
+                <span class="text-tinta/70"> {p.s}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- El caso real, si lo hay. Sin prometer resultados. -->
+    {g.caso && (
+      <section class="py-14 sm:py-20">
+        <div class="max-w-content mx-auto px-5 sm:px-8">
+          <div class="reveal card-warm p-8 sm:p-10 max-w-3xl">
+            <h2 class="font-display text-2xl sm:text-3xl text-tinta mb-4">{g.caso.titulo}</h2>
+            <p class="text-lg text-tinta/80 leading-relaxed">{g.caso.texto}</p>
+            {g.caso.url && (
+              <a
+                href={g.caso.url}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 mt-5 text-base font-medium text-tinta underline underline-offset-4 hover:text-terracota transition"
+              >
+                {g.caso.urlLabel}
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            )}
+            {g.caso.interno && (
+              <a
+                href={link(g.caso.interno)}
+                class="inline-flex items-center gap-2 mt-5 text-base font-medium text-tinta underline underline-offset-4 hover:text-terracota transition"
+              >
+                {g.caso.urlLabel}
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            )}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Qué incluye -->
+    <section class="py-16 sm:py-24 bg-papel border-y border-linea">
+      <div class="max-w-content mx-auto px-5 sm:px-8">
+        <h2
+          class="reveal font-display font-medium tracking-tight text-tinta mb-8"
+          style="font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.1;"
+        >
+          {g.incluye.titulo}
+        </h2>
+        <dl class="reveal max-w-3xl">
+          {g.incluye.filas.map((f) => (
+            <div class="grid sm:grid-cols-[230px,1fr] gap-1 sm:gap-6 py-3.5 border-b border-linea">
+              <dt class="text-tinta font-medium">{f.th}</dt>
+              <dd class="text-tinta/70">{f.td}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
+
+    <!-- Quién la hace -->
+    <section class="py-16 sm:py-20">
+      <div class="max-w-content mx-auto px-5 sm:px-8">
+        <div class="reveal max-w-2xl">
+          <h2 class="font-display text-2xl sm:text-3xl text-tinta mb-4">{c.quien.titulo}</h2>
+          <p class="text-lg text-tinta/80 leading-relaxed">{c.quien.texto}</p>
+          <a
+            href={link('/como-trabajo')}
+            class="inline-flex items-center gap-2 mt-5 text-base font-medium text-tinta underline underline-offset-4 hover:text-terracota transition"
+          >
+            {c.quien.enlaceTexto}
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Objeciones -->
+    <Faq titulo="Lo que me sueles preguntar antes de empezar" items={g.objeciones} />
+
+    <!-- Zona y otros gremios -->
+    <section class="py-14 sm:py-20">
+      <div class="max-w-content mx-auto px-5 sm:px-8">
+        <div class="reveal max-w-2xl">
+          <h2 class="font-display text-2xl sm:text-3xl text-tinta mb-4">{c.zona.titulo}</h2>
+          <p class="text-lg text-tinta/80 leading-relaxed">{c.zona.texto}</p>
+          <p class="mt-6 text-base text-muted">
+            {c.otrosTitulo}
+            {otros.map((o, i) => (
+              <>
+                {' '}<a
+                  href={link(`/${o.slug}`)}
+                  class="text-tinta underline underline-offset-4 hover:text-terracota transition"
+                >{o.enlaceEtiqueta}</a>{i < otros.length - 1 ? (i === otros.length - 2 ? ' y' : ',') : '.'}
+              </>
+            ))}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Una sola acción: WhatsApp, con la revisión como escalón -->
+    <section id="contacto" class="py-24 sm:py-32 relative overflow-hidden">
+      <div
+        class="absolute bottom-0 right-0 w-[520px] h-[520px] rounded-full opacity-[0.16] blur-[120px] pointer-events-none"
+        style="background: radial-gradient(circle, #C8553D 0%, transparent 70%);"
+        aria-hidden="true"
+      >
+      </div>
+
+      <div class="max-w-content mx-auto px-5 sm:px-8 relative text-center">
+        <h2
+          class="reveal font-display font-medium tracking-tight text-tinta mx-auto max-w-3xl"
+          style="font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.05;"
+        >
+          {c.cta.titulo}
+        </h2>
+        <p class="reveal mt-6 text-lg text-tinta/80 max-w-xl mx-auto leading-relaxed">{c.cta.texto}</p>
+
+        <div class="reveal mt-9 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4">
+          <a
+            href={wa}
+            class="inline-flex items-center gap-2 text-base font-medium text-papel bg-terracota px-7 py-4 rounded-full hover:bg-terracotaDark transition"
+          >
+            Escríbeme por WhatsApp
+          </a>
+          <a
+            href={site.telefonoLink}
+            class="inline-flex items-center gap-2 text-base font-medium text-tinta border border-linea bg-papel px-7 py-4 rounded-full hover:border-terracota transition"
+          >
+            Llamar al {site.telefono}
+          </a>
+        </div>
+
+        <p class="reveal mt-6 text-sm text-tinta/70">{c.cta.nota}</p>
+        <p class="reveal mt-4 text-sm text-muted max-w-xl mx-auto">
+          {c.cta.escalon}
+          <a href={waRevision} class="text-tinta underline underline-offset-4 hover:text-terracota">
+            Pídeme la revisión
+          </a>.
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <WhatsappFab />
+</BaseLayout>

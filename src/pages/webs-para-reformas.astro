@@ -1,0 +1,10 @@
+---
+// La página de gremio más importante. Porta el copy de la landing
+// anterior (_landing-anterior/index.html) con los precios de hoy.
+import PaginaGremio from '../components/PaginaGremio.astro';
+import { gremios } from '../data/config';
+
+const gremio = gremios.find((g) => g.slug === 'webs-para-reformas')!;
+---
+
+<PaginaGremio gremio={gremio} />

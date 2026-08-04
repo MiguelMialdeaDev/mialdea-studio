@@ -593,6 +593,125 @@ export const gracias = {
 };
 
 // ============================================================
+//  PÁGINAS DE GREMIO  ·  una por oficio, síntomas en sus palabras
+//  La de reformas porta el copy de la landing anterior
+//  (_landing-anterior/index.html), con los precios de hoy.
+//  Regla dura: cero cifras inventadas. Datos usables: 7 años
+//  programando, un cliente al mes, 600/1.200/49, 596 visitantes
+//  de Altamira, 14 € por contacto en portales.
+// ============================================================
+
+export type Gremio = {
+  slug: string;
+  menuLabel: string;
+  enlaceEtiqueta: string;
+  seo: { title: string; description: string };
+  kicker: string;
+  h1: string;
+  sub: string;
+  waMensaje: string;
+  sintomas: {
+    kicker: string;
+    titulo: string;
+    intro?: string;
+    puntos: { b: string; s: string }[];
+    cierre?: string;
+  };
+  caso?: { titulo: string; texto: string; url?: string; urlLabel?: string; interno?: string };
+  incluye: { titulo: string; filas: { th: string; td: string }[] };
+  objeciones: { q: string; a: string }[];
+};
+
+/** Lo que comparten las cuatro páginas de gremio. */
+export const gremioComun = {
+  precio: {
+    kicker: 'Precio cerrado',
+    principal: '600 €',
+    principalNota: 'una página, pago único',
+    resto: 'Web completa de varias páginas, 1.200 €. Las dos con el SEO de tu zona incluido y publicadas en dos semanas.',
+    letraPequena: 'Te doy la cifra exacta por escrito antes de empezar nada.',
+  },
+  quien: {
+    titulo: 'Yo mismo, y soy ingeniero',
+    texto:
+      'Me llamo Miguel Mialdea y llevo siete años programando, la mayor parte para empresas grandes. Aquí no hay comerciales: hablas conmigo y la hago yo. Cojo un cliente nuevo al mes.',
+    enlaceTexto: 'Cómo trabajo, paso a paso y con precios',
+  },
+  zona: {
+    titulo: 'Dónde trabajo',
+    texto:
+      'En Valencia y en los pueblos de alrededor: Torrent, Paiporta, Catarroja, Alfafar, Sedaví, Picanya, Albal, Burjassot, Massanassa y Benetússer. Si estás un poco más lejos, pregunta, que casi todo se resuelve por teléfono.',
+  },
+  otrosTitulo: 'También hago webs para',
+  cta: {
+    titulo: 'Cuéntame tu negocio',
+    texto: 'Te digo qué cambiaría, cuánto costaría y cuánto tardaría. Gratis y sin venta al final.',
+    nota: 'Te contesto yo, no un robot, y normalmente el mismo día.',
+    escalon:
+      'Si todavía no lo ves claro, pídeme la revisión de quince minutos: miro tu web y tu ficha de Google como las mira tu cliente y te digo qué falla. Sin coste.',
+  },
+};
+
+export const gremios: Gremio[] = [
+  {
+    slug: 'webs-para-reformas',
+    menuLabel: 'Para reformas',
+    enlaceEtiqueta: 'empresas de reformas',
+    seo: {
+      title: 'Webs para empresas de reformas en Valencia y alrededores | Mialdea Studio',
+      description:
+        'Hago la web de tu empresa de reformas y trabajo tu ficha de Google, para que te encuentren sin pagar por cada contacto. Precio cerrado desde 600 euros y lista en dos semanas.',
+    },
+    kicker: 'Reformas, climatización y solar · Valencia y alrededores',
+    h1: 'Que te encuentren sin pagar por cada contacto',
+    sub: 'Hago la web de tu empresa de reformas y trabajo tu ficha de Google, para que el cliente te llame a ti directamente.',
+    waMensaje: 'Hola Miguel. Tengo una empresa de reformas en ______ y quería preguntarte por una web.',
+    sintomas: {
+      kicker: 'Los portales',
+      titulo: 'Alquilar clientes sale caro',
+      intro:
+        'En los portales cada contacto se paga, y suele rondar los 14 euros. Y el mismo aviso se lo mandan a varios a la vez.',
+      puntos: [
+        { b: 'Diez contactos al mes, casi 1.700 € al año', s: 'Y el año que viene, otra vez.' },
+        { b: 'Compites por el mismo trabajo', s: 'Llegáis tres o cuatro al mismo cliente.' },
+        { b: 'El contacto nunca es tuyo', s: 'El mes que dejas de pagar, desapareces.' },
+      ],
+      cierre:
+        'Lo que le pagas al portal en nueve meses te paga la web entera. Y la web sigue siendo tuya.',
+    },
+    incluye: {
+      titulo: 'Un precio, todo dentro',
+      filas: [
+        { th: 'Una página por servicio', td: 'Reforma, clima, solar, aerotermia.' },
+        { th: 'Que te encuentren', td: 'Tu ficha de Google y el SEO de tu zona.' },
+        { th: 'Fotos de tus obras', td: 'Tus obras, no fotos de catálogo.' },
+        { th: 'Presupuesto en un clic', td: 'Formulario corto y teléfono a mano.' },
+        { th: 'Los textos, contigo', td: 'Yo los escribo, tú opinas.' },
+        { th: 'Es tuya', td: 'La web y el dominio, a tu nombre.' },
+      ],
+    },
+    objeciones: [
+      {
+        q: '¿Y si ya tengo web?',
+        a: 'La miro y te digo si basta con arreglar cuatro cosas o hace falta rehacerla, aunque sea lo más barato.',
+      },
+      {
+        q: '¿Tengo que dejar el portal?',
+        a: 'No. Mantenlo al principio. La idea es depender menos de él con el tiempo, no cortarlo de golpe.',
+      },
+      {
+        q: '¿Cuánto tarda en salir en Google?',
+        a: 'La ficha se mueve en semanas. Las búsquedas de tu zona, de dos a cuatro meses. No te prometo nada más rápido.',
+      },
+      {
+        q: '¿Hay que pagar todos los meses?',
+        a: 'No. Pagas una vez y la web es tuya. Si quieres que yo la cuide, son 49 € al mes, opcional y sin permanencia.',
+      },
+    ],
+  },
+];
+
+// ============================================================
 //  AVISO DEL AUTODIAGNÓSTICO  ·  recoger interés, no construirlo
 // ============================================================
 export const proximamente = {
