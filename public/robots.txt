@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mialdeastudio.com/sitemap-index.xml

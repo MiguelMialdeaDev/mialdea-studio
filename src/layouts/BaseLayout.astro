@@ -51,8 +51,20 @@ const canonical = new URL(ruta, site.url).href;
     })} />
 
     {/*
-      TODO medicion: clics en llamar, clics en WhatsApp y envios del formulario.
-      Comentario de Astro, no llega al HTML servido.
+      MEDICION. Dos piezas, las dos sin cookies y sin terceros, asi que no hace
+      falta banner de consentimiento:
+
+      1. Visitas y origen: Cloudflare Web Analytics. NO se instala aqui. Se activa
+         en el panel de Cloudflare, en el proyecto de Pages, apartado Analytics,
+         y Cloudflare inyecta su script solo. Si algun dia se desactiva ahi, esta
+         web deja de medir visitas y no hay nada que tocar en el codigo.
+
+      2. Clics en llamar y en WhatsApp: el script del final del body. Manda un
+         aviso a /e/llamada o /e/whatsapp, que no existen como pagina y devuelven
+         404 a proposito. Lo que interesa no es la respuesta, es que Cloudflare
+         cuenta la peticion por ruta en las analiticas del proyecto. Asi se puede
+         decir cuantos clics de llamada salieron de la web sin instalar nada de
+         terceros ni pedirle datos a nadie.
     */}
   </head>
   <body class="font-sans antialiased">
@@ -84,6 +96,30 @@ const canonical = new URL(ruta, site.url).href;
         window.addEventListener('scroll', onScroll, { passive: true });
         onScroll();
       }
+
+      // Cuenta clics en llamar y en WhatsApp.
+      // Avisa a una ruta que no existe: da 404 y da igual, porque lo que cuenta
+      // es que Cloudflare registra la peticion por ruta. Sin cookies, sin
+      // terceros y sin guardar nada de quien hace clic.
+      (function () {
+        const marca = (evento) => {
+          const url = '/e/' + evento;
+          if (navigator.sendBeacon) navigator.sendBeacon(url);
+          else fetch(url, { method: 'POST', keepalive: true }).catch(() => {});
+        };
+        document.addEventListener(
+          'click',
+          (ev) => {
+            const a = ev.target.closest && ev.target.closest('a[href]');
+            if (!a) return;
+            const href = a.getAttribute('href') || '';
+            if (href.startsWith('tel:')) marca('llamada');
+            else if (href.indexOf('wa.me') !== -1) marca('whatsapp');
+          },
+          { capture: true, passive: true }
+        );
+        // El formulario ya lleva a /gracias, que se cuenta sola como visita.
+      })();
     </script>
   </body>
 </html>
