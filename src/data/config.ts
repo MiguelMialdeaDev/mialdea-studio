@@ -709,6 +709,67 @@ export const gremios: Gremio[] = [
       },
     ],
   },
+  {
+    slug: 'webs-para-fontaneros',
+    menuLabel: 'Para fontaneros',
+    enlaceEtiqueta: 'fontaneros',
+    seo: {
+      title: 'Webs para fontaneros en Valencia y alrededores | Mialdea Studio',
+      description:
+        'Hago webs para fontaneros, pensadas para pedir el trabajo que quieres: reformas de baño y no solo chapuzas. Con tu ficha de Google al día. Desde 600 euros, en dos semanas.',
+    },
+    kicker: 'Fontanería · Valencia y alrededores',
+    h1: 'Webs para fontaneros en Valencia y alrededores',
+    sub: 'Para que cuando alguien busque fontanero y el nombre de tu pueblo, salgas tú. Y para que el trabajo que te llegue sea el que quieres.',
+    waMensaje: 'Hola Miguel. Soy fontanero en ______ y quería preguntarte por una web.',
+    sintomas: {
+      kicker: 'El día a día',
+      titulo: 'Te sonará todo esto',
+      puntos: [
+        { b: 'Te llaman para chapuzas de 40 euros', s: 'Y la reforma del baño se la lleva otro.' },
+        { b: 'Pierdes llamadas con las manos en la obra', s: 'Y el que no te localiza llama al siguiente.' },
+        { b: 'Buscas tu oficio y tu pueblo en Google', s: 'Y sale todo el mundo menos tú.' },
+      ],
+      cierre:
+        'La web se hace al revés: pide el trabajo que quieres, enseña tus baños terminados, y el presupuesto te llega al WhatsApp para contestarlo cuando puedas.',
+    },
+    caso: {
+      titulo: 'La de Mariano la puedes abrir ahora mismo',
+      texto:
+        'A Mariano, fontanero en Valencia, le hice su primera web. No te voy a contar cuántas llamadas le entran, porque eso lo estamos midiendo todavía y no vendo humo. Lo que sí puedes hacer es abrirla desde el móvil y ver cómo pide el trabajo. Así trabajaría la tuya.',
+      url: 'https://marianofontanero.com',
+      urlLabel: 'marianofontanero.com',
+    },
+    incluye: {
+      titulo: 'Un precio, todo dentro',
+      filas: [
+        { th: 'Una página por servicio', td: 'Baños, calderas, desatascos, urgencias.' },
+        { th: 'Que te encuentren', td: 'Tu ficha de Google y el SEO de tu zona.' },
+        { th: 'Fotos de tus trabajos', td: 'Tus baños, no fotos de catálogo.' },
+        { th: 'Presupuesto en un clic', td: 'Formulario corto que te llega al WhatsApp.' },
+        { th: 'Los textos, contigo', td: 'Yo los escribo, tú opinas.' },
+        { th: 'Es tuya', td: 'La web y el dominio, a tu nombre.' },
+      ],
+    },
+    objeciones: [
+      {
+        q: '¿Y si ya tengo web?',
+        a: 'La miro y te digo si basta con arreglar cuatro cosas o hace falta rehacerla, aunque sea lo más barato.',
+      },
+      {
+        q: '¿Me vas a prometer más llamadas?',
+        a: 'No. Eso no te lo puede prometer nadie honrado. Lo que sí te prometo es lo que depende de mí: que cargue rápido, que el botón de llamar se vea y que el formulario te llegue.',
+      },
+      {
+        q: '¿Hay que pagar todos los meses?',
+        a: 'No. Pagas una vez y la web es tuya. Si quieres que yo la cuide, son 49 € al mes, opcional y sin permanencia.',
+      },
+      {
+        q: '¿Cuánto tardas?',
+        a: 'Dos semanas desde que me pasas fotos y datos.',
+      },
+    ],
+  },
 ];
 
 // ============================================================

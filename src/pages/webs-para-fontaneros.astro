@@ -1,0 +1,10 @@
+---
+// Hay cliente real (Mariano, marianofontanero.com). Se vende método,
+// no resultado: sus llamadas aún no están medidas.
+import PaginaGremio from '../components/PaginaGremio.astro';
+import { gremios } from '../data/config';
+
+const gremio = gremios.find((g) => g.slug === 'webs-para-fontaneros')!;
+---
+
+<PaginaGremio gremio={gremio} />
