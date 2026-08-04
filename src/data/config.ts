@@ -114,14 +114,19 @@ export const portada = {
   villano: {
     titulo: 'El coste que ya pagas',
     intro: 'Alquilar clientes sale caro, y la factura ya la tienes.',
+    // Cifra pendiente de confirmar con clientes reales (2026-08-04). Se usa 14 €
+    // por contacto, que es lo manejado hasta ahora. Los numeros de abajo cuadran
+    // entre si a proposito: 14 x 10 x 12 = 1.680, y 1.200 / 140 = 8,6 meses.
+    // Si al preguntar a fontaneros de la zona sale otra cifra, hay que rehacer
+    // los tres numeros a la vez, no solo el primero.
     puntos: [
-      'En los portales de anuncios cada contacto te cuesta entre 12 y 35 euros.',
-      'Diez contactos al mes son cerca de 1.800 euros al año.',
+      'En los portales de anuncios cada contacto se paga, y suele rondar los 14 euros.',
+      'Con diez contactos al mes son unos 140 euros al mes, casi 1.700 al año.',
       'Compites con otros cuatro por el mismo trabajo y por el mismo aviso.',
       'Y ese contacto nunca llega a ser tuyo: el mes que dejas de pagar, desaparece.',
     ],
     cierre:
-      'Una web tuya se paga una vez. El teléfono que suena a partir de ahí no se lo pagas a nadie.',
+      'Lo que le pagas al portal en nueve meses te paga la web entera. Y la web sigue siendo tuya.',
   },
 
   // El cliente escaldado
