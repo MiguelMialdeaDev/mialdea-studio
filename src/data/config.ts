@@ -98,14 +98,13 @@ export const portada = {
   kicker: 'Webs para negocios de Valencia',
   h1: '¿Sabes cuando llamas a un fontanero, no te lo coge, y acabas llamando al siguiente?',
   h1Corto: 'Hay gente buscando lo que tú haces, en tu pueblo, y está llamando a otro.',
-  sub: 'Eso le está pasando a tu negocio ahora mismo, pero al revés: hay gente buscando lo que tú haces, en tu pueblo, y está llamando a otro.',
+  sub: 'Pues a tu negocio le pasa al revés: hay gente buscando lo que tú haces, en tu pueblo, y está llamando a otro.',
 
   // Síntoma, suposición falsa, problema real, solución
   problema: {
     titulo: 'Lo que suele estar pasando de verdad',
     parrafos: [
-      'Te entran menos llamadas que antes. Lo normal es pensar que es cosa de la crisis, o que el de al lado está tirando los precios.',
-      'Lo que yo suelo encontrar es otra cosa: el negocio sí sale en Google, pero desde el móvil no hay forma rápida de llamar, la ficha no tiene horario, y la mitad de la gente se va antes de encontrar el teléfono.',
+      'Te entran menos llamadas y parece cosa de la crisis. Casi nunca lo es: sales en Google, pero desde el móvil cuesta llamarte, y la mitad de la gente se va antes de encontrar el teléfono.',
       'Eso no se arregla con una web más bonita. Se arregla con una web hecha para que te llamen.',
     ],
   },
@@ -133,8 +132,8 @@ export const portada = {
   escaldado: {
     titulo: 'Si ya pagaste una web y no sirvió',
     parrafos: [
-      'Pasa mucho. Casi siempre me cuentan lo mismo: que se la hizo alguien de confianza, que ahora no hay forma de tocarla, que nadie contesta cuando hay que cambiar un horario, y que prometieron tres cosas y llegó una.',
-      'Yo no voy a decirte que quien te la hizo lo hiciera mal. Casi nunca es eso. Es que aquello se hacía así hace seis años y hoy Google lo cuenta de otra manera, y ahora casi todo el mundo te busca desde el móvil.',
+      'Pasa mucho: te la hizo alguien de confianza, ahora nadie contesta, y prometieron tres cosas y llegó una.',
+      'No es que lo hicieran mal. Es que aquello valía hace seis años, y hoy casi todo el mundo te busca desde el móvil.',
     ],
   },
 };
@@ -161,7 +160,7 @@ export const historias = [
     quien: 'Un restaurante venezolano',
     titulo: 'Sabores de casa que casi nadie encontraba',
     resumen:
-      'Una familia que se trajo su cocina en la maleta. Cinco estrellas reales, pero casi invisible en Google. Le construí su sitio y trabajé para que lo encuentren antes de llegar a la puerta.',
+      'Cinco estrellas de verdad, pero casi invisible en Google. Web nueva y ficha puesta al día.',
     etiqueta: 'Web y ficha de Google',
     color: 'terracota',
     portada: '',
@@ -170,7 +169,7 @@ export const historias = [
     quien: 'Un fontanero',
     titulo: 'Un oficio de toda la vida que da el salto',
     resumen:
-      'Un manitas que decide digitalizarse: una web para especializarse y aparecer justo cuando alguien busca su oficio en su zona.',
+      'Su primera web: aparecer justo cuando alguien busca su oficio en su zona.',
     etiqueta: 'Web de servicios',
     color: 'verde',
     portada: '',
@@ -179,7 +178,7 @@ export const historias = [
     quien: 'Una marca de café tradicional',
     titulo: 'De vender a comercios a vender a tu casa',
     resumen:
-      'Toda la vida sirviendo café a negocios locales. Ahora da el salto para llegar también a particulares, sin perder lo de siempre.',
+      'Toda la vida vendiendo a bares. Ahora también a tu casa, con tienda online.',
     etiqueta: 'Tienda online',
     color: 'terracota',
     portada: '',
@@ -444,9 +443,8 @@ export const comoTrabajo = {
 export const revision = {
   titulo: 'Te la miro y te digo qué falla. Quince minutos, sin coste.',
   parrafos: [
-    'Miro tu web y tu ficha de Google, la abro en el móvil como la abre tu cliente, y te cuento por teléfono las tres cosas que están costándote llamadas.',
-    'No te mando un informe ni te meto en una lista de correo. Te lo cuento por teléfono y ya está. Si de ahí sale trabajo, bien. Y si te apañas tú con lo que te cuente, también.',
-    'Si quieres el repaso completo y por escrito, con todo lo que hay que tocar y en qué orden, eso es otra cosa y cuesta 90 euros.',
+    'Abro tu web y tu ficha en el móvil, como las abre tu cliente, y te cuento por teléfono las tres cosas que te están costando llamadas.',
+    'Sin informe y sin lista de correo. Si te apañas tú con lo que te cuente, tan amigos.',
   ],
   cta: 'Pídeme la revisión',
 };
