@@ -142,9 +142,9 @@ export const portada = {
 //  CAPACIDAD DECLARADA  ·  es verdad y hay que sostenerla
 // ============================================================
 export const capacidad = {
-  titulo: 'Cojo un cliente nuevo al mes',
+  titulo: 'Los proyectos los llevo de uno en uno',
   parrafos: [
-    'Cojo un cliente nuevo al mes porque las hago yo solo y porque la mitad de mi tiempo se va en estar pendiente de las que ya he hecho. Eso es justo lo que hace que funcionen.',
+    'Las webs las hago yo solo y las llevo de una en una: empiezo la siguiente cuando la anterior está entregada. Eso es justo lo que hace que funcionen.',
     site.huecoDesde
       ? `Tengo el hueco cubierto hasta ${site.huecoDesde}. Si te corre prisa, dímelo y te digo si puedo mover algo o te paso el contacto de alguien.`
       : 'Ahora mismo tengo hueco. Si te corre prisa, dímelo y vemos fechas.',
@@ -457,7 +457,7 @@ export const quienSoy = {
   parrafos: [
     'Me llamo Miguel Mialdea y vivo en Valencia. Llevo siete años programando, la mayor parte para empresas grandes, y desde hace un tiempo hago webs para negocios de aquí al lado.',
     'Empecé con esto por un fontanero de la zona que perdía llamadas porque cuando alguien buscaba su oficio y el nombre de su pueblo, salía todo el mundo menos él.',
-    'Cojo un cliente nuevo al mes. No es una técnica de venta, es lo que me permite coger el teléfono cuando me llamas.',
+    'Los proyectos los llevo de uno en uno. No es una técnica de venta, es lo que me permite coger el teléfono cuando me llamas.',
   ],
   resumenPortada:
     'Me llamo Miguel Mialdea, vivo en Valencia y llevo siete años programando, la mayor parte para empresas grandes. Ahora hago webs para negocios de aquí al lado, y las hago yo, de principio a fin.',
@@ -597,7 +597,7 @@ export const gracias = {
 //  La de reformas porta el copy de la landing anterior
 //  (_landing-anterior/index.html), con los precios de hoy.
 //  Regla dura: cero cifras inventadas. Datos usables: 7 años
-//  programando, un cliente al mes, 600/1.200/49, 596 visitantes
+//  programando, proyectos de uno en uno, 600/1.200/49, 596 visitantes
 //  de Altamira, 14 € por contacto en portales.
 // ============================================================
 
@@ -634,7 +634,7 @@ export const gremioComun = {
   quien: {
     titulo: 'Yo mismo, y soy ingeniero',
     texto:
-      'Me llamo Miguel Mialdea y llevo siete años programando, la mayor parte para empresas grandes. Aquí no hay comerciales: hablas conmigo y la hago yo. Cojo un cliente nuevo al mes.',
+      'Me llamo Miguel Mialdea y llevo siete años programando, la mayor parte para empresas grandes. Aquí no hay comerciales: hablas conmigo y la hago yo, de una en una.',
     enlaceTexto: 'Cómo trabajo, paso a paso y con precios',
   },
   zona: {
