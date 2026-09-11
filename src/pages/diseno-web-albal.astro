@@ -1,0 +1,11 @@
+---
+// Página de zona en el eje "diseño web + municipio". Albal es la mejor
+// justificada de las cuatro: es donde esta Mariano, el unico caso con
+// numeros. El contenido vive en src/data/config.ts (zonas).
+import PaginaZona from '../components/PaginaZona.astro';
+import { zonas } from '../data/config';
+
+const zona = zonas.find((z) => z.slug === 'diseno-web-albal')!;
+---
+
+<PaginaZona zona={zona} />

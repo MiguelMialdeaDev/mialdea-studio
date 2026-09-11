@@ -7,10 +7,25 @@
 
 const rawBase = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 
-/** Prefija la base del sitio (GitHub Pages) a las rutas internas. */
+/** Prefija la base del sitio (GitHub Pages) a las rutas internas.
+ *
+ *  Y anade la BARRA FINAL, que es lo importante. El sitio se sirve como
+ *  /ruta/index.html, asi que enlazar a /ruta provoca un 301 en cada clic.
+ *  Eso es exactamente lo que Search Console reportaba como "Pagina con
+ *  redireccion" (8 de las 19 sin indexar). Detectado el 09-09-2026. */
 export const link = (path: string): string => {
-  if (!path || path.startsWith('#') || path.startsWith('http') || path.startsWith('tel:')) return path;
-  return `${rawBase}${path}`;
+  if (
+    !path ||
+    path.startsWith('#') ||
+    path.startsWith('http') ||
+    path.startsWith('tel:') ||
+    path.startsWith('mailto:')
+  ) {
+    return path;
+  }
+  const [ruta, ancla] = path.split('#');
+  const conBarra = ruta.endsWith('/') ? ruta : `${ruta}/`;
+  return `${rawBase}${conBarra}${ancla ? `#${ancla}` : ''}`;
 };
 
 export const site = {
@@ -169,7 +184,7 @@ export const historias = [
     quien: 'Un fontanero',
     titulo: 'Un oficio de toda la vida que da el salto',
     resumen:
-      'Su primera web: aparecer justo cuando alguien busca su oficio en su zona.',
+      'Tenía visitas y el teléfono no sonaba. Le puse la ficha de Google en condiciones.',
     etiqueta: 'Web de servicios',
     color: 'verde',
     portada: '',
@@ -239,7 +254,7 @@ export const servicios = [
       'Sales cuando alguien busca tu oficio y tu pueblo',
       'Listas en semanas',
     ],
-    desde: 'Desde 600 €',
+    desde: 'Desde 400 €',
   },
   {
     titulo: 'Apps y herramientas',
@@ -252,17 +267,18 @@ export const servicios = [
 export const paquetes = [
   {
     nombre: 'Presencia',
-    precio: '600 €',
+    precio: '400 €',
+    precioNota: 'lanzamiento, tres primeros. Después 600 €',
     desc: 'Para aparecer y que te encuentren.',
-    incluye: ['Web de una página', 'Móvil primero', 'Botón de WhatsApp', 'Alta en Google'],
-    destacado: false,
+    incluye: ['Web de una página', 'Tu ficha de Google', 'Móvil primero', 'Botón de WhatsApp'],
+    destacado: true,
   },
   {
     nombre: 'Negocio',
     precio: '1.200 €',
-    desc: 'El que elige la mayoría.',
+    desc: 'Si vives de que te encuentren.',
     incluye: ['Hasta 5 páginas', 'SEO local de tu zona', 'Google Business', 'Textos que venden'],
-    destacado: true,
+    destacado: false,
   },
   {
     nombre: 'A medida',
@@ -335,7 +351,8 @@ export const comoTrabajo = {
     items: [
       {
         nombre: 'Presencia',
-        precio: '600 €',
+        precio: '400 €',
+        precioNota: 'Precio de lanzamiento para los tres primeros. Después, 600 €.',
         plazo: 'Publicada en dos semanas',
         desc: 'Una sola página bien hecha, pensada para que quien te busque desde el móvil te llame en menos de un minuto.',
         incluye: [
@@ -625,10 +642,10 @@ export type Gremio = {
 /** Lo que comparten las cuatro páginas de gremio. */
 export const gremioComun = {
   precio: {
-    kicker: 'Precio cerrado',
-    principal: '600 €',
-    principalNota: 'una página, pago único',
-    resto: 'Web completa de varias páginas, 1.200 €. Las dos con el SEO de tu zona incluido y publicadas en dos semanas.',
+    kicker: 'Precio de lanzamiento',
+    principal: '400 €',
+    principalNota: 'una página y tu ficha de Google, pago único',
+    resto: 'Precio de lanzamiento para los tres primeros negocios. Después son 600 €. La web completa de varias páginas, 1.200 €. Todas con el SEO de tu zona incluido y publicadas en dos semanas.',
     letraPequena: 'Te doy la cifra exacta por escrito antes de empezar nada.',
   },
   quien: {
@@ -734,6 +751,8 @@ export const gremios: Gremio[] = [
         'La web se hace al revés: pide el trabajo que quieres, enseña tus baños terminados, y el presupuesto te llega al WhatsApp para contestarlo cuando puedas.',
     },
     caso: {
+      // Los numeros reales (8 llamadas, 4 trabajos, un mes) estan en
+      // pruebaMariano, gateados hasta que Mariano de permiso.
       titulo: 'La de Mariano la puedes abrir ahora mismo',
       texto:
         'A Mariano, fontanero en Valencia, le hice su primera web. No te voy a contar cuántas llamadas le entran, porque eso lo estamos midiendo todavía y no vendo humo. Lo que sí puedes hacer es abrirla desde el móvil y ver cómo pide el trabajo. Así trabajaría la tuya.',
@@ -905,3 +924,135 @@ export const proximamente = {
   ],
   cta: 'Avísame cuando esté',
 };
+
+// ============================================================
+//  LA PRUEBA DE MARIANO  ·  numeros reales, pendiente de permiso
+//  Medido en la ficha de Google de marianofontanero.com, primer mes.
+//  publicado: false  =>  la web NO lo pinta. Ponlo a true cuando
+//  Mariano de el permiso (es la tarea 1 de Mialdea en Jarvis).
+//  Los EUROS no entran aqui a proposito: el ticket de 150-200 EUR es
+//  estimacion de Miguel, no dato del cliente. Y con el precio a 400,
+//  un retorno del 150-200% en un mes resta credibilidad al caso.
+// ============================================================
+export const pruebaMariano = {
+  publicado: false,
+  kicker: 'Un caso con números',
+  titulo: 'Ocho llamadas y cuatro trabajos el primer mes',
+  texto:
+    'Mariano ya tenía web y ya tenía visitas, pero el teléfono no sonaba. No estaba en el mapa de Google, que es donde la gente busca un fontanero cuando tiene una fuga en casa. Le monté la ficha y la dejé en condiciones.',
+  cifras: [
+    { dato: '8', etiqueta: 'llamadas desde Google' },
+    { dato: '4', etiqueta: 'trabajos cerrados' },
+    { dato: '1 mes', etiqueta: 'desde que se publicó' },
+  ],
+  remate:
+    'Y un detalle que dice mucho de cómo funciona esto en un oficio: le llamaron más veces de las que entraron en su web. La gente marca desde el mapa.',
+  url: 'https://marianofontanero.com',
+  urlLabel: 'marianofontanero.com',
+};
+
+// ============================================================
+//  ZONAS  ·  paginas de "diseño web + pueblo"
+//
+//  Por que este eje y no "gremio + pueblo": Search Console (3 meses,
+//  96 impresiones, 0 clics) dice que las paginas de gremio ya posicionan
+//  para el cliente DEL cliente ("electricista godella", "fontanero en
+//  corbera": 6 de 8 consultas). Esa gente quiere un electricista y no
+//  hace clic nunca. La UNICA consulta del cliente real que aparece es
+//  "diseño web l'alcudia". Asi que el municipio va en este eje.
+//
+//  Solo tres, y cada una con un angulo propio de verdad, para que no
+//  sean paginas puerta: donde vive, donde ya tiene cliente, y la ciudad.
+// ============================================================
+export type Zona = {
+  slug: string;
+  municipio: string;
+  seo: { title: string; description: string };
+  kicker: string;
+  h1: string;
+  sub: string;
+  waMensaje: string;
+  angulo: { titulo: string; texto: string };
+  cercanos: string;
+};
+
+export const zonas: Zona[] = [
+  {
+    // La primera de la lista a proposito: Albal es donde esta Mariano, que es
+    // el unico caso con numeros (8 llamadas y 4 trabajos el primer mes).
+    slug: 'diseno-web-albal',
+    municipio: 'Albal',
+    seo: {
+      title: 'Diseño web en Albal | Mialdea Studio',
+      description:
+        'Hago webs para negocios y oficios de Albal y te dejo la ficha de Google en condiciones. Una página desde 400 €, publicada en dos semanas. Ya trabajo con un fontanero del pueblo.',
+    },
+    kicker: "Albal y l'Horta Sud",
+    h1: 'Diseño web en Albal',
+    sub: 'Ya trabajo con un fontanero de Albal. Te hago la web, te pongo la ficha de Google al día y en dos semanas lo tienes publicado.',
+    waMensaje: 'Hola Miguel, soy de Albal y te escribo por lo de la web de mi negocio.',
+    angulo: {
+      titulo: 'Aquí ya hay un oficio funcionando',
+      texto:
+        'Un fontanero de Albal que tenía web y tenía visitas, pero el teléfono no sonaba. No estaba en el mapa de Google, que es donde la gente busca un fontanero cuando tiene una fuga. Le monté la ficha y la dejé en condiciones, y ahí empezó a cambiar la cosa.',
+    },
+    cercanos: 'Catarroja, Beniparrell, Silla, Massanassa, Alfafar, Sedaví y Benetússer.',
+  },
+  {
+    slug: 'diseno-web-lalcudia',
+    municipio: "l'Alcúdia",
+    seo: {
+      title: "Diseño web en l'Alcúdia | Mialdea Studio",
+      description:
+        "Hago webs para negocios de l'Alcúdia y la Ribera Alta, y te dejo la ficha de Google en condiciones. Una página desde 400 €, publicada en dos semanas. Hablas conmigo, no con un comercial.",
+    },
+    kicker: "l'Alcúdia y la Ribera Alta",
+    h1: "Diseño web en l'Alcúdia",
+    sub: "Vivo aquí, así que si quieres nos vemos y lo hablamos en persona. Te hago la web y te dejo la ficha de Google como la mira tu cliente.",
+    waMensaje: "Hola Miguel, soy de l'Alcúdia y te escribo por lo de la web de mi negocio.",
+    angulo: {
+      titulo: 'Estoy aquí al lado',
+      texto:
+        "Casi todo esto se resuelve por teléfono y por WhatsApp, pero si eres de l'Alcúdia o de un pueblo de al lado y prefieres que nos veamos, nos vemos. Va bien para las fotos del negocio y para que me cuentes cómo te llega la gente, que es la parte que no sale en ningún formulario.",
+    },
+    cercanos: "Carlet, Alginet, Benimodo, Guadassuar, Massalavés, Algemesí y Alcàntera de Xúquer.",
+  },
+  {
+    slug: 'diseno-web-burjassot',
+    municipio: 'Burjassot',
+    seo: {
+      title: 'Diseño web en Burjassot | Mialdea Studio',
+      description:
+        'Hago webs para negocios de Burjassot y te pongo la ficha de Google al día. Una página desde 400 €, publicada en dos semanas. Ya trabajo con un negocio del pueblo.',
+    },
+    kicker: 'Burjassot',
+    h1: 'Diseño web en Burjassot',
+    sub: 'Ya tengo un negocio del pueblo trabajando conmigo. Te hago la web, te pongo la ficha de Google al día y lo tienes publicado en dos semanas.',
+    waMensaje: 'Hola Miguel, soy de Burjassot y te escribo por lo de la web de mi negocio.',
+    angulo: {
+      titulo: 'Ya trabajo con un negocio de aquí',
+      texto:
+        'Un restaurante de Burjassot que tenía la ficha de Google apuntando a una página vieja que ya no era suya. Quien lo buscaba llegaba a un sitio equivocado, y eso no se arreglaba con una web nueva si nadie tocaba la ficha. Es el fallo que más veo y casi nadie lo mira.',
+    },
+    cercanos: 'Godella, Paterna, Rocafort, Moncada, Benimàmet y Beniferri.',
+  },
+  {
+    slug: 'diseno-web-valencia',
+    municipio: 'Valencia',
+    seo: {
+      title: 'Diseño web en Valencia para negocios y oficios | Mialdea Studio',
+      description:
+        'Hago webs para negocios y oficios de Valencia, y te dejo la ficha de Google en condiciones. Una página desde 400 €, publicada en dos semanas. Los llevo de uno en uno.',
+    },
+    kicker: 'Valencia y alrededores',
+    h1: 'Diseño web en Valencia',
+    sub: 'Para negocios que viven de que les llamen: fontaneros, electricistas, reformas, bares. Te hago la web y te dejo la ficha de Google en condiciones.',
+    waMensaje: 'Hola Miguel, soy de Valencia y te escribo por lo de la web de mi negocio.',
+    angulo: {
+      titulo: 'De uno en uno',
+      texto:
+        'En Valencia hay muchas agencias y casi todas llevan veinte proyectos a la vez. Yo los llevo de uno en uno, así que hablas conmigo desde el primer mensaje hasta el último, y la web la hago yo. Eso es más lento de vender y bastante mejor de recibir.',
+    },
+    cercanos: 'Torrent, Paiporta, Catarroja, Alfafar, Sedaví, Picanya, Albal, Massanassa y Benetússer.',
+  },
+];

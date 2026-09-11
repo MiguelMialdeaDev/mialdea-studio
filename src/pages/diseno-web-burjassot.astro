@@ -1,0 +1,11 @@
+---
+// Página de zona en el eje "diseño web + municipio". El contenido vive en
+// src/data/config.ts (zonas). Motivo del eje y del ángulo propio de cada
+// zona: ver la cabecera de PaginaZona.astro.
+import PaginaZona from '../components/PaginaZona.astro';
+import { zonas } from '../data/config';
+
+const zona = zonas.find((z) => z.slug === 'diseno-web-burjassot')!;
+---
+
+<PaginaZona zona={zona} />
