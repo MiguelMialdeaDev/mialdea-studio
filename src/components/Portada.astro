@@ -5,6 +5,8 @@
 // móvil de 320: quién eres (nombre y foto), qué haces (titular), cuánto cuesta
 // (la caja de oferta), si eres de fiar (precio cerrado por escrito) y cómo
 // escribirte (WhatsApp y teléfono). Un solo botón de acción, y es verde.
+// La foto solo se pinta si public/miguel.jpg existe; nada de huecos "pendiente"
+// a la vista del cliente. Mientras no esté, va el nombre y la frase.
 import { existsSync } from 'node:fs';
 import { home, site, waLink } from '../data/config';
 
@@ -62,14 +64,7 @@ const foto = `${base}${site.foto}`;
           height="400"
           class="w-[4.5rem] h-[4.5rem] rounded-full object-cover shrink-0 lg:w-full lg:max-w-[20rem] lg:h-auto lg:aspect-[4/5] lg:rounded-md"
         />
-      ) : (
-        <div
-          class="w-[4.5rem] h-[4.5rem] rounded-full border border-dashed border-linea bg-crema2 grid place-items-center text-center text-[0.6875rem] leading-tight text-muted p-1 shrink-0 lg:w-full lg:max-w-[20rem] lg:h-auto lg:aspect-[4/5] lg:rounded-md lg:text-sm lg:p-4"
-          aria-label="Hueco reservado para la foto de Miguel"
-        >
-          {home.yo.fotoPendiente}
-        </div>
-      )}
+      ) : null}
       <p class="text-sm text-tinta2 max-w-[30ch] lg:max-w-[24ch]">
         <b class="block font-display font-bold text-base text-tinta">{home.yo.nombre}</b>
         {home.yo.texto}
