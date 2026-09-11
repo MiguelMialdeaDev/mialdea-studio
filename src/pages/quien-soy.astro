@@ -7,48 +7,46 @@ import Footer from '../components/Footer.astro';
 import WhatsappFab from '../components/WhatsappFab.astro';
 import { seo, quienSoy, site, comoTrabajo, link } from '../data/config';
 
+import { existsSync } from 'node:fs';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const foto = `${base}${site.foto}`;
+// Solo se pinta la etiqueta si el fichero existe: antes cada visita pedia un jpg que daba 404.
+const hayFoto = existsSync('public' + site.foto);
 ---
 
 <BaseLayout title={seo.quienSoy.title} description={seo.quienSoy.description}>
   <Nav />
   <main>
     <section class="pt-28 pb-16 sm:pt-40 sm:pb-24 relative overflow-hidden">
-      <div
-        class="absolute -top-32 -left-24 w-[520px] h-[520px] rounded-full opacity-[0.14] blur-[130px] pointer-events-none"
-        style="background: radial-gradient(circle, #E0A04D 0%, transparent 70%);"
-        aria-hidden="true"
-      >
-      </div>
 
-      <div class="max-w-content mx-auto px-5 sm:px-8 relative grid md:grid-cols-[320px_1fr] gap-10 md:gap-14 items-start">
+      <div class="max-w-content mx-auto px-[22px] sm:px-8 relative grid md:grid-cols-[320px_1fr] gap-10 md:gap-14 items-start">
         <div>
-          <div class="rounded-2xl overflow-hidden border border-linea bg-crema">
-            <img
-              src={foto}
+          <div class="rounded-lg overflow-hidden border border-linea bg-crema">
+            {hayFoto ? (
+              <img src={foto}
               alt="Miguel Mialdea, que es quien hace la web y quien te coge el teléfono"
               width="320"
               height="400"
-              class="w-full h-[400px] object-cover"
-              onerror="this.style.display='none'; this.parentElement.classList.add('foto-ph');"
-            />
+              class="w-full h-[400px] object-cover" />
+              ) : (
+              <div class="foto-ph" aria-label="Hueco reservado para la foto de Miguel"></div>
+              )}
           </div>
         </div>
 
         <div>
           <h1
-            class="font-display font-medium text-tinta leading-[1.05] tracking-tight"
+            class="font-display font-bold text-tinta leading-[1.05] tracking-tight"
             style="font-size: clamp(2.25rem, 5.5vw, 3.75rem);"
           >
             {quienSoy.titulo}
           </h1>
           {quienSoy.parrafos.map((p) => (
-            <p class="mt-6 text-xl text-tinta/80 leading-relaxed">{p}</p>
+            <p class="mt-6 text-xl text-tinta2 leading-relaxed">{p}</p>
           ))}
 
           <div class="mt-10 border-t border-linea pt-8">
-            <p class="text-lg text-tinta/80 leading-relaxed">{comoTrabajo.charla.texto}</p>
+            <p class="text-lg text-tinta2 leading-relaxed">{comoTrabajo.charla.texto}</p>
           </div>
 
           <div class="mt-8 flex flex-wrap gap-x-6 gap-y-3">
@@ -90,7 +88,7 @@ const foto = `${base}${site.foto}`;
   }
   .foto-ph::after {
     content: 'Foto de Miguel pendiente';
-    color: #8c8378;
+    color: oklch(42% 0.012 45);
     font-size: 0.85rem;
   }
 </style>

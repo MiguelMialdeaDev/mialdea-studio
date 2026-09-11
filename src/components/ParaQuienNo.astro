@@ -1,0 +1,20 @@
+---
+// FILTRO: para quién no es. Honestidad que vende y ahorra llamadas.
+import { comoTrabajo } from '../data/config';
+const no = comoTrabajo.paraQuien.no;
+---
+
+<section class="border-t-[3px] border-tinta" aria-labelledby="no-h">
+  <div class="max-w-content mx-auto px-[22px] sm:px-8 py-14 sm:py-16 grid gap-6">
+    <h2 id="no-h" class="font-display font-bold text-tinta leading-[1.02] max-w-[20ch]" style="font-size: clamp(2rem, 1.3rem + 3vw, 3.25rem);">
+      {no.titulo}.
+    </h2>
+    <ul class="grid gap-3 max-w-[58ch]">
+      {no.puntos.map((p) => (
+        <li class="relative pl-5 text-tinta2">
+          <span class="absolute left-0 text-terracota font-bold" aria-hidden="true">×</span>{p}
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

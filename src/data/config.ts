@@ -57,6 +57,86 @@ export const nav = [
 ];
 
 // ============================================================
+//  PORTADA v2  ·  foco en captación (septiembre 2026)
+//  Orden: quién, qué, cuánto y cómo escribir, todo antes del scroll.
+//  Después la prueba, el precio, el proceso, el filtro y la revisión.
+// ============================================================
+export const home = {
+  kicker: 'Webs para negocios de Valencia',
+  h1: 'Te buscan en tu pueblo',
+  h1Marca: 'y llaman a otro.',
+  lede: 'Hago tu web y te dejo la ficha de Google en condiciones, para que quien te busque desde el móvil te llame en menos de un minuto.',
+  oferta: {
+    titulo: 'Web y ficha de Google: 400 €',
+    nota: 'Para los tres primeros, después 600 €. Precio cerrado por escrito.',
+  },
+  cta: 'Escríbeme por WhatsApp',
+  alt: 'Te contesto yo.',
+  yo: {
+    nombre: 'Miguel Mialdea',
+    texto: 'Siete años programando. Las webs las hago yo, de principio a fin.',
+    fotoPendiente: 'Tu foto, hecha en el taller de un cliente',
+  },
+  prueba: {
+    titulo: 'Dos webs mías que puedes abrir ahora mismo.',
+    intro: 'Ábrelas desde el móvil y mira cómo piden el trabajo. Así trabajaría la tuya.',
+    sitios: [
+      {
+        url: 'https://altamiragcp.es',
+        label: 'altamiragcp.es',
+        texto: 'Altamira, restaurante venezolano en Burjassot. Web en dos idiomas, carta y ficha de Google.',
+      },
+      {
+        url: 'https://marianofontanero.com',
+        label: 'marianofontanero.com',
+        texto: 'Mariano, fontanero en Valencia. Su primera web. Las llamadas las estamos midiendo todavía: no vendo humo.',
+      },
+    ],
+  },
+  precio: {
+    titulo: 'Lo que hago, y lo que cuesta.',
+    intro: 'Pago único. La web es tuya y el dominio va a tu nombre.',
+    tiers: [
+      {
+        nombre: 'Presencia',
+        precio: '400 €',
+        nota: 'Los tres primeros. Después, 600 €.',
+        incluye: ['Una página bien hecha', 'Tu ficha de Google al día', 'Llamar y WhatsApp donde se ven'],
+        destacado: true,
+      },
+      {
+        nombre: 'Negocio',
+        precio: '1.200 €',
+        nota: 'Si vives de que te encuentren, no solo del boca a boca.',
+        incluye: ['Hasta cinco páginas, por servicio o zona', 'Tus trabajos con fotos', 'Que salgas en Google en tu zona'],
+        destacado: false,
+      },
+      {
+        nombre: 'A medida',
+        precio: 'Hablamos',
+        nota: 'Reservas, pedidos, o esa herramienta que hoy llevas en una libreta.',
+        incluye: ['Hecho para tu caso', 'Conectado con lo que ya usas', 'Precio cerrado antes de empezar'],
+        destacado: false,
+      },
+    ],
+  },
+  pasos: {
+    titulo: 'Dos semanas, cuatro pasos.',
+    items: [
+      { titulo: 'Hablamos', desc: 'Veinte minutos por teléfono. Al colgar sabes cuánto cuesta y cuándo la tendrías.' },
+      { titulo: 'Precio por escrito', desc: 'En un folio, el mismo día. Lo que pone ahí es lo que se paga.' },
+      { titulo: 'Te la enseño', desc: 'En un móvil de verdad, con tus fotos. Si algo no encaja, se cambia ahí.' },
+      { titulo: 'La publico', desc: 'Con tu ficha de Google a punto. Y me quedo treinta días para cambios sin coste.' },
+    ],
+  },
+  revision: {
+    titulo: '¿Ya tienes web? Te la miro gratis.',
+    texto: 'Abro tu web y tu ficha en el móvil y te digo qué te está costando llamadas. Quince minutos. Si te apañas con lo que te cuente, tan amigos.',
+    cta: 'Pedir la revisión gratis',
+  },
+};
+
+// ============================================================
 //  SEO  ·  título y descripción escritos a mano para cada página
 // ============================================================
 export const seo = {
@@ -596,7 +676,7 @@ export const contacto = {
       'Otra cosa',
     ],
   },
-  boton: 'Enviármelo por WhatsApp',
+  boton: 'Enviar por WhatsApp',
   nota: 'Al enviarlo se abre tu WhatsApp con el mensaje escrito. Solo tienes que darle a enviar.',
 };
 

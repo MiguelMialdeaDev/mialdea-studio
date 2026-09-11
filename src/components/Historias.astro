@@ -25,16 +25,16 @@ const colores: Record<string, string> = {
 ---
 
 <section id="historias" class="py-20 sm:py-28">
-  <div class="max-w-content mx-auto px-5 sm:px-8">
+  <div class="max-w-content mx-auto px-[22px] sm:px-8">
     <div class="reveal max-w-2xl mb-12">
-      <p class="text-xs uppercase tracking-[0.18em] text-terracota font-medium mb-4">Trabajos</p>
+      <p class="text-sm uppercase tracking-[0.04em] text-terracota font-semibold mb-4">Trabajos</p>
       <h2
-        class="font-display font-medium tracking-tight text-tinta"
+        class="font-display font-bold tracking-tight text-tinta"
         style="font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.05;"
       >
         {titulo}
       </h2>
-      <p class="mt-5 text-lg text-tinta/75 leading-relaxed">{intro}</p>
+      <p class="mt-5 text-lg text-tinta2 leading-relaxed">{intro}</p>
     </div>
 
     <div class="grid sm:grid-cols-2 gap-6">
@@ -64,7 +64,7 @@ const colores: Record<string, string> = {
           <div class="p-7 flex flex-col flex-1">
             <p class="text-sm text-muted mb-1">{h.quien}</p>
             <h3 class="font-display text-2xl text-tinta leading-snug mb-3">{h.titulo}</h3>
-            <p class="text-tinta/75 leading-relaxed">{h.resumen}</p>
+            <p class="text-tinta2 leading-relaxed">{h.resumen}</p>
           </div>
         </article>
       ))}

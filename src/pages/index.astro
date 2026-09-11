@@ -1,29 +1,23 @@
 ---
-// PORTADA
+// PORTADA  ·  foco en captación (septiembre 2026)
 //
-// Su unico trabajo: que alguien entienda que tiene un problema y que yo lo
-// resuelvo. Nada mas. Lo que se lee DESPUES vive en su propia pagina.
+// Orden pensado para el comprador que abre el enlace desde WhatsApp en la
+// furgoneta: quién soy, qué hago, cuánto cuesta y cómo escribirme, todo en la
+// primera pantalla. Después la prueba (dos webs reales), el precio, el
+// proceso en cuatro pasos, para quién no es y la revisión gratis.
 //
-// Se quitaron de aqui seis bloques que ya existian en otro sitio y que hacian
-// que esta pagina tuviera 1.442 palabras, el triple que la landing de reformas
-// (444 palabras), que es la que de verdad retiene gente:
-//   Servicios y Proceso   -> /como-trabajo
-//   SobreMi               -> /quien-soy
-//   Faq                   -> /como-trabajo
-//   Contacto (formulario) -> /contacto
-//   Proximamente          -> /como-trabajo (aviso del test, antes de la FAQ)
+// Un solo botón de acción, siempre el mismo, y es verde: el comprador
+// reconoce el icono de WhatsApp sin leer. El terracota queda para marca,
+// reglas y el subrayador del titular.
 //
-// Y una sola accion de cierre: la revision de quince minutos, que es el
-// escalon barato. Antes habia quince llamadas a la accion compitiendo.
+// Presupuesto: 450 palabras visibles como máximo. Cero guiones.
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
-import Hero from '../components/Hero.astro';
-import Marquee from '../components/Marquee.astro';
-import Problema from '../components/Problema.astro';
-import Villano from '../components/Villano.astro';
-import Escaldado from '../components/Escaldado.astro';
-import Historias from '../components/Historias.astro';
-import Capacidad from '../components/Capacidad.astro';
+import Portada from '../components/Portada.astro';
+import Prueba from '../components/Prueba.astro';
+import Precios from '../components/Precios.astro';
+import Pasos from '../components/Pasos.astro';
+import ParaQuienNo from '../components/ParaQuienNo.astro';
 import Revision from '../components/Revision.astro';
 import Footer from '../components/Footer.astro';
 import WhatsappFab from '../components/WhatsappFab.astro';
@@ -32,14 +26,12 @@ import { seo } from '../data/config';
 
 <BaseLayout title={seo.home.title} description={seo.home.description}>
   <Nav />
-  <main>
-    <Hero />
-    <Marquee />
-    <Problema />
-    <Villano />
-    <Escaldado />
-    <Historias limite={3} enlace={true} />
-    <Capacidad />
+  <main id="inicio">
+    <Portada />
+    <Prueba />
+    <Precios />
+    <Pasos />
+    <ParaQuienNo />
     <Revision />
   </main>
   <Footer />

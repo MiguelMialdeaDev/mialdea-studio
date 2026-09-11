@@ -1,5 +1,15 @@
 [
  {
+  "date": "2026-09-11",
+  "scope": "app",
+  "macrostructure": "Proof-Led sales page (portada) + sistema del sitio en interiores",
+  "theme": "custom",
+  "theme_axes": "light / geometric-sans / chromatic-terracotta ~32",
+  "vibe": "obrador de barrio, papel calido, terracota",
+  "enrichment": "none",
+  "brief": "portada v2 con foco en captacion, tokens OKLCH con contraste AA, Bricolage+Switzer, boton unico verde WhatsApp, favicon y og:image, sin manchas radiales ni foto rota"
+ },
+ {
   "date": "2026-09-09",
   "macrostructure": "sistema del sitio (espina de gremio reutilizada en zonas)",
   "theme": "sistema Mialdea (crema/terracota, Fraunces+Inter)",

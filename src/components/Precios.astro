@@ -1,0 +1,27 @@
+---
+// PRECIO: tres columnas, la primera manda porque es la oferta del pliegue.
+import { home } from '../data/config';
+---
+
+<section class="border-t-[3px] border-tinta" aria-labelledby="precio-h">
+  <div class="max-w-content mx-auto px-[22px] sm:px-8 py-14 sm:py-16 grid gap-6">
+    <h2 id="precio-h" class="font-display font-bold text-tinta leading-[1.02] max-w-[20ch]" style="font-size: clamp(2rem, 1.3rem + 3vw, 3.25rem);">
+      {home.precio.titulo}
+    </h2>
+    <p class="text-tinta2 max-w-[58ch]">{home.precio.intro}</p>
+    <div class="grid gap-6 lg:grid-cols-[1.25fr_1fr_1fr] lg:gap-16">
+      {home.precio.tiers.map((t) => (
+        <div class={`grid gap-2 content-start py-6 border-t ${t.destacado ? 'border-t-[3px] border-terracota' : 'border-linea'}`}>
+          <h3 class="font-display font-bold text-xl text-tinta">{t.nombre}</h3>
+          <p class="font-display font-extrabold text-tinta" style="font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.125rem);">{t.precio}</p>
+          <p class="text-sm text-muted">{t.nota}</p>
+          <ul class="grid gap-1.5 mt-2 text-sm text-tinta2">
+            {t.incluye.map((i) => (
+              <li class="flex gap-2"><span class="text-terracota font-bold" aria-hidden="true">·</span><span>{i}</span></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

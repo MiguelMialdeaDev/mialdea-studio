@@ -1,0 +1,30 @@
+---
+// PROCESO en cuatro pasos compactos. El número va encima del título, nunca a
+// la izquierda: número a la izquierda y título a la derecha es la marca de
+// plantilla más reconocible. Su función aquí es quitar miedo, no presentar.
+import { home, link } from '../data/config';
+---
+
+<section class="border-t-[3px] border-tinta" aria-labelledby="pasos-h">
+  <div class="max-w-content mx-auto px-[22px] sm:px-8 py-14 sm:py-16 grid gap-6">
+    <h2 id="pasos-h" class="font-display font-bold text-tinta leading-[1.02] max-w-[20ch]" style="font-size: clamp(2rem, 1.3rem + 3vw, 3.25rem);">
+      {home.pasos.titulo}
+    </h2>
+    <ol class="grid gap-6 lg:grid-cols-4 lg:gap-10">
+      {home.pasos.items.map((p, i) => (
+        <li class="grid gap-2 py-4 border-t border-linea">
+          <span class="font-display font-extrabold text-terracota leading-none tabular-nums" style="font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.125rem);" aria-hidden="true">
+            {String(i + 1).padStart(2, '0')}
+          </span>
+          <h3 class="font-display font-bold text-xl text-tinta">{p.titulo}</h3>
+          <p class="text-sm text-tinta2">{p.desc}</p>
+        </li>
+      ))}
+    </ol>
+    <p class="text-sm text-muted">
+      <a href={link('/como-trabajo')} class="text-tinta underline underline-offset-4 hover:text-terracota transition-colors">
+        Ver el proceso entero
+      </a>
+    </p>
+  </div>
+</section>

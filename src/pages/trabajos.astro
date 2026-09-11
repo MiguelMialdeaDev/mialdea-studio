@@ -12,21 +12,15 @@ import { seo, caso, link } from '../data/config';
   <Nav />
   <main>
     <section class="pt-28 pb-14 sm:pt-40 sm:pb-16 relative overflow-hidden">
-      <div
-        class="absolute -top-32 -right-24 w-[560px] h-[560px] rounded-full opacity-[0.16] blur-[130px] pointer-events-none"
-        style="background: radial-gradient(circle, #C8553D 0%, transparent 70%);"
-        aria-hidden="true"
-      >
-      </div>
 
-      <div class="max-w-content mx-auto px-5 sm:px-8 relative">
+      <div class="max-w-content mx-auto px-[22px] sm:px-8 relative">
         <h1
-          class="font-display font-medium text-tinta leading-[1.05] tracking-tight max-w-3xl"
+          class="font-display font-bold text-tinta leading-[1.05] tracking-tight max-w-3xl"
           style="font-size: clamp(2.25rem, 5.5vw, 4rem);"
         >
           Trabajos que he hecho para negocios de aquí
         </h1>
-        <p class="mt-7 max-w-2xl text-xl text-tinta/80 leading-relaxed">
+        <p class="mt-7 max-w-2xl text-xl text-tinta2 leading-relaxed">
           Prefiero contar uno por dentro que enseñar veinte por fuera. Aquí está
           qué pasaba antes, qué hice y qué cambió después.
         </p>
@@ -39,18 +33,18 @@ import { seo, caso, link } from '../data/config';
 
     <!-- El caso, contado a fondo -->
     <section id="caso" class="py-16 sm:py-24 bg-papel border-y border-linea">
-      <div class="max-w-content mx-auto px-5 sm:px-8">
+      <div class="max-w-content mx-auto px-[22px] sm:px-8">
         <div class="max-w-3xl">
-          <p class="text-xs uppercase tracking-[0.18em] text-terracota font-medium mb-4">
+          <p class="text-sm uppercase tracking-[0.04em] text-terracota font-semibold mb-4">
             Un trabajo por dentro
           </p>
           <h2
-            class="font-display font-medium tracking-tight text-tinta"
+            class="font-display font-bold tracking-tight text-tinta"
             style="font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.05;"
           >
             {caso.titular}
           </h2>
-          <p class="mt-5 text-xl text-tinta/80 leading-relaxed">{caso.resumen}</p>
+          <p class="mt-5 text-xl text-tinta2 leading-relaxed">{caso.resumen}</p>
           <p class="mt-4 text-sm text-muted">{caso.nombreCliente}</p>
         </div>
 
@@ -58,7 +52,7 @@ import { seo, caso, link } from '../data/config';
           {caso.bloques.filter((b) => b.texto && !b.texto.includes('PENDIENTE')).map((b) => (
             <div class="reveal">
               <h3 class="font-display text-2xl text-tinta mb-3">{b.titulo}</h3>
-              <p class="text-lg text-tinta/80 leading-relaxed">{b.texto}</p>
+              <p class="text-lg text-tinta2 leading-relaxed">{b.texto}</p>
             </div>
           ))}
         </div>
@@ -77,19 +71,19 @@ import { seo, caso, link } from '../data/config';
 
     <!-- Webs que se pueden visitar: la prueba sin promesas -->
     <section class="py-14 sm:py-20">
-      <div class="max-w-content mx-auto px-5 sm:px-8">
+      <div class="max-w-content mx-auto px-[22px] sm:px-8">
         <h2 class="reveal font-display text-2xl sm:text-3xl text-tinta mb-3">Webs que puedes visitar ahora mismo</h2>
-        <p class="reveal text-lg text-tinta/80 leading-relaxed max-w-2xl mb-8">
+        <p class="reveal text-lg text-tinta2 leading-relaxed max-w-2xl mb-8">
           Mejor que te lo cuente yo es que las abras tú, desde el móvil, como las abre un cliente.
         </p>
         <div class="grid gap-4 sm:grid-cols-2 max-w-2xl">
           <a href="https://altamiragcp.es" target="_blank" rel="noopener" class="reveal card-warm p-6 hover:border-terracota transition block">
             <span class="font-display text-xl text-tinta">altamiragcp.es</span>
-            <span class="block mt-2 text-base text-tinta/70">Altamira, restaurante venezolano en Burjassot.</span>
+            <span class="block mt-2 text-base text-tinta2">Altamira, restaurante venezolano en Burjassot.</span>
           </a>
           <a href="https://marianofontanero.com" target="_blank" rel="noopener" class="reveal card-warm p-6 hover:border-terracota transition block">
             <span class="font-display text-xl text-tinta">marianofontanero.com</span>
-            <span class="block mt-2 text-base text-tinta/70">Mariano, fontanero en Valencia.</span>
+            <span class="block mt-2 text-base text-tinta2">Mariano, fontanero en Valencia.</span>
           </a>
         </div>
       </div>
@@ -101,9 +95,9 @@ import { seo, caso, link } from '../data/config';
     />
 
     <section class="pb-4">
-      <div class="max-w-content mx-auto px-5 sm:px-8">
+      <div class="max-w-content mx-auto px-[22px] sm:px-8">
         <div class="reveal card-warm p-8 max-w-3xl">
-          <p class="text-lg text-tinta/80 leading-relaxed">
+          <p class="text-lg text-tinta2 leading-relaxed">
             Si quieres ver cómo trabajo antes de que hablemos, está todo escrito:
             los cinco pasos, lo que cuesta cada cosa y qué necesito de ti.
           </p>
