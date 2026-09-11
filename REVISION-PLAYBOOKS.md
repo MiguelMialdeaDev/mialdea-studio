@@ -1,5 +1,24 @@
 # Revisión de conformidad · mialdeastudio.com contra los playbooks The Futur
 
+> **Estado a 2026-09-12 (leer antes que el resto).** Este documento describe la web del 4 de
+> agosto. Desde entonces han cambiado dos cosas que dejan obsoletas varias filas de CUMPLE:
+>
+> 1. **La web ya no publica ningún precio** (decisión de Miguel, 11-sep-2026). Los puntos de
+>    CUMPLE sobre "precio publicado como paquete", "plan de cuidado con precio de lista", "rescate
+>    con tarifa publicada" y "horquillas de presupuesto" ya no se cumplen, y **es a propósito**:
+>    el precio se da solo por teléfono. El playbook de precio (§3.1 a 3.3) recomienda lo
+>    contrario; queda anotado como excepción consciente, no como olvido. Lo que sí sigue vigente
+>    es el principio de "nunca un desde X suelto".
+> 2. **La portada es la v2 de captación** (fusionada a `main` el 11-sep). El H1 ya no es la
+>    pregunta del fontanero sino "Te buscan en tu pueblo y llaman a otro", así que la "tensión
+>    menor" del final ya no aplica.
+>
+> De los siete NO CUMPLE: **1, 2, 3, 4 y 6 siguen abiertos** (cara, capturas, testimonios, caso
+> con cifra, historias genéricas). El **5 está resuelto**: el bloque "Estoy montando una cosa"
+> ya se renderiza en `/como-trabajo`. El **7** está limpio de precios pero los exports
+> `servicios` y `paquetes` siguen en `config.ts` sin usarse. La lista de tareas viva está en
+> Jarvis, proyecto "Mialdea · Marca, web y SEO", bloque del 12-sep-2026.
+
 Fecha: 2026-08-04. Fuentes: los cuatro playbooks de `jarvis/backend/data/learning/the-futur/`
 (captación, venta, precio, operativa) leídos completos, contrastados con `src/data/config.ts`,
 las páginas de `src/pages/`, los componentes de `src/components/` y el estado en vivo de
