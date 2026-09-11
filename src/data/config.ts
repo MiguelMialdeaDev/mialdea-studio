@@ -770,7 +770,7 @@ export const gremios: Gremio[] = [
         'Lo que le pagas al portal en nueve meses te paga la web entera. Y la web sigue siendo tuya.',
     },
     incluye: {
-      titulo: 'Un precio, todo dentro',
+      titulo: 'Todo dentro, sin extras a mitad',
       filas: [
         { th: 'Una página por servicio', td: 'Reforma, clima, solar, aerotermia.' },
         { th: 'Que te encuentren', td: 'Tu ficha de Google y el SEO de tu zona.' },
@@ -833,7 +833,7 @@ export const gremios: Gremio[] = [
       urlLabel: 'marianofontanero.com',
     },
     incluye: {
-      titulo: 'Un precio, todo dentro',
+      titulo: 'Todo dentro, sin extras a mitad',
       filas: [
         { th: 'Una página por servicio', td: 'Baños, calderas, desatascos, urgencias.' },
         { th: 'Que te encuentren', td: 'Tu ficha de Google y el SEO de tu zona.' },
@@ -894,7 +894,7 @@ export const gremios: Gremio[] = [
       urlLabel: 'Ver esos trabajos',
     },
     incluye: {
-      titulo: 'Un precio, todo dentro',
+      titulo: 'Todo dentro, sin extras a mitad',
       filas: [
         { th: 'Una página por servicio', td: 'Boletines, instalaciones, cuadros, urgencias.' },
         { th: 'Que te encuentren', td: 'Tu ficha de Google y el SEO de tu zona.' },
@@ -955,7 +955,7 @@ export const gremios: Gremio[] = [
       urlLabel: 'altamiragcp.es',
     },
     incluye: {
-      titulo: 'Un precio, todo dentro',
+      titulo: 'Todo dentro, sin extras a mitad',
       filas: [
         { th: 'La carta que se lee en el móvil', td: 'Al día y sin PDF.' },
         { th: 'Que te encuentren', td: 'Tu ficha de Google con fotos y horario al día.' },
