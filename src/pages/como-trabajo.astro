@@ -79,8 +79,7 @@ import { seo, comoTrabajo, link, faq } from '../data/config';
           {comoTrabajo.productos.items.map((p) => (
             <article class="card-warm p-8 flex flex-col">
               <h3 class="font-display text-2xl text-tinta">{p.nombre}</h3>
-              <p class="font-display text-3xl text-terracota mt-2">{p.precio}</p>
-              <p class="text-sm text-muted mt-1">{p.plazo}</p>
+              <p class="text-base text-terracota font-semibold mt-2">{p.plazo}</p>
               <p class="text-tinta2 leading-relaxed mt-5">{p.desc}</p>
               <ul class="space-y-2.5 mt-6">
                 {p.incluye.map((i) => (
@@ -117,7 +116,7 @@ import { seo, comoTrabajo, link, faq } from '../data/config';
           <h2 class="font-display text-2xl sm:text-3xl text-tinta mb-3">
             {comoTrabajo.planCuidado.titulo}
           </h2>
-          <p class="font-display text-2xl text-terracota mb-5">{comoTrabajo.planCuidado.precio}</p>
+          <p class="text-lg text-terracota font-semibold mb-5">{comoTrabajo.planCuidado.precio}</p>
           {comoTrabajo.planCuidado.parrafos.map((p) => (
             <p class="text-lg text-tinta2 leading-relaxed mb-4">{p}</p>
           ))}
@@ -128,7 +127,7 @@ import { seo, comoTrabajo, link, faq } from '../data/config';
           <h2 class="font-display text-2xl sm:text-3xl text-tinta mb-3">
             {comoTrabajo.rescate.titulo}
           </h2>
-          <p class="font-display text-2xl text-terracota mb-5">{comoTrabajo.rescate.precio}</p>
+          <p class="text-lg text-terracota font-semibold mb-5">{comoTrabajo.rescate.precio}</p>
           {comoTrabajo.rescate.parrafos.map((p) => (
             <p class="text-lg text-tinta2 leading-relaxed mb-4">{p}</p>
           ))}
@@ -173,7 +172,7 @@ import { seo, comoTrabajo, link, faq } from '../data/config';
       <div class="max-w-content mx-auto px-[22px] sm:px-8">
         <div class="reveal card-warm p-8 sm:p-10 max-w-3xl">
           <h2 class="font-display text-2xl sm:text-3xl text-tinta mb-3">{comoTrabajo.escalon.titulo}</h2>
-          <p class="font-display text-2xl text-terracota mb-5">{comoTrabajo.escalon.precio}</p>
+          <p class="text-lg text-terracota font-semibold mb-5">{comoTrabajo.escalon.precio}</p>
           <p class="text-lg text-tinta2 leading-relaxed">{comoTrabajo.escalon.texto}</p>
           <p class="mt-6 text-base text-tinta2 leading-relaxed border-t border-linea pt-6">
             {comoTrabajo.charla.texto}

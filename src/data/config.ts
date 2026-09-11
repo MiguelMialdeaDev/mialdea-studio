@@ -67,8 +67,8 @@ export const home = {
   h1Marca: 'y llaman a otro.',
   lede: 'Hago tu web y te dejo la ficha de Google en condiciones, para que quien te busque desde el móvil te llame en menos de un minuto.',
   oferta: {
-    titulo: 'Web y ficha de Google: 400 €',
-    nota: 'Para los tres primeros, después 600 €. Precio cerrado por escrito.',
+    titulo: 'Web y ficha de Google, en dos semanas',
+    nota: 'El precio te lo digo por teléfono, y te lo dejo cerrado por escrito el mismo día.',
   },
   cta: 'Escríbeme por WhatsApp',
   alt: 'Te contesto yo.',
@@ -94,26 +94,24 @@ export const home = {
     ],
   },
   precio: {
-    titulo: 'Lo que hago, y lo que cuesta.',
-    intro: 'Pago único. La web es tuya y el dominio va a tu nombre.',
+    titulo: 'Lo que hago.',
+    intro: 'Pago único. La web es tuya y el dominio va a tu nombre. El precio depende de lo que necesites, y te lo digo en la llamada.',
+    cierre: 'Llámame, me cuentas qué negocio tienes y te doy la cifra en esos mismos veinte minutos.',
     tiers: [
       {
         nombre: 'Presencia',
-        precio: '400 €',
-        nota: 'Los tres primeros. Después, 600 €.',
+        nota: 'Para empezar a salir cuando te buscan en tu pueblo.',
         incluye: ['Una página bien hecha', 'Tu ficha de Google al día', 'Llamar y WhatsApp donde se ven'],
         destacado: true,
       },
       {
         nombre: 'Negocio',
-        precio: '1.200 €',
         nota: 'Si vives de que te encuentren, no solo del boca a boca.',
         incluye: ['Hasta cinco páginas, por servicio o zona', 'Tus trabajos con fotos', 'Que salgas en Google en tu zona'],
         destacado: false,
       },
       {
         nombre: 'A medida',
-        precio: 'Hablamos',
         nota: 'Reservas, pedidos, o esa herramienta que hoy llevas en una libreta.',
         incluye: ['Hecho para tu caso', 'Conectado con lo que ya usas', 'Precio cerrado antes de empezar'],
         destacado: false,
@@ -146,7 +144,7 @@ export const seo = {
       'Hago la web de tu negocio y te dejo la ficha de Google en condiciones, para que cuando alguien busque tu oficio y tu pueblo te llame a ti. Valencia y alrededores.',
   },
   comoTrabajo: {
-    title: 'Cómo trabajo, paso a paso y con precios | Mialdea Studio',
+    title: 'Cómo trabajo, paso a paso | Mialdea Studio',
     description:
       'Los cinco pasos, lo que incluye cada web, en cuántas semanas la tienes y qué necesito de ti. Léelo antes de que hablemos y la llamada dura quince minutos.',
   },
@@ -334,7 +332,7 @@ export const servicios = [
       'Sales cuando alguien busca tu oficio y tu pueblo',
       'Listas en semanas',
     ],
-    desde: 'Desde 400 €',
+    desde: 'Precio por teléfono',
   },
   {
     titulo: 'Apps y herramientas',
@@ -347,15 +345,14 @@ export const servicios = [
 export const paquetes = [
   {
     nombre: 'Presencia',
-    precio: '400 €',
-    precioNota: 'lanzamiento, tres primeros. Después 600 €',
+    precio: 'Por teléfono',
     desc: 'Para aparecer y que te encuentren.',
     incluye: ['Web de una página', 'Tu ficha de Google', 'Móvil primero', 'Botón de WhatsApp'],
     destacado: true,
   },
   {
     nombre: 'Negocio',
-    precio: '1.200 €',
+    precio: 'Por teléfono',
     desc: 'Si vives de que te encuentren.',
     incluye: ['Hasta 5 páginas', 'SEO local de tu zona', 'Google Business', 'Textos que venden'],
     destacado: false,
@@ -426,13 +423,11 @@ export const comoTrabajo = {
   ],
 
   productos: {
-    titulo: 'Lo que hago, y lo que cuesta',
-    intro: 'Precio cerrado por escrito antes de empezar. No hay versiones intermedias ni extras que aparezcan a mitad.',
+    titulo: 'Lo que hago',
+    intro: 'El precio te lo digo por teléfono y te lo dejo cerrado por escrito antes de empezar. No hay versiones intermedias ni extras que aparezcan a mitad.',
     items: [
       {
         nombre: 'Presencia',
-        precio: '400 €',
-        precioNota: 'Precio de lanzamiento para los tres primeros. Después, 600 €.',
         plazo: 'Publicada en dos semanas',
         desc: 'Una sola página bien hecha, pensada para que quien te busque desde el móvil te llame en menos de un minuto.',
         incluye: [
@@ -445,7 +440,6 @@ export const comoTrabajo = {
       },
       {
         nombre: 'Negocio',
-        precio: '1.200 €',
         plazo: 'Publicada en dos semanas',
         desc: 'Lo mismo, más una página para cada cosa que haces y para cada zona en la que trabajas. Es la que tiene sentido si vives de que te encuentren y no solo del boca a boca.',
         incluye: [
@@ -458,7 +452,6 @@ export const comoTrabajo = {
       },
       {
         nombre: 'A medida',
-        precio: 'Hablamos',
         plazo: 'El plazo te lo digo en la primera llamada',
         desc: 'Cuando lo que necesitas no es una web, sino que el negocio funcione por dentro: reservas, pedidos, o esa herramienta que hoy llevas en una libreta.',
         incluye: [
@@ -467,7 +460,7 @@ export const comoTrabajo = {
           'Hecho para tu caso, no adaptado de otro',
           'Todo lo de la web completa, incluido',
         ],
-        cierre: 'Precio cerrado por escrito antes de empezar.',
+        cierre: 'El precio te lo digo en la llamada y te lo dejo por escrito antes de empezar.',
       },
     ],
   },
@@ -480,7 +473,7 @@ export const comoTrabajo = {
 
   planCuidado: {
     titulo: 'Que no te tengas que acordar de ella nunca',
-    precio: '49 € al mes',
+    precio: 'Un fijo al mes, te digo cuánto por teléfono',
     parrafos: [
       'Tu web al día, rápida y funcionando. Si algo se rompe, es problema mío, no tuyo.',
       'Todos los meses te escribo con un dato: cuánta gente te ha llamado desde la web y por qué búsqueda te están encontrando. Y voy revisando tu ficha de Google, las reseñas nuevas y que el formulario siga llegándote.',
@@ -491,10 +484,10 @@ export const comoTrabajo = {
 
   rescate: {
     titulo: 'Si se te ha caído la web',
-    precio: '90 €',
+    precio: 'Llámame y te digo lo que cuesta',
     parrafos: [
       'O se te ha quedado sin dominio, o el que te la llevaba ha desaparecido, o hay algo roto que te está costando llamadas.',
-      'Precio cerrado y puesto desde antes de que me llames. No te cobro más por estar en un apuro.',
+      'Precio cerrado antes de tocar nada. No te cobro más por estar en un apuro.',
       'Los mensajes de fin de semana los contesto el lunes por la mañana. Si necesitas a alguien disponible a cualquier hora, dímelo y te digo lo que cuesta.',
     ],
   },
@@ -523,7 +516,7 @@ export const comoTrabajo = {
 
   escalon: {
     titulo: 'Si todavía no quieres una web',
-    precio: '90 €, y si luego hacemos la web te lo descuento',
+    precio: 'Te digo el precio por teléfono, y si luego hacemos la web te lo descuento',
     texto:
       'Esto no es la llamada gratis de quince minutos, donde te digo por encima las tres cosas más gordas. Aquí reviso a fondo la web, la ficha de Google y las reseñas, y te lo dejo TODO por escrito: qué hay que arreglar, en qué orden y por qué. Te sirve me lo encargues a mí o a otro. Si luego me encargas la web, te lo descuento.',
   },
@@ -722,17 +715,17 @@ export type Gremio = {
 /** Lo que comparten las cuatro páginas de gremio. */
 export const gremioComun = {
   precio: {
-    kicker: 'Precio de lanzamiento',
-    principal: '400 €',
-    principalNota: 'una página y tu ficha de Google, pago único',
-    resto: 'Precio de lanzamiento para los tres primeros negocios. Después son 600 €. La web completa de varias páginas, 1.200 €. Todas con el SEO de tu zona incluido y publicadas en dos semanas.',
-    letraPequena: 'Te doy la cifra exacta por escrito antes de empezar nada.',
+    kicker: 'El precio',
+    principal: 'Te lo digo por teléfono',
+    principalNota: 'cerrado y por escrito antes de empezar nada',
+    resto: 'Cada negocio necesita una cosa distinta, así que prefiero oírte antes de darte una cifra. Son veinte minutos, te lo digo en la misma llamada y no hay venta al final.',
+    letraPequena: 'Pago único. La web es tuya y el dominio va a tu nombre.',
   },
   quien: {
     titulo: 'Yo mismo, y soy ingeniero',
     texto:
       'Me llamo Miguel Mialdea y llevo siete años programando, la mayor parte para empresas grandes. Aquí no hay comerciales: hablas conmigo y la hago yo, de una en una.',
-    enlaceTexto: 'Cómo trabajo, paso a paso y con precios',
+    enlaceTexto: 'Cómo trabajo, paso a paso',
   },
   zona: {
     titulo: 'Dónde trabajo',
@@ -757,7 +750,7 @@ export const gremios: Gremio[] = [
     seo: {
       title: 'Webs para empresas de reformas en Valencia y alrededores | Mialdea Studio',
       description:
-        'Hago la web de tu empresa de reformas y trabajo tu ficha de Google, para que te encuentren sin pagar por cada contacto. Precio cerrado desde 600 euros y lista en dos semanas.',
+        'Hago la web de tu empresa de reformas y trabajo tu ficha de Google, para que te encuentren sin pagar por cada contacto. Precio cerrado por escrito y lista en dos semanas.',
     },
     kicker: 'Reformas, climatización y solar · Valencia y alrededores',
     h1: 'Que te encuentren sin pagar por cada contacto',
@@ -802,7 +795,7 @@ export const gremios: Gremio[] = [
       },
       {
         q: '¿Hay que pagar todos los meses?',
-        a: 'No. Pagas una vez y la web es tuya. Si quieres que yo la cuide, son 49 € al mes, opcional y sin permanencia.',
+        a: 'No. Pagas una vez y la web es tuya. Si quieres que yo la cuide, hay un fijo mensual, opcional y sin permanencia. Te digo cuánto por teléfono.',
       },
     ],
   },
@@ -813,7 +806,7 @@ export const gremios: Gremio[] = [
     seo: {
       title: 'Webs para fontaneros en Valencia y alrededores | Mialdea Studio',
       description:
-        'Hago webs para fontaneros, pensadas para pedir el trabajo que quieres: reformas de baño y no solo chapuzas. Con tu ficha de Google al día. Desde 600 euros, en dos semanas.',
+        'Hago webs para fontaneros, pensadas para pedir el trabajo que quieres: reformas de baño y no solo chapuzas. Con tu ficha de Google al día y lista en dos semanas.',
     },
     kicker: 'Fontanería · Valencia y alrededores',
     h1: 'Webs para fontaneros en Valencia y alrededores',
@@ -861,7 +854,7 @@ export const gremios: Gremio[] = [
       },
       {
         q: '¿Hay que pagar todos los meses?',
-        a: 'No. Pagas una vez y la web es tuya. Si quieres que yo la cuide, son 49 € al mes, opcional y sin permanencia.',
+        a: 'No. Pagas una vez y la web es tuya. Si quieres que yo la cuide, hay un fijo mensual, opcional y sin permanencia. Te digo cuánto por teléfono.',
       },
       {
         q: '¿Cuánto tardas?',
@@ -876,7 +869,7 @@ export const gremios: Gremio[] = [
     seo: {
       title: 'Webs para electricistas en Valencia y alrededores | Mialdea Studio',
       description:
-        'Hago webs para electricistas: boletines, instalaciones y urgencias. Para que quien compara tres presupuestos te encuentre a ti. Desde 600 euros, lista en dos semanas.',
+        'Hago webs para electricistas: boletines, instalaciones y urgencias. Para que quien compara tres presupuestos te encuentre a ti. Lista en dos semanas.',
     },
     kicker: 'Electricidad · Valencia y alrededores',
     h1: 'Webs para electricistas en Valencia y alrededores',
@@ -922,7 +915,7 @@ export const gremios: Gremio[] = [
       },
       {
         q: '¿Hay que pagar todos los meses?',
-        a: 'No. Pagas una vez y la web es tuya. Si quieres que yo la cuide, son 49 € al mes, opcional y sin permanencia.',
+        a: 'No. Pagas una vez y la web es tuya. Si quieres que yo la cuide, hay un fijo mensual, opcional y sin permanencia. Te digo cuánto por teléfono.',
       },
       {
         q: '¿Cuánto tardas?',
@@ -937,7 +930,7 @@ export const gremios: Gremio[] = [
     seo: {
       title: 'Webs para bares y restaurantes en Valencia y alrededores | Mialdea Studio',
       description:
-        'Hago webs para bares y restaurantes: la carta que se lee en el móvil, tus fotos y la ficha de Google al día. Desde 600 euros, lista en dos semanas.',
+        'Hago webs para bares y restaurantes: la carta que se lee en el móvil, tus fotos y la ficha de Google al día. Lista en dos semanas.',
     },
     kicker: 'Bares y restaurantes · Valencia y alrededores',
     h1: 'Webs para bares y restaurantes en Valencia y alrededores',
@@ -979,11 +972,11 @@ export const gremios: Gremio[] = [
       },
       {
         q: '¿Y cuando cambie la carta?',
-        a: 'Los cambios del día a día entran en el plan de cuidado de 49 € al mes. Me mandas la carta nueva y la subo yo.',
+        a: 'Los cambios del día a día entran en el plan de cuidado mensual. Me mandas la carta nueva y la subo yo.',
       },
       {
         q: '¿Hay que pagar todos los meses?',
-        a: 'No. Pagas una vez y la web es tuya. El plan de 49 € es opcional y sin permanencia.',
+        a: 'No. Pagas una vez y la web es tuya. El plan de cuidado es opcional y sin permanencia.',
       },
       {
         q: '¿Cuánto tardas?',
@@ -1065,7 +1058,7 @@ export const zonas: Zona[] = [
     seo: {
       title: 'Diseño web en Albal | Mialdea Studio',
       description:
-        'Hago webs para negocios y oficios de Albal y te dejo la ficha de Google en condiciones. Una página desde 400 €, publicada en dos semanas. Ya trabajo con un fontanero del pueblo.',
+        'Hago webs para negocios y oficios de Albal y te dejo la ficha de Google en condiciones. Una página, publicada en dos semanas. Ya trabajo con un fontanero del pueblo.',
     },
     kicker: "Albal y l'Horta Sud",
     h1: 'Diseño web en Albal',
@@ -1084,7 +1077,7 @@ export const zonas: Zona[] = [
     seo: {
       title: "Diseño web en l'Alcúdia | Mialdea Studio",
       description:
-        "Hago webs para negocios de l'Alcúdia y la Ribera Alta, y te dejo la ficha de Google en condiciones. Una página desde 400 €, publicada en dos semanas. Hablas conmigo, no con un comercial.",
+        "Hago webs para negocios de l'Alcúdia y la Ribera Alta, y te dejo la ficha de Google en condiciones. Una página, publicada en dos semanas. Hablas conmigo, no con un comercial.",
     },
     kicker: "l'Alcúdia y la Ribera Alta",
     h1: "Diseño web en l'Alcúdia",
@@ -1103,7 +1096,7 @@ export const zonas: Zona[] = [
     seo: {
       title: 'Diseño web en Burjassot | Mialdea Studio',
       description:
-        'Hago webs para negocios de Burjassot y te pongo la ficha de Google al día. Una página desde 400 €, publicada en dos semanas. Ya trabajo con un negocio del pueblo.',
+        'Hago webs para negocios de Burjassot y te pongo la ficha de Google al día. Una página, publicada en dos semanas. Ya trabajo con un negocio del pueblo.',
     },
     kicker: 'Burjassot',
     h1: 'Diseño web en Burjassot',
@@ -1122,7 +1115,7 @@ export const zonas: Zona[] = [
     seo: {
       title: 'Diseño web en Valencia para negocios y oficios | Mialdea Studio',
       description:
-        'Hago webs para negocios y oficios de Valencia, y te dejo la ficha de Google en condiciones. Una página desde 400 €, publicada en dos semanas. Los llevo de uno en uno.',
+        'Hago webs para negocios y oficios de Valencia, y te dejo la ficha de Google en condiciones. Una página, publicada en dos semanas. Los llevo de uno en uno.',
     },
     kicker: 'Valencia y alrededores',
     h1: 'Diseño web en Valencia',
